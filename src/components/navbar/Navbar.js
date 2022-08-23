@@ -21,7 +21,7 @@ const Navbar = () => {
         </div>
         <div className="hidden md:float-left md:contents">
             {categories.reverse().map((elem,i)=>(<Link key={elem.slug} to={`./${elem.slug}`}>
-                <span className="md:float-right mt-2 align-middle text-dark ml-4 font-semibold cursor-pointer hover:text-blue-500">
+                <span className="md:float-right mt-2 align-middle text-[#333333] text-[#16px] ml-4 font-semibold cursor-pointer hover:text-[#00A59C]">
                     {elem.name}
                 </span>
             </Link>))}
