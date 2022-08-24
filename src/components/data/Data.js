@@ -50,4 +50,4 @@ const ru = {
     },
   ],
 };
-export default lan === "uz" ? uz : lan === "ru"?ru:[];
+export default lan === "uz" ? uz : lan === "ru"?ru:[]
