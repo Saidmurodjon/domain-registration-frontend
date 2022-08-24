@@ -1,29 +1,10 @@
 import React, { useState } from 'react';
 import { BsArrowLeftSquareFill, BsArrowRightSquareFill } from 'react-icons/bs';
-import cloud from "../../assets/Cloud hosting-amico.png"
-import domain from "../../assets/Domain names-amico.png"
-import site from "../../assets/site.png"
-const sliderData = [
-  {
-    url:cloud,
-    title:"ISHONCHLI HOSTING XIZMATI",
-    about:"-haftasiga 7 kun   24 soat uzluksiz -rezerevda saqlash -cheksiz internet trafik"
-  },
-  {
-    url: domain,
-    title:"DOMENINGIZNI TEZ VA QULAY RO‘YXATDAN O‘TKAZING",
-    about:"600 MB hosting+domen Marketing uchun yangi imkoniyat"
-  },
-  {
-    url: site,
-    title:"SAYT YARATIB BERISH XIZMATI",
-    about:"Istagingiz va didingizga mos keladigan saytga buyurtma bering"
-  },
-];
 
+import Data from '../data/Data';
 const Carousel = () => {
   const [slide, setSlide] = useState(0);
-  const length = sliderData.length;
+  const length = Data.sliderData.length;
   // console.log(length)
 
   const prevSlide = () => {
@@ -43,7 +24,7 @@ const Carousel = () => {
         onClick={nextSlide}
         className='absolute top-[50%] text-3xl text-blue cursor-pointer right-8'
       />
-      {sliderData.map((item, index) => (
+      {Data.sliderData.map((item, index) => (
         <div key={index} className={index === slide ? 'opacity-100' : 'opacity-0'}>
           {index === slide && (
             <div className='grid md:grid-cols-2 gap-2 sm:grid-cols-1'>

@@ -1,18 +1,10 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png"
+import Data from '../data/Data';
 const Navbar = () => {
-    const categories=[
-    {name:"Bosh sahifa",slug:""},
-    {name:"Domen",slug:"domen"},
-    {name:"Hosting",slug:"hosting"},
-    {name:"Pochta",slug:"pochta"},
-    {name:"Sayt",slug:"sayt"},
-    {name:"Aloqa",slug:"aloqa"},
-
-]
   return (
-    <div className="container mx-auto px-10 mb-8 shadow-current">
+    <div className="container mx-auto px-10 mb-8">
       <div className="w-full inline-block border-blue-500 py-8">
         <div className="md:float-left block">
           <Link to={"/"}>
@@ -20,7 +12,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="hidden md:float-left md:contents">
-            {categories.reverse().map((elem,i)=>(<Link key={elem.slug} to={`./${elem.slug}`}>
+            {Data.category.reverse().map((elem,i)=>(<Link key={elem.slug} to={`./${elem.slug}`}>
                 <span className="md:float-right mt-2 align-middle text-[#333333] text-[#16px] ml-4 font-semibold cursor-pointer hover:text-[#00A59C]">
                     {elem.name}
                 </span>
