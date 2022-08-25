@@ -14,7 +14,7 @@ const Navbar = () => {
         <div className="hidden md:float-left md:contents">
             {Data.category.reverse().map((elem,i)=>(<Link key={elem.slug} to={`./${elem.slug}`}>
                 <span className="md:float-right mt-2 align-middle text-[#333333] text-[#16px] ml-4 font-semibold cursor-pointer hover:text-[#00A59C]">
-                    {elem.name}
+                  {elem.name}
                 </span>
             </Link>))}
         </div>

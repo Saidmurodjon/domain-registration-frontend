@@ -1,24 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Data from "../data/Data";
-const icons = [
-  {
-    url: "./assets/icons/instagram.png",
-    slug: "#",
-  },
-  {
-    url: "./assets/icons/google.png",
-    slug: "",
-  },
-  {
-    url: "./assets/icons/twitter.png",
-    slug: "",
-  },
-  {
-    url: "./assets/icons/facebook.png",
-    slug: "",
-  },
-];
+// const icons = [
+//   {
+//     url: "./assets/icons/instagram.png",
+//     slug: "#",
+//   },
+//   {
+//     url: "./assets/icons/google.png",
+//     slug: "",
+//   },
+//   {
+//     url: "./assets/icons/twitter.png",
+//     slug: "",
+//   },
+//   {
+//     url: "./assets/icons/facebook.png",
+//     slug: "",
+//   },
+// ];
 const Footer = () => {
   return (
     <footer className="p-4 bg-white sm:p-6 dark:bg-[#34495E]">
@@ -38,7 +38,7 @@ const Footer = () => {
               rivojlantirish yangi bosqichlarga olib chiqish.
             </span>
           </div>
-          <div className="mb-6 md:mb-0 md:w-1/4 my-12">
+          <div className="mb-6 md:mb-0 md:w-1/4 my-12 hidden md:inline">
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
               Manzil
             </h2>

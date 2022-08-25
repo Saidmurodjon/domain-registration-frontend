@@ -26,11 +26,26 @@ const uz = {
       about: "Istagingiz va didingizga mos keladigan saytga buyurtma bering",
     },
   ],
+  headerCard: [
+    {
+      url: "./assets/headerCard/domain.png",
+      title: "Domenni ro‘yxatdan o‘tkazish",
+      info: "Milliy domen bilan biznesga ilk qadam ",
+    },
+    {
+      url: "./assets/headerCard/hosting.png",
+      title: "Ishonchli hosting xizmati",
+      info: "Ishlash uchun qulaylik haftasiga 7 kun 24 soat uzluksiz",
+    },
+    {
+      url: "./assets/headerCard/site.png",
+      title: "Websaytlar yaratib berish",
+      info: "Istalgan murakkablikdagi saytlar biz uchun sifat birinchi o‘rinda",
+    },
+  ],
 };
 const ru = {
-  category: [
-    { name: "Bosh sahifa ru", slug: "" }
-  ],
+  category: [{ name: "Bosh sahifa ru", slug: "" }],
   sliderData: [
     {
       url: "./assets/Cloud hosting-amico.png",
@@ -50,4 +65,4 @@ const ru = {
     },
   ],
 };
-export default lan === "uz" ? uz : lan === "ru"?ru:[]
+export default lan === "uz" ? uz : lan === "ru" ? ru : [];
