@@ -17,7 +17,7 @@ const Left = () => {
         Hajmi
       </label>
       <select
-        className="float-right w-[96px] cursor-pointer rounded dark:bg-[#00A59C] text-white outline-none text-center"
+        className="float-right w-[96px] h-[30px] cursor-pointer rounded dark:bg-[#00A59C] text-white outline-none text-center"
         id="hajmi"
       >
         {test.map((item) => (
@@ -31,7 +31,7 @@ const Left = () => {
         ))}
       </select>
       <br />
-      <hr className="border-t dark:border-gray-100 my-4" />
+      <hr className="border-t dark:border-gray-100 my-5" />
       <label
         className="float-left text-[#333333] font-semibold cursor-pointer"
         htmlFor="domain"
@@ -39,7 +39,7 @@ const Left = () => {
         Domain
       </label>
       <select
-        className="float-right w-[96px] cursor-pointer rounded dark:bg-[#00A59C] text-white outline-none text-center"
+        className="float-right w-[96px] h-[30px] cursor-pointer rounded dark:bg-[#00A59C] text-white outline-none text-center"
         id="domain"
       >
         {test.map((item) => (
@@ -53,7 +53,7 @@ const Left = () => {
         ))}
       </select>
       <br />
-      <hr className="border-t dark:border-gray-100 my-4" />
+      <hr className="border-t dark:border-gray-100 my-5" />
       <label
         className="float-left text-[#333333] font-semibold cursor-pointer"
         htmlFor="d"
@@ -61,7 +61,7 @@ const Left = () => {
         Domain
       </label>
       <select
-        className="float-right w-[96px] cursor-pointer rounded dark:bg-[#00A59C] text-white outline-none text-center"
+        className="float-right w-[96px] h-[30px] cursor-pointer rounded dark:bg-[#00A59C] text-white outline-none text-center"
         id="d"
       >
         {test.map((item) => (
@@ -75,7 +75,7 @@ const Left = () => {
         ))}
       </select>
       <br />
-      <hr className="border-t dark:border-gray-100 my-4" />
+      <hr className="border-t dark:border-gray-100 my-5" />
       <label
         className="float-left text-[#333333] font-semibold cursor-pointer"
         htmlFor="d"
@@ -83,7 +83,7 @@ const Left = () => {
         Domain
       </label>
       <select
-        className="float-right w-[96px] cursor-pointer rounded dark:bg-[#00A59C] text-white outline-none text-center"
+        className="float-right w-[96px] h-[30px] cursor-pointer rounded dark:bg-[#00A59C] text-white outline-none text-center"
         id="d"
       >
         {test.map((item) => (
@@ -97,7 +97,7 @@ const Left = () => {
         ))}
       </select>
       <br />
-      <hr className="border-t dark:border-gray-100 my-4" />
+      <hr className="border-t dark:border-gray-100 my-5" />
       <label
         className="float-left text-[#333333] font-semibold cursor-pointer"
         htmlFor="d"
@@ -119,7 +119,7 @@ const Left = () => {
         ></div>
       </label>
       <br />
-      <hr className="border-t dark:border-gray-100 my-4" />
+      <hr className="border-t dark:border-gray-100 my-5" />
       <label
         className="float-left text-[#333333] font-semibold cursor-pointer"
         htmlFor="d"
@@ -141,7 +141,7 @@ const Left = () => {
         ></div>
       </label>
       <br />
-      <hr className="border-t dark:border-gray-100 my-4" />
+      <hr className="border-t dark:border-gray-100 my-5" />
       <label
         className="float-left text-[#333333] font-semibold cursor-pointer"
         htmlFor="d"
@@ -163,7 +163,7 @@ const Left = () => {
         ></div>
       </label>
       <br />
-      <hr className="border-t dark:border-gray-100 my-4" />
+      <hr className="border-t dark:border-gray-100 my-5" />
     </form>
   </div></>
   )

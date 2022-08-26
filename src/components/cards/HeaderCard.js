@@ -3,7 +3,8 @@ import React from "react";
 const HeaderCard = ({props}) => {
   return (
     <>
-      <div className="w-full max-w-sm bg-white rounded-lg border border-gray-200 shadow-md md:dark:bg-[#0A96FF] md:dark:border-[#0A96FF] hover:bg-[#00A59C]">
+      <div className="w-full max-w-sm bg-white rounded-lg border border-gray-200 shadow-md md:dark:bg-[#0A96FF] md:dark:border-[#0A96FF] hover:bg-[#00A59C] h-[202px
+] md:h-[273px] md:w-[370px] transition duration-500 transform hover:-translate-y-[30px] hover:shadow-xl">
         <div className="flex justify-end px-4 pt-4"></div>
         <div className="flex flex-col md:items-center pb-10 mx-3">
           <img

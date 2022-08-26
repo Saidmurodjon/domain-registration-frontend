@@ -16,7 +16,7 @@ const uz = {
         "-haftasiga 7 kun   24 soat uzluksiz -rezerevda saqlash -cheksiz internet trafik",
     },
     {
-      url: "./assets/Domain names-amico.png",
+      url: "./assets/Domain.png",
       title: "DOMENINGIZNI TEZ VA QULAY RO‘YXATDAN O‘TKAZING",
       about: "600 MB hosting+domen Marketing uchun yangi imkoniyat",
     },
