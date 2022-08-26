@@ -6,27 +6,21 @@ import Domain from "../../components/domain/Domain";
 // import Data from "../../components/data/Data";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
-// import Hosting from "../../components/hosting/Hosting";
-import test from "../../test.json";
+import Hosting from "../../components/hosting/Hosting";
 import CreateHosting from "../../components/hosting/createHosting/CreateHosting";
-console.log(test);
 const Home = () => {
   return (
     <>
-      <Navbar />
+     <div className=" ">
+     <Navbar />
       <Carousel />
       <Domain />
-      <div className="max-w-[1200px] mx-auto md:flex justify-between items-centergrid grid-cols-3">
-        {/* {test.map((item) => {
-          return (
-            <div className="w-[200px] mx-3 inline">
-              <Hosting key={item.narxi} props={item} />
-            </div>
-          );
-        })} */}
+      <div className="max-w-[1200px] mx-auto bg-[#F1FAFF]">
+       <Hosting/>
         <CreateHosting/>
       </div>
       <Footer />
+     </div>
     </>
   );
 };

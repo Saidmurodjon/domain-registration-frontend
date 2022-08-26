@@ -43,12 +43,15 @@ const Carousel = () => {
                     {item.title}
                   </h1>
                   <h3 className="text-[#797979] md:mt-7">{item.about}</h3>
-                  <div  className='mt-2 md:mt-[60px]'>
+                  <div  className='mt-2 md:mt-[60px] hidden md:contents'>
                   <Button name={"RO‘YXATDAN O‘TISH"}/>
                   </div>
                 </div>
                 <div className="float-right md:w-[416px] col-span-2">
                   <img className="rounded-md w-full" src={item.url} alt="/" />
+                  <div  className='mt-2 md:mt-[60px] text-center'>
+                  <Button name={"RO‘YXATDAN O‘TISH"}/>
+                  </div>
                 </div>
               </div>
             )}
@@ -57,11 +60,11 @@ const Carousel = () => {
       </div>
 
       <div className="g bg-transparent">
-        <div className="max-w-[1240px] mx-auto px-4 md:mt-4 md:flex">
+        <div className="max-w-[1200px] mx-auto px-2 md:px-0 md:mt-16 md:flex">
           {Data.headerCard.map((item) => (
             <div
               key={item.url}
-              className="mx-auto p-3 md:flex-1 justify-center itmes-center"
+              className="mx-auto md:flex-1 justify-center itmes-center"
             >
               <HeaderCard props={item} />
             </div>
