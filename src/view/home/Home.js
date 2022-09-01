@@ -8,6 +8,7 @@ import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 import Hosting from "../../components/hosting/Hosting";
 import CreateHosting from "../../components/hosting/createHosting/CreateHosting";
+import Sayt from "../../components/sayt/Sayt";
 const Home = () => {
   return (
     <>
@@ -21,6 +22,7 @@ const Home = () => {
 
        <Hosting/>
         <CreateHosting/>
+        <Sayt/>
       </div>
       <Footer />
      </div>

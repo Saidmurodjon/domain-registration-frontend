@@ -36,12 +36,12 @@ const HostingCard = ({ props }) => {
           <p className="my-[10px] font-semibold pl-[20px]">{props.hajmi}</p>
           <p className="my-[10px] pl-[35px] col-span-2">Hajmi</p>
           <p className="my-[10px] font-semibold pl-[20px]">{props.hajmi}</p>
-          <p className="my-[10px] pl-[35px] col-span-2">Hajmi</p>
-          <p className="my-[10px] font-semibold pl-[20px]">{props.hajmi}</p>
+          <p className="my-[10px] pl-[35px] col-span-2">Narxi</p>
+          <p className="my-[10px] font-semibold pl-[20px]">{props.narxi}</p>
         </div>
         {/* footer */}
-        <div className="pt-10 pb-2 text-center">
-            <Button name={"Buyurtma berish"}/>
+        <div className="pt-10 pb-3 px-3 text-center">
+            <Button name={"Buyurtma berish"} styles="w-full"/>
         </div>
       </div>
     </>

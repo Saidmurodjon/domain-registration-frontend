@@ -19,7 +19,7 @@ const Carousel = () => {
     <div className="">
       <div className="max-w-[1200px] mx-auto px-4 relative justify-center itmes-center lg:h-[500px]">
         {/* Qayta ko'rib chiqiladi */}
-        {/* <div className="absolute invisible lg:visible md:top-[200px] md:inline text-3xl text-blue cursor-pointer left-[-150px] bg-[#00A59C] hover:bg-transparent border-2 border-[#00A59C] rounded">
+        <div className="absolute invisible lg:visible md:top-[200px] md:inline text-3xl text-blue cursor-pointer left-[-150px] bg-[#00A59C] hover:bg-transparent border-2 border-[#00A59C] rounded">
         <FiChevronLeft
           onClick={prevSlide}
           className="text-white hover:text-[#00A59C]"
@@ -30,7 +30,7 @@ const Carousel = () => {
           onClick={nextSlide} 
           className="text-white hover:text-[#00A59C]"
         />
-        </div> */}
+        </div>
         {Data.sliderData.map((item, index) => (
           <div
             key={index}

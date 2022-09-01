@@ -57,7 +57,7 @@ const Domain = ({ props }) => {
               <td className="py-4 px-6">Laptop</td>
               <td className="py-4 px-6">$2999</td>
               <td className="py-4 px-6">
-                <Button name={"Buyurtma berish"} />
+                <Button name={"Buyurtma berish"} styles={"md:w-[249px]"} />
               </td>
             </tr>
             <tr className="bg-white border-t dark:bg-white dark:border-gray-200 text-black hover:bg-[#F1FAFF] dark:hover:bg-[#F1FAFF] md:h-[77px] text-center">
@@ -65,7 +65,7 @@ const Domain = ({ props }) => {
               <td className="py-4 px-6">Laptop</td>
               <td className="py-4 px-6">$2999</td>
               <td className="py-4 px-6">
-                <Button name={"Buyurtma berish"} />
+                <Button name={"Buyurtma berish"}  styles={"md:w-[249px]"} />
               </td>
             </tr>
           </tbody>
