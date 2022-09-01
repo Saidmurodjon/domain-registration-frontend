@@ -11,11 +11,14 @@ import CreateHosting from "../../components/hosting/createHosting/CreateHosting"
 const Home = () => {
   return (
     <>
-     <div className=" ">
+     <div className="mx-auto">
      <Navbar />
+     {/* error of carousel */}
       <Carousel />
       <Domain />
-      <div className="max-w-[1200px] mx-auto bg-[#F1FAFF]">
+      <div className="">
+     {/* error of hosting */}
+
        <Hosting/>
         <CreateHosting/>
       </div>

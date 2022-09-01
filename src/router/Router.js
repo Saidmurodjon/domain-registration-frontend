@@ -9,17 +9,15 @@ import Aloqa from "../view/aloqa/Aloqa";
 
 function Router() {
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/domen" element={<Domen />} />
-        <Route path="/hosting" element={<Hosting />} />
-        <Route path="/pochta" element={<Pochta />} />
-        <Route path="/sayt" element={<Sayt />} />
-        <Route path="/aloqa" element={<Aloqa />} />
-        <Route path="*" element={<E404 />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/domen" element={<Domen />} />
+      <Route path="/hosting" element={<Hosting />} />
+      <Route path="/pochta" element={<Pochta />} />
+      <Route path="/sayt" element={<Sayt />} />
+      <Route path="/aloqa" element={<Aloqa />} />
+      <Route path="*" element={<E404 />} />
+    </Routes>
   );
 }
 export default Router;

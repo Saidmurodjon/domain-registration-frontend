@@ -17,7 +17,7 @@ const Hosting = () => {
         </div>
        <p className="mx-3">Tariflar</p>
 
-        <div className="grid md:grid-cols-4 grid-cols-1 items-center relative justify-between">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 items-center relative justify-center">
           {" "}
           {test.map((item) => {
             return (
