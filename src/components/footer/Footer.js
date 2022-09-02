@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Data from "../data/Data";
-import { RiMapPin2Line } from "react-icons/ri";
+import { RiMapPin2Line, RiGoogleFill, RiInstagramLine } from "react-icons/ri";
 import { TbPhonePlus } from "react-icons/tb";
+import { FaFacebookF, FaTwitter } from "react-icons/fa";
+// import { TbPhonePlus } from "react-icons/tb";
 // const icons = [
 //   {
 //     url: "./assets/icons/instagram.png",
@@ -25,11 +27,11 @@ const Footer = () => {
   return (
     <footer className="p-4 bg-white sm:p-6 dark:bg-[#34495E]">
       <div className="max-w-[1240px] mx-auto">
-        <div className="md:flex md:justify-between">
-          <div className="mb-6 md:mb-0 md:w-1/4 mx-5">
+        <div className="md:flex md:justify-between justify-center">
+          <div className="lg:mb-6 mb-0 md:w-1/4 h-max mx-5">
             <img
               src={"./assets/logo/logoWhite.png"}
-              className="mr-5 h-15 m-3"
+              className="lg:mr-5 h-15 m-3 mx-auto md:mx-0"
               alt="FlowBite Logo"
             />
             &nbsp;
@@ -40,7 +42,7 @@ const Footer = () => {
               rivojlantirish yangi bosqichlarga olib chiqish.
             </span>
           </div>
-          <div className="mb-6 md:mb-0 md:w-1/4 my-12 hidden md:inline">
+          <div className="mb-6 md:mb-0 md:w-1/4 my-12 hidden md:inline  lg:pl-16">
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
               Manzil
             </h2>
@@ -60,8 +62,8 @@ const Footer = () => {
               </h3>
             </div>
           </div>
-          <div className="mb-6 md:mb-0 md:w-1/4 text-center my-12">
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-[#ffff]">
+          <div className="mb-6 md:mb-0 md:w-1/4 text-center md:my-12">
+            <h2 className="md:mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-[#ffff]">
               Menyu
             </h2>
             &nbsp;
@@ -75,7 +77,7 @@ const Footer = () => {
               ))}
             </span>
           </div>
-          <div className="mb-6 md:mb-0 md:w-1/4 my-12">
+          <div className="mb-6 md:mb-0 md:w-1/4 my-12 hidden lg:flex">
             <div className="grid grid-cols-2 w-5/6">
               <div className="">
                 <h1 className="dark:text-[#d0d0d0]">Bugun 20-iyul</h1>
@@ -84,7 +86,9 @@ const Footer = () => {
               <div className="border-l flex justify-center">
                 <form action="" className="mx-auto dark:text-[#d0d0d0]">
                   <select className="bg-transparent outline-none" name="" id="">
-                    <option className="" value="">Farg'ona</option>
+                    <option className="" value="">
+                      Farg'ona
+                    </option>
                   </select>
                 </form>
               </div>
@@ -95,31 +99,43 @@ const Footer = () => {
                 <h1 className="text-[32px] font-semibold text-white">+33</h1>
               </div>
               <div className="s col-span-2">
-                <h1 className="text-[14px] dark:text-[#d0d0d0]">Soʼngi martta saytdagi maʼlumotlar <p className="font-semibold inline text-white">20.07.2022</p> kuni yangilangan</h1>
+                <h1 className="text-[14px] dark:text-[#d0d0d0]">
+                  Soʼngi martta saytdagi maʼlumotlar{" "}
+                  <p className="font-semibold inline text-white">20.07.2022</p>{" "}
+                  kuni yangilangan
+                </h1>
               </div>
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-2">
-          <div className="bg-red-300">
-            <h1>social</h1>
+        <div className="grid lg:grid-cols-2 md:my-4 lg:pl-6">
+          <div className="flex items-center justify-center lg:justify-start">
+            <FaFacebookF className="w-[28px] h-[28px] bg-[#d0d0d0] p-1 text-[#34495E] hover:bg-[#00A59C] hover:text-white mr-4" />
+            <FaTwitter className="w-[28px] h-[28px] bg-[#d0d0d0] p-1 text-[#34495E] hover:bg-[#00A59C] hover:text-white mr-4" />
+            <RiGoogleFill className="w-[28px] h-[28px] bg-[#d0d0d0] p-1 text-[#34495E] hover:bg-[#00A59C] hover:text-white mr-4" />
+            <RiInstagramLine className="w-[28px] h-[28px] bg-[#d0d0d0] p-1 text-[#34495E] hover:bg-[#00A59C] hover:text-white mr-4" />
           </div>
-          <div className="bg-red-700">
-            <h1>card</h1>
+          <div className="flex justify-end">
+           <div className="hidden lg:flex">
+           <img src={`./assets/footer/image 2.png`} alt="" className="mr-4 inline" />
+            <img src={`./assets/footer/image 3.png`} alt="" className="mr-4 inline" />
+            <img src={`./assets/footer/image 4.png`} alt="" className="mr-4 inline" />
+            <img src={`./assets/footer/image 5.png`} alt="" className="mr-4 inline" />
+           </div>
           </div>
         </div>
-        <hr className="my-6 border-[#ffffffb4] sm:mx-auto dark:border-gray-700 lg:my-4" />
-        <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400 mx-auto">
+       
+      </div>
+      <hr className="my-2 border-[#ffffffb4] sm:mx-auto dark:border-[#797979] w-full lg:my-4" />
+        <div className="flex items-center sm:justify-between">
+          <span className="text-sm text-gray-500 text-center dark:text-gray-400 mx-auto">
             Sayt ishlab chiqildi:{" "}
-            <a href="https://" className="hover:underline text-white">
+            <a href="https://" className="hover:underline text-[white]">
               "Space Group"
             </a>{" "}
             tomonidan
           </span>
-          <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0"></div>
         </div>
-      </div>
     </footer>
   );
 };
