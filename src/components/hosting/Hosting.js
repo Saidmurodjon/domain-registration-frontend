@@ -63,7 +63,7 @@ const data=test.slice(0,4)
             </div>
             <div className="w-[35px] h-[35px] bg-white border rounded-full ">
               <FiChevronRight
-                onClick={prevSlide}
+                onClick={nextSlide}
                 className="text-black hover:text-[#00A59C] mx-auto mt-2"
               />
             </div>

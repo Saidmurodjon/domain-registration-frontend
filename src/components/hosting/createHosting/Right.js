@@ -99,7 +99,7 @@ const Right = () => {
           <p className="text-gray-500">Umumiy to'lov:</p>
           <h3 className="text-4xl font-bold ">560 000 <span className="text-xl font-medium">so'm</span></h3>
           <div className="mx-auto mt-12">
-          <Button className="" name={"Buyurtma berish"} style={"w-full"}/>
+          <Button className="" name={"Buyurtma berish"} styles={"w-full"}/>
 
           </div>
         </form>

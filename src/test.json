@@ -68,5 +68,47 @@
     "DNS": "mavjud",
     "errLog": "mavjud",
     "narxi": 50005
+  },
+  {
+    "hajmi": 100,
+    "domains": 2,
+    "subDomains": 2,
+    "DBMSQL": 2,
+    "domain": "mavjud emas",
+    "pochta": "cheksiz",
+    "tarfik": "cheksiz",
+    "backup": "mavjud",
+    "ftp": "mavjud",
+    "DNS": "mavjud",
+    "errLog": "mavjud",
+    "narxi": 50006
+  },
+  {
+    "hajmi": 100,
+    "domains": 2,
+    "subDomains": 2,
+    "DBMSQL": 2,
+    "domain": "mavjud emas",
+    "pochta": "cheksiz",
+    "tarfik": "cheksiz",
+    "backup": "mavjud",
+    "ftp": "mavjud",
+    "DNS": "mavjud",
+    "errLog": "mavjud",
+    "narxi": 50007
+  },
+  {
+    "hajmi": 100,
+    "domains": 2,
+    "subDomains": 2,
+    "DBMSQL": 2,
+    "domain": "mavjud emas",
+    "pochta": "cheksiz",
+    "tarfik": "cheksiz",
+    "backup": "mavjud",
+    "ftp": "mavjud",
+    "DNS": "mavjud",
+    "errLog": "mavjud",
+    "narxi": 50008
   }
 ]

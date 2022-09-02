@@ -1,4 +1,3 @@
-import React from "react";
 // import Button from '../../components/button/Button'
 import Carousel from "../../components/carausel/Carousel";
 import Domain from "../../components/domain/Domain";
@@ -9,7 +8,10 @@ import Navbar from "../../components/navbar/Navbar";
 import Hosting from "../../components/hosting/Hosting";
 import CreateHosting from "../../components/hosting/createHosting/CreateHosting";
 import Sayt from "../../components/sayt/Sayt";
+import Partern from "../../components/partner/Partner";
 const Home = () => {
+
+
   return (
     <>
      <div className="mx-auto">
@@ -24,6 +26,7 @@ const Home = () => {
         <CreateHosting/>
         <Sayt/>
       </div>
+      <Partern/>
       <Footer />
      </div>
     </>
