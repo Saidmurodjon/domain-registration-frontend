@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Data from "../data/Data";
+import { RiMapPin2Line } from "react-icons/ri";
+import { TbPhonePlus } from "react-icons/tb";
 // const icons = [
 //   {
 //     url: "./assets/icons/instagram.png",
@@ -31,7 +33,7 @@ const Footer = () => {
               alt="FlowBite Logo"
             />
             &nbsp;
-            <span className="hidden md:contents self-center text-1xl text-[#FFFFFF]">
+            <span className="hidden md:contents self-center text-1xl text-1xl dark:text-[#d0d0d0] w-5/6 text-start p-2">
               Markaz viloyat hokimligida IT texnalogiyalarini rivojlantirish
               maqsadida 2008 yildan buyon faoliyat yuritib kelmoqda. Asosiy
               vazifalari davlat organlari, korxona va tashlikotlarda sohani
@@ -42,23 +44,31 @@ const Footer = () => {
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
               Manzil
             </h2>
-            &nbsp;
-            <span className="self-center text-1xl dark:text-white w-10">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit,
-              vero? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Facilis eius id mollitia voluptas fugit cumque, porro distinctio.
-              Dolore, minima laboriosam?
-            </span>
+            <div className="flex">
+              <RiMapPin2Line className="mt-3 dark:text-white" />
+              <h3 className="text-1xl dark:text-[#d0d0d0] w-5/6 text-start p-2">
+                Farg‘ona shahar Alisher Navoi ko‘chasi 15-uy. Mo‘ljal: Aziya
+                mehmonxonasi
+              </h3>
+            </div>
+            <div className="flex">
+              <TbPhonePlus className="mt-6 dark:text-white" />
+              <h3 className="text-1xl dark:text-[#d0d0d0] w-5/6 text-start p-2 flex-none">
+                +99890 166 55 66
+                <br />
+                +99890 166 55 66
+              </h3>
+            </div>
           </div>
           <div className="mb-6 md:mb-0 md:w-1/4 text-center my-12">
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-[#ffff]">
               Menyu
             </h2>
             &nbsp;
-            <span className="self-center text-1xl dark:text-white w-10">
+            <span className="self-center text-1xl dark:text-[#d0d0d0] w-10">
               {Data.category.reverse().map((item, index) => (
                 <Link key={index} to={`./${item.slug}`}>
-                  <h3 className="text-[#FFFFFF] hover:text-[#00A59C] cursor-pointer">
+                  <h3 className="hover:text-[#00A59C] cursor-pointer">
                     {item.name}
                   </h3>
                 </Link>
@@ -66,39 +76,39 @@ const Footer = () => {
             </span>
           </div>
           <div className="mb-6 md:mb-0 md:w-1/4 my-12">
-            <span className="self-center text-1xl dark:text-white">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit,
-              vero? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Facilis eius id mollitia voluptas fugit cumque, porro distinctio.
-              Dolore, minima laboriosam?
-            </span>
+            <div className="grid grid-cols-2 w-5/6">
+              <div className="">
+                <h1 className="dark:text-[#d0d0d0]">Bugun 20-iyul</h1>
+                <h1 className="dark:text-[#d0d0d0]">Chorshanba</h1>
+              </div>
+              <div className="border-l flex justify-center">
+                <form action="" className="mx-auto dark:text-[#d0d0d0]">
+                  <select className="bg-transparent outline-none" name="" id="">
+                    <option className="" value="">Farg'ona</option>
+                  </select>
+                </form>
+              </div>
+              <div className="">
+                <img src={`./assets/weather/sun.png`} alt="" />
+              </div>
+              <div className="flex items-center justify-center">
+                <h1 className="text-[32px] font-semibold text-white">+33</h1>
+              </div>
+              <div className="s col-span-2">
+                <h1 className="text-[14px] dark:text-[#d0d0d0]">Soʼngi martta saytdagi maʼlumotlar <p className="font-semibold inline text-white">20.07.2022</p> kuni yangilangan</h1>
+              </div>
+            </div>
           </div>
         </div>
-        {/* <div className="md:flex md:justify-between mt-12">
-          <div className="mb-6 md:w-1/2">
-            <span className="self-center text-1xl text-black w-10">
-              {icons.map((item, index) => (
-                <Link key={index} to={`./${item.slug}`}>
-                  <div className="w-10 h-10 inline-flex mx-5  bg-[#D9D9D9] hover:bg-[#00A59C]">
-                    <img className="fill-black" src={item.url} alt="sa" />
-                  </div>
-                </Link>
-              ))}
-            </span>
+        <div className="grid grid-cols-2">
+          <div className="bg-red-300">
+            <h1>social</h1>
           </div>
-          <div className="mb-6 md:mb-0 md:w-1/2">
-            <span className="self-center text-1xl dark:text-white w-10">
-              {icons.map((item, index) => (
-                <Link key={index} to={`./${item.slug}`}>
-                  <h3 className="text-[#FFFFFF] hover:text-[#00A59C] inline cursor-pointer">
-                    {item.url}
-                  </h3>
-                </Link>
-              ))}
-            </span>
+          <div className="bg-red-700">
+            <h1>card</h1>
           </div>
-        </div> */}
-        <hr className="my-6 border-[#ffffffb4] sm:mx-auto dark:border-gray-700 lg:my-8" />
+        </div>
+        <hr className="my-6 border-[#ffffffb4] sm:mx-auto dark:border-gray-700 lg:my-4" />
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400 mx-auto">
             Sayt ishlab chiqildi:{" "}

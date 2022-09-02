@@ -31,7 +31,7 @@ const Info = () => {
             <h1 className="text-[#d0cece]">Aloqa uchun</h1>
             <h1 className="text-white">+99873 244-05-35</h1>
           </div>
-          <div className="w-[44px] h-[43px] bg-[#00A59C] flex justify-center items-center mx-5 rounded-md text-white">
+          <div className="w-[44px] h-[43px] bg-[#00A59C] flex  items-center rounded-md text-white">
             <form action="bg-[#00A59C]">
               <select
                 value={localStorage.getItem("language")}
