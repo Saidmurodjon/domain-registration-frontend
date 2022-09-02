@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaAlignRight } from "react-icons/fa";
+import { RiMenu3Fill } from "react-icons/ri";
 import { HiOutlineX, HiOutlineChevronUp } from "react-icons/hi";
 import Data from "../data/Data";
 import "./Navbar.css";
+import Info from "./Info";
 const Navbar = () => {
   const [modal, setModal] = useState(false);
   // const [show, setShow] = useState(true);
@@ -25,6 +26,7 @@ const Navbar = () => {
     });
   };
   window.addEventListener("scroll", toggleVisible);
+
   return (
     <div className="shadow-md sticky top-0 bg-white z-50">
       {/* scroll to top start*/}
@@ -39,52 +41,7 @@ const Navbar = () => {
       {/* scroll to top end*/}
 
       {/* yuqorida chiquchi ma'lumotlar uchun start */}
-      {visible ? (
-        <div className=" bg-slate-600 hidden md:block h-[50px]">
-          <div className="max-w-[75rem] px-2 grid grid-cols-8 mx-auto ">
-            <div className="col-span-1 flex items-center">
-              <h1>09:11</h1>
-            </div>
-            <div className="col-span-3 flex justify-between mx-5 items-center">
-              <h1>09:11</h1>
-              <h1>09:11</h1>
-              <h1>09:11</h1>
-            </div>
-            <div className="col-span-4 flex justify-end items-center">
-              <div className="mx-5">
-                <h1>Icons</h1>
-              </div>
-              <div className="mx-5">
-                <h1>Aloqa uchun</h1>
-                <h1>+99873 244-05-35</h1>
-              </div>
-              <div className="w-[44px] h-[43px] bg-[#00A59C] flex justify-center items-center mx-5 rounded-md text-white">
-                <form action="bg-[#00A59C]">
-                  <select
-                    value={localStorage.getItem("language")}
-                    onChange={(e) => {
-                      window.localStorage.setItem("language", e.target.value);
-                      window.dispatchEvent(new Event("language"));
-                    }}
-                    className="bg-[#00A59C] outline-none"
-                    name=""
-                    id=""
-                  >
-                    <option className={``} value="uz">
-                      Uz
-                    </option>
-                    <option className={``} value="ru">
-                      Ru
-                    </option>
-                  </select>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      ) : (
-        false
-      )}
+      {visible ? <Info /> : false}
       {/* yuqorida chiquchi ma'lumotlar uchun end */}
       <div className="container mx-auto px-2 md:mb-8 max-w-[75rem]">
         {/* navbar brend va category */}
@@ -111,7 +68,7 @@ const Navbar = () => {
             onClick={() => setModal(!modal)}
             className={`md:hidden float-right w-[43px] h-[43px] mt-[21px] shadow-md hover:shadow-lg cursor-pointer right-2`}
           >
-            <FaAlignRight className="mx-auto mt-[25%]" />
+            <RiMenu3Fill className="mx-auto mt-[25%]" />
           </div>
         </div>
         {/* navbar brend va category */}
