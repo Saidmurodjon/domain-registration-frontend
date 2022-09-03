@@ -4,7 +4,7 @@ import HostingCard from "../cards/HostingCard";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import Data from "../data/Data";
 const Hosting = () => {
-const data=test.slice(0,4)
+  const data = test.slice(0, 4);
   const [slide, setSlide] = useState(0);
   const length = data.length;
 
@@ -23,13 +23,13 @@ const data=test.slice(0,4)
           </h1>
           <hr className="border-[#00A59C] w-[90px] mx-auto" />
           <h2 className="md:w-[637px] text-center mx-auto text-[#797979] my-6">
-          {Data.hosting.about}
+            {Data.hosting.about}
           </h2>
         </div>
         <p className="mx-3">Tariflar</p>
 
         <div className="hidden md:contents">
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 items-center relative justify-center">
+          <div className="grid xl:grid-cols-4 md:grid-cols-2 lg:grid-cols-3 items-center relative justify-center">
             {" "}
             {data.map((item) => {
               return (
@@ -67,7 +67,6 @@ const data=test.slice(0,4)
                 className="text-black hover:text-[#00A59C] mx-auto mt-2"
               />
             </div>
-          
           </div>
         </div>
       </div>

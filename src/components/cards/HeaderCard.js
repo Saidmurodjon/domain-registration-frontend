@@ -1,10 +1,12 @@
 import React from "react";
 
-const HeaderCard = ({props}) => {
+const HeaderCard = ({ props }) => {
   return (
     <>
-      <div className="w-[382px] bg-white rounded-lg shadow-xl border border-gray-100 md:border-none md:dark:bg-[#0A96FF]  hover:bg-[#00A59C] h-[202px
-] md:h-[273px] md:w-[370px] transition duration-500 transform md:hover:-translate-y-[30px] md:hover:shadow-2xl my-4">
+      <div
+        className="w-[360px] bg-white rounded-lg shadow-xl border border-gray-100 md:border-none md:dark:bg-[#0A96FF]  hover:bg-[#00A59C] h-[202px
+] md:h-[223px] xl:h-[273px] md:w-[380px] xl:w-[370px] transition duration-500 transform md:hover:-translate-y-[30px] md:hover:shadow-2xl my-4"
+      >
         <div className="flex justify-end px-4 pt-4"></div>
         <div className="flex flex-col md:items-center pb-10 mx-3">
           <img
