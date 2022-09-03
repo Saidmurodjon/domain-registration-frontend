@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import test from "../../test.json";
 import HostingCard from "../cards/HostingCard";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
+import Data from "../data/Data";
 const Hosting = () => {
 const data=test.slice(0,4)
   const [slide, setSlide] = useState(0);
@@ -18,12 +19,11 @@ const data=test.slice(0,4)
       <div className="max-w-[1200px] mx-auto bg-[#F1FAFF] py-5">
         <div className="px-2 md:px-0 md:py-5">
           <h1 className=" text-[#1F3D9D] text-[24px] md:text-[48px] md:text-center font-semibold">
-            ISHONCHLI HOSTING XIZMATI
+            {Data.hosting.title}
           </h1>
           <hr className="border-[#00A59C] w-[90px] mx-auto" />
           <h2 className="md:w-[637px] md:text-center mx-auto text-[#797979] my-6">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
+          {Data.hosting.about}
           </h2>
         </div>
         <p className="mx-3">Tariflar</p>
