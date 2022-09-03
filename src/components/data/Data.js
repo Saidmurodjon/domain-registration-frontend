@@ -50,7 +50,7 @@ const uz = {
       title1: "Muddat",
       title2: "Ro‘yxatdan o‘tkazish",
       title3: "Muddatni uzaytirish",
-      button:"Buyurtma berish"
+      button: "Buyurtma berish",
     },
     information: {
       title1: "Kompyuterlashtirish markazi",
@@ -77,8 +77,11 @@ const uz = {
       ftp: "FTP ulanish",
       dns: "DNS qo‘llash",
       access_log: "Access_log, error_log",
+      total: "Umumiy to'lov:",
       button: "Buyurtma berish",
     },
+    more: "Barcha ta’riflarni ko‘rish",
+    title2: "O‘zingizga qulay ta’rifni yarating",
   },
   site: {
     title: "SAYT YARATIB BERISH XIZMATI",
@@ -91,25 +94,28 @@ const uz = {
       "Saytni planshet va mobil versiyalarini ishlab chiqish",
       "Saytingiz uchun domen va hosting xizmatlari",
     ],
-    card:{
-      title1:"Eski dizayndagi saytlarni yangilash",
-      about1:"saytingizni zamonaviy dizayn hamda foydalanuvchiga qulay usulda yangilang",
-      title2:"Yangi sayt yaratish",
-      about2:"istagingiz va didingizga mos keladigan saytga buyurtma bering"
+    card: {
+      title1: "Eski dizayndagi saytlarni yangilash",
+      about1:
+        "saytingizni zamonaviy dizayn hamda foydalanuvchiga qulay usulda yangilang",
+      title2: "Yangi sayt yaratish",
+      about2: "istagingiz va didingizga mos keladigan saytga buyurtma bering",
     },
-    about2:"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here",
-    button:"SAYTGA BUYURTMA BERISH"
+    about2:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here",
+    button: "SAYTGA BUYURTMA BERISH",
   },
-  footer:{
-    about:"Markaz viloyat hokimligida IT texnalogiyalarini rivojlantirish maqsadida 2008 yildan buyon faoliyat yuritib kelmoqda. Asosiy vazifalari davlat organlari, korxona va tashlikotlarda sohani rivojlantirish yangi bosqichlarga olib chiqish.",
-    title1:"Manzil",
-    map:"Farg‘ona shahar Alisher Navoi ko‘chasi 15-uy. Mo‘ljal: Aziya mehmonxonasi",
-    contact1:"+99890 166 55 66",
-    contact2:"+99890 166 55 66",
-    title2:"Menyu",
-    update:"Soʼngi martta saytdagi maʼlumotlar 20.07.2022 kuni yangilangan",
-    createdBy:"Sayt ishlab chiqildi: “SPACE GROUP”"
-  }
+  footer: {
+    about:
+      "Markaz viloyat hokimligida IT texnalogiyalarini rivojlantirish maqsadida 2008 yildan buyon faoliyat yuritib kelmoqda. Asosiy vazifalari davlat organlari, korxona va tashlikotlarda sohani rivojlantirish yangi bosqichlarga olib chiqish.",
+    title1: "Manzil",
+    map: "Farg‘ona shahar Alisher Navoi ko‘chasi 15-uy. Mo‘ljal: Aziya mehmonxonasi",
+    contact1: "+99890 166 55 66",
+    contact2: "+99890 166 55 66",
+    title2: "Menyu",
+    update: "Soʼngi martta saytdagi maʼlumotlar 20.07.2022 kuni yangilangan",
+    createdBy: "Sayt ishlab chiqildi: “SPACE GROUP”",
+  },
 };
 const ru = {
   category: [

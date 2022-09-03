@@ -1,20 +1,21 @@
 import React, {useState}from 'react'
 import test from "../../../test.json";
+import Data from '../../data/Data';
 
 const Left = () => {
   const [enabled, setEnabled] = useState(false);
-
+  const card = Data.hosting.card;
   return (
     <> <div className="float-left px-3 md:px-[120px]">
     <h1 className="text-semibold text-xl font-semibold cursor-pointer text-[#1F3D9D] text-center my:4 md:my-10">
-      Lorem ipsum dolor sit.
+      {Data.hosting.title2}
     </h1>
     <form className="md:mt-[60px]" action="">
       <label
         className="float-left text-[#333333] font-semibold cursor-pointer"
         htmlFor="hajmi"
       >
-        Hajmi
+       {card.hajmi}
       </label>
       <select
         className="float-right w-[96px] h-[30px] cursor-pointer rounded dark:bg-[#00A59C] text-white outline-none text-center"
@@ -36,7 +37,7 @@ const Left = () => {
         className="float-left text-[#333333] font-semibold cursor-pointer"
         htmlFor="domain"
       >
-        Domain
+        {card.domain}
       </label>
       <select
         className="float-right w-[96px] h-[30px] cursor-pointer rounded dark:bg-[#00A59C] text-white outline-none text-center"
@@ -58,7 +59,7 @@ const Left = () => {
         className="float-left text-[#333333] font-semibold cursor-pointer"
         htmlFor="d"
       >
-        Domain
+        {card.subdomain}
       </label>
       <select
         className="float-right w-[96px] h-[30px] cursor-pointer rounded dark:bg-[#00A59C] text-white outline-none text-center"
@@ -80,7 +81,7 @@ const Left = () => {
         className="float-left text-[#333333] font-semibold cursor-pointer"
         htmlFor="d"
       >
-        Domain
+        {card.db}
       </label>
       <select
         className="float-right w-[96px] h-[30px] cursor-pointer rounded dark:bg-[#00A59C] text-white outline-none text-center"
@@ -102,7 +103,7 @@ const Left = () => {
         className="float-left text-[#333333] font-semibold cursor-pointer"
         htmlFor="d"
       >
-        Domain
+        {card.domainuz}
       </label>
       <label className="inline-flex relative items-center mr-5 cursor-pointer float-right">
         <input
@@ -124,7 +125,7 @@ const Left = () => {
         className="float-left text-[#333333] font-semibold cursor-pointer"
         htmlFor="d"
       >
-        Domain
+        {card.pochta}
       </label>
       <label className="inline-flex relative items-center mr-5 cursor-pointer float-right">
         <input
@@ -146,7 +147,7 @@ const Left = () => {
         className="float-left text-[#333333] font-semibold cursor-pointer"
         htmlFor="d"
       >
-        Domain
+        {card.trafik}
       </label>
       <label className="inline-flex relative items-center mr-5 cursor-pointer float-right">
         <input
