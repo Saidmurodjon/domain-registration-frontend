@@ -4,25 +4,6 @@ import Data from "../data/Data";
 import { RiMapPin2Line, RiGoogleFill, RiInstagramLine } from "react-icons/ri";
 import { TbPhonePlus } from "react-icons/tb";
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
-// import { TbPhonePlus } from "react-icons/tb";
-// const icons = [
-//   {
-//     url: "./assets/icons/instagram.png",
-//     slug: "#",
-//   },
-//   {
-//     url: "./assets/icons/google.png",
-//     slug: "",
-//   },
-//   {
-//     url: "./assets/icons/twitter.png",
-//     slug: "",
-//   },
-//   {
-//     url: "./assets/icons/facebook.png",
-//     slug: "",
-//   },
-// ];
 const Footer = () => {
   return (
     <footer className="p-4 bg-white sm:p-6 dark:bg-[#34495E]">
@@ -36,35 +17,31 @@ const Footer = () => {
             />
             &nbsp;
             <span className="hidden md:contents self-center text-1xl text-1xl dark:text-[#d0d0d0] w-5/6 text-start p-2">
-              Markaz viloyat hokimligida IT texnalogiyalarini rivojlantirish
-              maqsadida 2008 yildan buyon faoliyat yuritib kelmoqda. Asosiy
-              vazifalari davlat organlari, korxona va tashlikotlarda sohani
-              rivojlantirish yangi bosqichlarga olib chiqish.
+              {Data.footer.about}
             </span>
           </div>
           <div className="mb-6 md:mb-0 md:w-1/4 my-12 hidden md:inline  lg:pl-16">
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-              Manzil
+              {Data.footer.title1}
             </h2>
             <div className="flex">
               <RiMapPin2Line className="mt-3 dark:text-white" />
               <h3 className="text-1xl dark:text-[#d0d0d0] w-5/6 text-start p-2">
-                Farg‘ona shahar Alisher Navoi ko‘chasi 15-uy. Mo‘ljal: Aziya
-                mehmonxonasi
+                {Data.footer.map}
               </h3>
             </div>
             <div className="flex">
               <TbPhonePlus className="mt-6 dark:text-white" />
               <h3 className="text-1xl dark:text-[#d0d0d0] w-5/6 text-start p-2 flex-none">
-                +99890 166 55 66
+                {Data.footer.contact1}
                 <br />
-                +99890 166 55 66
+                {Data.footer.contact2}
               </h3>
             </div>
           </div>
           <div className="mb-6 md:mb-0 md:w-1/4 text-center md:my-12">
             <h2 className="md:mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-[#ffff]">
-              Menyu
+              {Data.footer.title2}
             </h2>
             &nbsp;
             <span className="self-center text-1xl dark:text-[#d0d0d0] w-10">
@@ -100,9 +77,10 @@ const Footer = () => {
               </div>
               <div className="s col-span-2">
                 <h1 className="text-[14px] dark:text-[#d0d0d0]">
-                  Soʼngi martta saytdagi maʼlumotlar{" "}
-                  <p className="font-semibold inline text-white">20.07.2022</p>{" "}
-                  kuni yangilangan
+                  {Data.footer.update}
+                  <p className="font-semibold inline text-white">
+                    20.07.2022
+                  </p>{" "}
                 </h1>
               </div>
             </div>
@@ -110,32 +88,55 @@ const Footer = () => {
         </div>
         <div className="grid lg:grid-cols-2 md:my-4 lg:pl-6">
           <div className="flex items-center justify-center lg:justify-start">
-            <FaFacebookF className="w-[28px] h-[28px] bg-[#d0d0d0] p-1 text-[#34495E] hover:bg-[#00A59C] hover:text-white mr-4" />
-            <FaTwitter className="w-[28px] h-[28px] bg-[#d0d0d0] p-1 text-[#34495E] hover:bg-[#00A59C] hover:text-white mr-4" />
-            <RiGoogleFill className="w-[28px] h-[28px] bg-[#d0d0d0] p-1 text-[#34495E] hover:bg-[#00A59C] hover:text-white mr-4" />
-            <RiInstagramLine className="w-[28px] h-[28px] bg-[#d0d0d0] p-1 text-[#34495E] hover:bg-[#00A59C] hover:text-white mr-4" />
+            <Link to={`/`}>
+              <FaFacebookF className="w-[28px] h-[28px] bg-[#d0d0d0] p-1 text-[#34495E] hover:bg-[#00A59C] hover:text-white mr-4" />
+            </Link>
+            <Link to={`/`}>
+              <FaTwitter className="w-[28px] h-[28px] bg-[#d0d0d0] p-1 text-[#34495E] hover:bg-[#00A59C] hover:text-white mr-4" />
+            </Link>
+            <Link to={`/`}>
+              <RiGoogleFill className="w-[28px] h-[28px] bg-[#d0d0d0] p-1 text-[#34495E] hover:bg-[#00A59C] hover:text-white mr-4" />
+            </Link>
+            <Link to={`/`}>
+              <RiInstagramLine className="w-[28px] h-[28px] bg-[#d0d0d0] p-1 text-[#34495E] hover:bg-[#00A59C] hover:text-white mr-4" />
+            </Link>
           </div>
           <div className="flex justify-end">
-           <div className="hidden lg:flex">
-           <img src={`./assets/footer/image 2.png`} alt="" className="mr-4 inline" />
-            <img src={`./assets/footer/image 3.png`} alt="" className="mr-4 inline" />
-            <img src={`./assets/footer/image 4.png`} alt="" className="mr-4 inline" />
-            <img src={`./assets/footer/image 5.png`} alt="" className="mr-4 inline" />
-           </div>
+            <div className="hidden lg:flex">
+              <img
+                src={`./assets/footer/image 2.png`}
+                alt=""
+                className="mr-4 inline"
+              />
+              <img
+                src={`./assets/footer/image 3.png`}
+                alt=""
+                className="mr-4 inline"
+              />
+              <img
+                src={`./assets/footer/image 4.png`}
+                alt=""
+                className="mr-4 inline"
+              />
+              <img
+                src={`./assets/footer/image 5.png`}
+                alt=""
+                className="mr-4 inline"
+              />
+            </div>
           </div>
         </div>
-       
       </div>
       <hr className="my-2 border-[#ffffffb4] sm:mx-auto dark:border-[#797979] w-full lg:my-4" />
-        <div className="flex items-center sm:justify-between">
-          <span className="text-sm text-gray-500 text-center dark:text-gray-400 mx-auto">
-            Sayt ishlab chiqildi:{" "}
-            <a href="https://" className="hover:underline text-[white]">
-              "Space Group"
-            </a>{" "}
-            tomonidan
-          </span>
-        </div>
+      <div className="flex items-center sm:justify-between">
+        <span className="text-sm text-gray-500 text-center dark:text-gray-400 mx-auto">
+          {Data.footer.createdBy}
+          <Link className="text-white font-semibold hover:shadow-sm " to="/">
+            {" "}
+            “SPACE GROUP”
+          </Link>
+        </span>
+      </div>
     </footer>
   );
 };

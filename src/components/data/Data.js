@@ -113,8 +113,8 @@ const uz = {
     contact1: "+99890 166 55 66",
     contact2: "+99890 166 55 66",
     title2: "Menyu",
-    update: "Soʼngi martta saytdagi maʼlumotlar 20.07.2022 kuni yangilangan",
-    createdBy: "Sayt ishlab chiqildi: “SPACE GROUP”",
+    update: "Soʼngi martta saytdagi maʼlumotlar yangilangan kun: ",
+    createdBy: "Sayt ishlab chiqildi:",
   },
 };
 const ru = {
