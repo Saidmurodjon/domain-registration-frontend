@@ -18,11 +18,11 @@ const data=test.slice(0,4)
     <>
       <div className="max-w-[1200px] mx-auto bg-[#F1FAFF] py-5">
         <div className="px-2 md:px-0 md:py-5">
-          <h1 className=" text-[#1F3D9D] text-[24px] md:text-[48px] md:text-center font-semibold">
+          <h1 className=" text-[#1F3D9D] text-[24px] md:text-[48px] text-center font-semibold">
             {Data.hosting.title}
           </h1>
           <hr className="border-[#00A59C] w-[90px] mx-auto" />
-          <h2 className="md:w-[637px] md:text-center mx-auto text-[#797979] my-6">
+          <h2 className="md:w-[637px] text-center mx-auto text-[#797979] my-6">
           {Data.hosting.about}
           </h2>
         </div>

@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Button from "../../button/Button";
 import Data from "../../data/Data";
 
@@ -13,7 +13,7 @@ const Right = () => {
             className="float-left text-[#333333] font-semibold cursor-pointer"
             htmlFor="d"
           >
-           {card.backup}
+            {card.backup}
           </label>
           <label className="inline-flex relative items-center mr-5 cursor-pointer float-right">
             <input
@@ -98,10 +98,11 @@ const Right = () => {
           <br />
           <hr className="border-t dark:border-gray-100 my-4" />
           <p className="text-gray-500">{card.total}</p>
-          <h3 className="text-4xl font-bold ">560 000 <span className="text-xl font-medium">so'm</span></h3>
+          <h3 className="text-4xl font-bold ">
+            560 000 <span className="text-xl font-medium">so'm</span>
+          </h3>
           <div className="mx-auto mt-12">
-          <Button className="" name={card.button} styles={"w-full"}/>
-
+            <Button className="" name={card.button} styles={"w-full"} />
           </div>
         </form>
       </div>
