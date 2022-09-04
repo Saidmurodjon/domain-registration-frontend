@@ -17,7 +17,7 @@ const HeaderCard = ({ props }) => {
           <h5 className="mb-1 text-xl font-medium text-[#1F3D9D] md:text-[#FFFFFF] md:dark:text-white md:text-center">
             {props.title}
           </h5>
-          <span className="text-sm text-[#333333] md:dark:text-[#F8F8F8] md:text-center">
+          <span className="text-sm text-[#333333] md:dark:text-[#F8F8F8] md:text-center w-2/3 md:w-3/5">
             {props.info}
           </span>
           {/* <div className="flex mt-4 space-x-3 md:mt-6"></div> */}

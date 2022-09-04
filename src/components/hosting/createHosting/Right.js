@@ -16,7 +16,6 @@ const Right = ({ changeHandler, basic, send }) => {
         <form className="md:mt-[130px]" action=""onSubmit={(e)=>e.preventDefault()}>
           <label
             className="float-left text-[#333333] font-semibold cursor-pointer"
-            htmlFor="d"
           >
             {card.backup}
           </label>

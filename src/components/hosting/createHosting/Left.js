@@ -13,7 +13,7 @@ const Left = ({ changeHandler, basic }) => {
     <>
       {" "}
       <div className="float-left px-3 md:px-[120px]">
-        <h1 className="text-semibold text-xl font-semibold cursor-pointer text-[#1F3D9D] text-center my:4 md:my-10">
+        <h1 className="text-semibold text-xl font-semibold cursor-pointer text-[#1F3D9D] text-center mb-6 md:my-10">
           {Data.hosting.title2}
         </h1>
         <form className="md:mt-[60px]" action="">

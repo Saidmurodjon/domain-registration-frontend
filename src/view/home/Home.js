@@ -10,25 +10,26 @@ import CreateHosting from "../../components/hosting/createHosting/CreateHosting"
 import Sayt from "../../components/sayt/Sayt";
 import Partern from "../../components/partner/Partner";
 const Home = () => {
-
-
   return (
     <>
-     <div className="mx-auto">
-     <Navbar />
-     {/* error of carousel */}
-      <Carousel />
-      <Domain />
-      <div className="">
-     {/* error of hosting */}
+      <div className="mx-auto">
+        <Navbar />
+        {/* error of carousel */}
+        
 
-       <Hosting/>
-        <CreateHosting/>
-        <Sayt/>
+        <div className="bg-[#EFEFEF]">
+        <Carousel />
+          {/* error of hosting */}
+          <Domain />
+          <div className="bg-[#F1FAFF]">
+          <Hosting />
+          <CreateHosting />
+          </div>
+          <Sayt />
+        </div>
+        <Partern />
+        <Footer />
       </div>
-      <Partern/>
-      <Footer />
-     </div>
     </>
   );
 };

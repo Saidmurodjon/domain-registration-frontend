@@ -26,7 +26,7 @@ const CreateHosting = () => {
 
   return (
     <>
-      <div className="grid md:grid-cols-2 gap-2 sm:grid-cols-1 max-w-[1200px] mx-auto">
+      <div className="grid md:grid-cols-2 gap-2 sm:grid-cols-1 max-w-[1200px] mx-auto bg-[#ffff] py-4">
         {/* chap tomondagi ma'lumotlar */}
         <Left changeHandler={changeHandler} basic={hosting} />
         {/* O'ng tomondagi ma'lumotlar */}
