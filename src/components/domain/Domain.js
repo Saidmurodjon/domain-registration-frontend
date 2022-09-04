@@ -5,7 +5,7 @@ import Data from "../data/Data";
 const Domain = ({ props }) => {
   return (
     <>
-      <div className="md:mt-[70px] max-w-[1200px] mx-auto">
+      <div id={`domain`} className="md:mt-[70px] max-w-[1200px] mx-auto ">
         <div className="px-2 md:px-0">
           <h1 className=" text-[#1F3D9D] text-[24px] md:text-[48px] text-center font-semibold">
             {Data.domain.title}

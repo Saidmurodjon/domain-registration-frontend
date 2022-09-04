@@ -1,7 +1,7 @@
 const uz = {
   category: [
     { name: "Bosh sahifa", slug: "" },
-    { name: "Domen", slug: "domen" },
+    { name: "Domen", slug: "domain" },
     { name: "Hosting", slug: "hosting" },
     { name: "Pochta", slug: "pochta" },
     { name: "Sayt", slug: "sayt" },
