@@ -17,18 +17,20 @@ const CreateHosting = () => {
     dns: true,
     access_log: true,
   });
-  const LeftFunction = (object) => {
+  const changeHandler = (object) => {
     setHosting({ ...hosting, [object.name]: object.value });
   };
-  console.log(hosting);
+  const Send = () => {
+    console.log(hosting);
+  };
 
   return (
     <>
       <div className="grid md:grid-cols-2 gap-2 sm:grid-cols-1 max-w-[1200px] mx-auto">
         {/* chap tomondagi ma'lumotlar */}
-        <Left left={LeftFunction} default={hosting} basic={hosting} />
+        <Left changeHandler={changeHandler} basic={hosting} />
         {/* O'ng tomondagi ma'lumotlar */}
-        <Right />
+        <Right changeHandler={changeHandler} basic={hosting} send={Send} />
       </div>
     </>
   );

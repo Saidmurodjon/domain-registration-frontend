@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import test from "../../../test.json";
 import Data from "../../data/Data";
 
-const Left = ({ left, basic }) => {
+const Left = ({ changeHandler, basic }) => {
   const [toggle, setToggle] = useState({
     domainuz: basic.domainuz,
     pochta: basic.pochta,
@@ -23,7 +23,7 @@ const Left = ({ left, basic }) => {
           </label>
           <select
             className="float-right w-[96px] h-[30px] cursor-pointer rounded dark:bg-[#00A59C] text-white outline-none text-center"
-            onChange={(e) => left({ name: "hajmi", value: e.target.value })}
+            onChange={(e) => changeHandler({ name: "hajmi", value: e.target.value })}
           >
             {test.map((item) => (
               <option
@@ -106,7 +106,7 @@ const Left = ({ left, basic }) => {
               className="sr-only peer"
               checked={toggle.domainuz}
               onChange={() =>
-                left({ name: "domainuz", value: toggle.domainuz })
+                changeHandler({ name: "domainuz", value: toggle.domainuz })
               }
             />
             <div
@@ -129,7 +129,7 @@ const Left = ({ left, basic }) => {
               type="checkbox"
               className="sr-only peer"
               checked={toggle.pochta}
-              onChange={() => left({ name: "pochta", value: toggle.pochta })}
+              onChange={() => changeHandler({ name: "pochta", value: toggle.pochta })}
             />
             <div
               onClick={() => setToggle({ ...toggle, pochta: !toggle.pochta })}
@@ -149,7 +149,7 @@ const Left = ({ left, basic }) => {
               type="checkbox"
               className="sr-only peer"
               checked={toggle.trafik}
-              onChange={() => left({ name: "trafik", value: toggle.trafik })}
+              onChange={() => changeHandler({ name: "trafik", value: toggle.trafik })}
             />
             <div
               onClick={() => setToggle({ ...toggle, trafik: !toggle.trafik })}

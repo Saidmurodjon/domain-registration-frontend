@@ -2,13 +2,18 @@ import React, { useState } from "react";
 import Button from "../../button/Button";
 import Data from "../../data/Data";
 
-const Right = () => {
-  const [enabled, setEnabled] = useState(false);
+const Right = ({ changeHandler, basic, send }) => {
+  const [toggle, setToggle] = useState({
+    backup: basic.backup,
+    ftp: basic.ftp,
+    dns: basic.dns,
+    access_log: basic.access_log,
+  });
   const card = Data.hosting.card;
   return (
     <>
       <div className="float-left px-3 md:px-[120px]">
-        <form className="md:mt-[130px]" action="">
+        <form className="md:mt-[130px]" action=""onSubmit={(e)=>e.preventDefault()}>
           <label
             className="float-left text-[#333333] font-semibold cursor-pointer"
             htmlFor="d"
@@ -19,12 +24,14 @@ const Right = () => {
             <input
               type="checkbox"
               className="sr-only peer"
-              checked={enabled}
-              readOnly
+              checked={toggle.backup}
+              onChange={() =>
+                changeHandler({ name: "backup", value: toggle.backup })
+              }
             />
             <div
               onClick={() => {
-                setEnabled(!enabled);
+                setToggle({ ...toggle, backup: !toggle.backup });
               }}
               className="w-11 h-6 bg-gray-200 rounded-full peer  peer-focus:ring-green-300  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#00A59C]"
             ></div>
@@ -33,7 +40,6 @@ const Right = () => {
           <hr className="border-t dark:border-gray-100 my-4" />
           <label
             className="float-left text-[#333333] font-semibold cursor-pointer"
-            htmlFor="d"
           >
             {card.ftp}
           </label>
@@ -41,12 +47,14 @@ const Right = () => {
             <input
               type="checkbox"
               className="sr-only peer"
-              checked={enabled}
-              readOnly
+              checked={toggle.ftp}
+              onChange={() =>
+                changeHandler({ name: "ftp", value: toggle.ftp })
+              }
             />
             <div
               onClick={() => {
-                setEnabled(!enabled);
+                setToggle({ ...toggle, ftp: !toggle.ftp });
               }}
               className="w-11 h-6 bg-gray-200 rounded-full peer  peer-focus:ring-green-300  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#00A59C]"
             ></div>
@@ -55,7 +63,6 @@ const Right = () => {
           <hr className="border-t dark:border-gray-100 my-4" />
           <label
             className="float-left text-[#333333] font-semibold cursor-pointer"
-            htmlFor="d"
           >
             {card.dns}
           </label>
@@ -63,12 +70,14 @@ const Right = () => {
             <input
               type="checkbox"
               className="sr-only peer"
-              checked={enabled}
-              readOnly
+              checked={toggle.dns}
+              onChange={() =>
+                changeHandler({ name: "dns", value: toggle.dns })
+              }
             />
             <div
               onClick={() => {
-                setEnabled(!enabled);
+                setToggle({ ...toggle, dns: !toggle.dns });
               }}
               className="w-11 h-6 bg-gray-200 rounded-full peer  peer-focus:ring-green-300  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#00A59C]"
             ></div>
@@ -77,7 +86,6 @@ const Right = () => {
           <hr className="border-t dark:border-gray-100 my-4" />
           <label
             className="float-left text-[#333333] font-semibold cursor-pointer"
-            htmlFor="d"
           >
             {card.access_log}
           </label>
@@ -85,12 +93,14 @@ const Right = () => {
             <input
               type="checkbox"
               className="sr-only peer"
-              checked={enabled}
-              readOnly
+              checked={toggle.access_log}
+              onChange={() =>
+                changeHandler({ name: "access_log", value: toggle.access_log })
+              }
             />
             <div
               onClick={() => {
-                setEnabled(!enabled);
+                setToggle({ ...toggle, access_log: !toggle.access_log });
               }}
               className="w-11 h-6 bg-gray-200 rounded-full peer  peer-focus:ring-green-300  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#00A59C]"
             ></div>
@@ -102,7 +112,7 @@ const Right = () => {
             560 000 <span className="text-xl font-medium">so'm</span>
           </h3>
           <div className="mx-auto mt-12">
-            <Button className="" name={card.button} styles={"w-full"} />
+            <Button ButtonFunction={send} name={card.button} styles={"w-full"} />
           </div>
         </form>
       </div>
