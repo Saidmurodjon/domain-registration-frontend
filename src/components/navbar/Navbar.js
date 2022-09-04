@@ -12,7 +12,7 @@ const Navbar = () => {
 
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 600) {
+    if (scrolled > 550) {
       setVisible(false);
     } else {
       setVisible(true);
@@ -57,7 +57,7 @@ const Navbar = () => {
           </div>
           <div className="hidden md:float-right md:contents">
             {Data.category.map((elem, i) => (
-              <Link key={elem.slug} to={`./${elem.slug}`}>
+              <Link key={elem.slug} to={`/${elem.slug}`}>
                 <span className="md:float-right mt-8 align-middle text-[#333333] text-[#16px] lg:ml-14 md:ml-8 font-semibold cursor-pointer hover:text-[#00A59C]">
                   {elem.name}
                 </span>
@@ -82,7 +82,7 @@ const Navbar = () => {
                 className="float-right mr-4 mt-4 cursor-pointer"
               />
               {Data.category.map((elem, i) => (
-                <Link key={elem.slug} to={`./${elem.slug}`}>
+                <Link key={elem.slug} to={`/${elem.slug}`}>
                   <h1 className="mx-3 py-3 align-middle text-[#333333] text-[#16px] lg:ml-14 md:ml-8 font-semibold cursor-pointer hover:text-[#00A59C]">
                     {elem.name}
                   </h1>
