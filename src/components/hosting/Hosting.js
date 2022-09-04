@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import test from "../../test.json";
 import HostingCard from "../cards/HostingCard";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
@@ -38,6 +39,13 @@ const Hosting = () => {
                 </div>
               );
             })}
+          </div>
+          <div className="mx-3 mt-5 flex justify-end">
+            <Link to={`/domen`}>
+              <p className=" text-[#00A59C] border-b-2 border-transparent hover:border-b-2 hover:border-current">
+                {Data.hosting.more}
+              </p>
+            </Link>
           </div>
         </div>
         {/* Hosting carousel */}
