@@ -90,7 +90,11 @@ const HostingCard = ({ props }) => {
         </div>
         {/* footer */}
         <div className="pt-10 pb-3 px-3 text-center">
-          <Button name={card.button} ButtonFunction={()=>navigate("/user",{ state: props })} styles="w-full" />
+          <Button
+            name={card.button}
+            ButtonFunction={() => navigate("/user", { state: { item: props } })}
+            styles="w-full"
+          />
         </div>
       </div>
     </>

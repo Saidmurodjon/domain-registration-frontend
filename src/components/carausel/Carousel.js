@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import Button from "../button/Button";
 import HeaderCard from "../cards/HeaderCard";
 import Data from "../data/Data";
 const Carousel = () => {
+  const navigate = useNavigate();
   const [slide, setSlide] = useState(0);
   const length = Data.sliderData.length;
   // console.log(length)
@@ -44,13 +46,24 @@ const Carousel = () => {
                   </h1>
                   <h3 className="text-[#797979] md:mt-7">{item.about}</h3>
                   <div className="mt-2 lg:mt-[60px] hidden md:contents">
-                    <Button name={"RO‘YXATDAN O‘TISH"} styles="mt-16"/>
+                    <Button
+                      name={"RO‘YXATDAN O‘TISH"}
+                      ButtonFunction={() =>
+                        navigate("/user", { state: { type: "registration" } })
+                      }
+                      styles="mt-16"
+                    />
                   </div>
                 </div>
                 <div className="float-right lg:w-[416px] md:w-[380px] lg:col-span-2 mx-auto">
                   <img className="rounded-md w-full" src={item.url} alt="/" />
                   <div className="my-6 md:mt-[60px] text-center md:hidden">
-                    <Button name={"RO‘YXATDAN O‘TISH"} />
+                    <Button
+                      name={"RO‘YXATDAN O‘TISH"}
+                      ButtonFunction={() =>
+                        navigate("/user", { state: { type: "registration" } })
+                      }
+                    />
                   </div>
                 </div>
               </div>

@@ -3,6 +3,7 @@ import Form from "../aloqa/Form";
 import { HiOutlineX } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import Registration from "../form/Registration";
 const Order = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -17,7 +18,11 @@ const Order = () => {
           className="float-right mr-4 mt-4 cursor-pointer"
         />
         <div className="grid md:grid-cols-2 ">
-          <Form type={"order"} />
+          {location.state.type === "registration" ? (
+            <Registration />
+          ) : (
+            <Form type={"order"} />
+          )}
           <div className="flex items-center justify-center">
             <img
               className="hidden md:content"
