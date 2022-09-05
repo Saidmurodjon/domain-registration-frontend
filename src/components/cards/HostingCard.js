@@ -3,10 +3,12 @@ import Button from "../button/Button";
 import { BsCheck2Circle } from "react-icons/bs";
 import { FiXCircle } from "react-icons/fi";
 import { CgInfinity } from "react-icons/cg";
+import { useNavigate } from "react-router-dom";
+
 import Data from "../data/Data";
 const HostingCard = ({ props }) => {
+  const navigate = useNavigate();
   const card = Data.hosting.card;
-
   return (
     <>
       <div className="w-[278px] px-[0px] rounded-lg shadow-lg mx-auto bg-white">
@@ -88,7 +90,7 @@ const HostingCard = ({ props }) => {
         </div>
         {/* footer */}
         <div className="pt-10 pb-3 px-3 text-center">
-          <Button name={card.button} styles="w-full" />
+          <Button name={card.button} ButtonFunction={()=>navigate("/user",{ state: props })} styles="w-full" />
         </div>
       </div>
     </>

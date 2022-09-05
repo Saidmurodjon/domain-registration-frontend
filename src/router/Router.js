@@ -6,7 +6,7 @@ import Hosting from "../view/hosting/Hosting";
 import Pochta from "../view/pochta/Pochta";
 import Sayt from "../view/sayt/Sayt";
 import Aloqa from "../view/aloqa/Aloqa";
-
+import Order from "../view/user/User";
 function Router() {
   return (
     <Routes>
@@ -16,6 +16,7 @@ function Router() {
       <Route path="/pochta" element={<Pochta />} />
       <Route path="/sayt" element={<Sayt />} />
       <Route path="/aloqa" element={<Aloqa />} />
+      <Route path="/user" element={<Order />} />
       <Route path="*" element={<E404 />} />
     </Routes>
   );
