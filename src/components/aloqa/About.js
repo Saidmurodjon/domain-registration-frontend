@@ -1,6 +1,7 @@
 import React from "react";
 import Data from "../data/Data";
-import { RiMapPinLine } from "react-icons/ri";
+import { MdEmail } from "react-icons/md";
+import { RiMapPinLine, RiGlobalFill } from "react-icons/ri";
 import { TbPhonePlus } from "react-icons/tb";
 const About = () => {
   return (
@@ -15,13 +16,13 @@ const About = () => {
             </h3>
           </div>
           <div className="flex mt-[20px]">
-            <TbPhonePlus className="mt-1 mr-2 dark:text-[#5B5B5B]" />
+            <MdEmail className="mt-1 mr-2 dark:text-[#5B5B5B]" />
             <h3 className="dark:text-[#5B5B5B] text-start flex-none">
               farmarkaz@ferghana.uz
             </h3>
           </div>
           <div className="flex mt-[20px]">
-            <TbPhonePlus className="mt-1 mr-2 dark:text-[#5B5B5B]" />
+            <RiGlobalFill className="mt-1 mr-2 dark:text-[#5B5B5B]" />
             <h3 className="dark:text-[#5B5B5B] text-start flex-none">fcc.uz</h3>
           </div>
         </div>
@@ -29,7 +30,9 @@ const About = () => {
         <div className="">
           <div className="flex">
             <RiMapPinLine className=" mr-2 dark:text-[#5B5B5B] xl:text-[32px]" />
-            <h3 className="text-[#5B5B5B] text-[16px]">{Data.footer.map} yonida</h3>
+            <h3 className="text-[#5B5B5B] text-[16px]">
+              {Data.footer.map} yonida
+            </h3>
           </div>
         </div>
         {/*  */}
@@ -45,4 +48,3 @@ const About = () => {
 };
 
 export default About;
-

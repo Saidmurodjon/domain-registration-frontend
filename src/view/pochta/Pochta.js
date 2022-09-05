@@ -1,8 +1,14 @@
 import React from 'react'
-
+import Footer from '../../components/footer/Footer'
+import Navbar from '../../components/navbar/Navbar'
+import PochtaComponents from '../../components/pochta/PochtaComponents'
 const Pochta = () => {
   return (
-    <div>Pochta</div>
+    <>
+      <Navbar/>
+      <PochtaComponents/>
+      <Footer/>
+    </>
   )
 }
 

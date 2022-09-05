@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Mail-5GB",
+    "name": "NC panel",
+    "hajmi": 5,
+    "quti": 50,
+    "narxi": 100000
+  },
+  {
+    "id": 2,
+    "title": "Mail-5GB",
+    "name": "NC panel",
+    "hajmi": 5,
+    "quti": 50,
+    "narxi": 100000
+  },
+  {
+    "id": 3,
+    "title": "Mail-5GB",
+    "name": "NC panel",
+    "hajmi": 5,
+    "quti": 50,
+    "narxi": 100000
+  },
+  {
+    "id": 4,
+    "title": "Mail-5GB",
+    "name": "NC panel",
+    "hajmi": 5,
+    "quti": 50,
+    "narxi": 100000
+  }
+]

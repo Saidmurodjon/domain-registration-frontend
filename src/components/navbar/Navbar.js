@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 550) {
+    if (scrolled > 500) {
       setVisible(false);
     } else {
       setVisible(true);
@@ -32,7 +32,7 @@ const Navbar = () => {
       let to = WSW < 450 ? 1230 : WSW < 1250 ? 1000 : 900;
       ScrollNavigate(to);
     } else if (elem.slug === "hosting") {
-      let to = WSW < 450 ? 1930 : WSW < 1250 ? 1700 : 1600;
+      let to = WSW < 450 ? 1930 : WSW < 1250 ? 1700 : 1550;
       ScrollNavigate(to);
     } else if (elem.slug === "sayt") {
       let to = WSW < 450 ? 3930 : WSW < 1250 ? 4100 : 3300;
@@ -67,7 +67,7 @@ const Navbar = () => {
       {/* yuqorida chiquchi ma'lumotlar uchun start */}
       {visible ? <Info /> : false}
       {/* yuqorida chiquchi ma'lumotlar uchun end */}
-      <div className="container mx-auto px-2 md:mb-8 max-w-[75rem]">
+      <div className="container mx-auto px-2 max-w-[75rem]">
         {/* navbar brend va category */}
         <div className="w-full inline-block border-blue-500 py-2">
           <div className="float-left inline">
