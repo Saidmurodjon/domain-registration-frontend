@@ -4,7 +4,6 @@ import { BsCheck2Circle } from "react-icons/bs";
 import { FiXCircle } from "react-icons/fi";
 import { CgInfinity } from "react-icons/cg";
 import { useNavigate } from "react-router-dom";
-
 import Data from "../data/Data";
 const HostingCard = ({ props }) => {
   const navigate = useNavigate();
@@ -92,7 +91,7 @@ const HostingCard = ({ props }) => {
         <div className="pt-10 pb-3 px-3 text-center">
           <Button
             name={card.button}
-            ButtonFunction={() => navigate("/user", { state: { item: props } })}
+            ButtonFunction={() => navigate("/user", { state: {type:"hosting", item: props } })}
             styles="w-full"
           />
         </div>

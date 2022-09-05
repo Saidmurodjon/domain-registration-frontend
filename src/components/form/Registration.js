@@ -21,14 +21,14 @@ const Registration = () => {
         <div className="">
           <form className={`xl:mt-[30px]`} action="">
             <input
-              className="w-full h-[60px] outline-none rounded-md dark:text-[#5B5B5B] border-2 mt-[20px]"
+              className="w-full h-[60px] p-2.5 outline-none rounded-md dark:text-[#5B5B5B] border-2 mt-[20px]"
               type="text"
               placeholder="Email*"
               name=""
               id=""
             />
             <input
-              className="w-full h-[60px] outline-none rounded-md dark:text-[#5B5B5B] border-2 mt-[20px]"
+              className="w-full h-[60px] p-2.5 outline-none rounded-md dark:text-[#5B5B5B] border-2 mt-[20px]"
               type="password"
               placeholder="password*"
               name=""

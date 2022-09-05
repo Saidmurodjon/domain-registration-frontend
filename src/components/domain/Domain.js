@@ -2,7 +2,11 @@ import React from "react";
 import { FiSearch } from "react-icons/fi";
 import Button from "../button/Button";
 import Data from "../data/Data";
+import { useNavigate } from "react-router-dom";
+
 const Domain = ({ props }) => {
+  const navigate = useNavigate();
+
   return (
     <>
       <div id={`domain`} className="md:mt-[70px] max-w-[1200px] mx-auto ">
@@ -31,48 +35,58 @@ const Domain = ({ props }) => {
           </form>
         </div>
         <div className="overflow-x-auto relative shadow-[0_35px_60px_-15px_rgba(0,0,0,0)] rounded-none">
-            <table className="hidden md:inline w-full text-sm text-left text-gray-500 dark:text-gray-400">
-              <thead className="text-xs text-gray-700 uppercase dark:bg-[#34495E] dark:text-white">
-                <tr className="md:h-[77px] text-center divide-x divide-[#797979]">
-                  <th scope="col" className="py-3 px-6 w-1/4">
-                    {Data.domain.table.title1}
-                  </th>
-                  <th scope="col" className="py-3 px-6 w-1/4">
-                    {Data.domain.table.title2}
-                  </th>
-                  <th scope="col" className="py-3 px-6 w-1/4">
-                    {Data.domain.table.title3}
-                  </th>
-                  <th scope="col" className="py-3 px-6">
-                    {/* <span className="sr-only">Edit</span> */}
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="bg-white dark:bg-white dark:border-gray-700 text-black hover:bg-[#F1FAFF] dark:hover:bg-[#F1FAFF] md:h-[77px] text-center">
-                  <td className="py-4 px-6">Sliver</td>
-                  <td className="py-4 px-6">Laptop</td>
-                  <td className="py-4 px-6">$2999</td>
-                  <td className="py-4 px-6">
-                    <Button
-                      name={Data.domain.table.button}
-                      styles={"md:w-[249px]"}
-                    />
-                  </td>
-                </tr>
-                <tr className="bg-white border-t dark:bg-white dark:border-gray-200 text-black hover:bg-[#F1FAFF] dark:hover:bg-[#F1FAFF] md:h-[77px] text-center">
-                  <td className="py-4 px-6">Sliver</td>
-                  <td className="py-4 px-6">Laptop</td>
-                  <td className="py-4 px-6">$2999</td>
-                  <td className="py-4 px-6">
-                    <Button
-                      name={Data.domain.table.button}
-                      styles={"md:w-[249px]"}
-                    />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <table className="hidden md:inline w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <thead className="text-xs text-gray-700 uppercase dark:bg-[#34495E] dark:text-white">
+              <tr className="md:h-[77px] text-center divide-x divide-[#797979]">
+                <th scope="col" className="py-3 px-6 w-1/4">
+                  {Data.domain.table.title1}
+                </th>
+                <th scope="col" className="py-3 px-6 w-1/4">
+                  {Data.domain.table.title2}
+                </th>
+                <th scope="col" className="py-3 px-6 w-1/4">
+                  {Data.domain.table.title3}
+                </th>
+                <th scope="col" className="py-3 px-6">
+                  {/* <span className="sr-only">Edit</span> */}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="bg-white dark:bg-white dark:border-gray-700 text-black hover:bg-[#F1FAFF] dark:hover:bg-[#F1FAFF] md:h-[77px] text-center">
+                <td className="py-4 px-6">Sliver</td>
+                <td className="py-4 px-6">Laptop</td>
+                <td className="py-4 px-6">$2999</td>
+                <td className="py-4 px-6">
+                  <Button
+                    ButtonFunction={() =>
+                      navigate("/user", {
+                        state: { type: "domain", item: props },
+                      })
+                    }
+                    name={Data.domain.table.button}
+                    styles={"md:w-[249px]"}
+                  />
+                </td>
+              </tr>
+              <tr className="bg-white border-t dark:bg-white dark:border-gray-200 text-black hover:bg-[#F1FAFF] dark:hover:bg-[#F1FAFF] md:h-[77px] text-center">
+                <td className="py-4 px-6">Sliver</td>
+                <td className="py-4 px-6">Laptop</td>
+                <td className="py-4 px-6">$2999</td>
+                <td className="py-4 px-6">
+                  <Button
+                    ButtonFunction={() =>
+                      navigate("/user", {
+                        state: { type: "domain", item: props },
+                      })
+                    }
+                    name={Data.domain.table.button}
+                    styles={"md:w-[249px]"}
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         {/* mobile */}
         <div className="md:hidden py-4 px-4 mx-auto w-[362px] h-[300px] rounded-md mb-6 border shadow-md bg-white">
@@ -113,7 +127,13 @@ const Domain = ({ props }) => {
             {/*  */}
           </div>
           <div className="flex items-end h-[105px]">
-            <Button name={Data.domain.table.button} styles={"w-full"} />
+            <Button
+              name={Data.domain.table.button}
+              styles={"w-full"}
+              ButtonFunction={() =>
+                navigate("/user", { state: { type: "domain", item: props } })
+              }
+            />
           </div>
         </div>
         {/* mobile */}
