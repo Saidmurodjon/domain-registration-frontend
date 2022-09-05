@@ -9,24 +9,28 @@ const Form = () => {
           <input
             className="w-full h-[60px] outline-none rounded-md dark:text-[#5B5B5B] border-2"
             type="text"
+            placeholder="Name*"
             name=""
             id=""
           />
           <input
             className="w-full h-[60px] outline-none rounded-md dark:text-[#5B5B5B] border-2 mt-[20px]"
             type="text"
+            placeholder="Email*"
             name=""
             id=""
           />
           <input
             className="w-full h-[60px] outline-none rounded-md dark:text-[#5B5B5B] border-2 mt-[20px]"
             type="text"
+            placeholder="Phone*"
             name=""
             id=""
           />
           <textarea
             className="w-full h-[116px] outline-none rounded-md dark:text-[#5B5B5B] border-2 mt-[20px]"
             name=""
+            placeholder="Xabar*"
             id=""
             cols="30"
             rows="10"

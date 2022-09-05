@@ -1,6 +1,6 @@
 import React from "react";
 import Data from "../data/Data";
-import { RiMapPin2Line } from "react-icons/ri";
+import { RiMapPinLine } from "react-icons/ri";
 import { TbPhonePlus } from "react-icons/tb";
 const About = () => {
   return (
@@ -28,8 +28,8 @@ const About = () => {
         {/*  */}
         <div className="">
           <div className="flex">
-            <RiMapPin2Line className="mt-1 mr-2 dark:text-[#5B5B5B]" />
-            <h3 className="dark:text-[#5B5B5B] text-[16px]">{Data.footer.map} yonida</h3>
+            <RiMapPinLine className=" mr-2 dark:text-[#5B5B5B] xl:text-[32px]" />
+            <h3 className="text-[#5B5B5B] text-[16px]">{Data.footer.map} yonida</h3>
           </div>
         </div>
         {/*  */}
