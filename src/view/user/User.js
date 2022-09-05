@@ -1,12 +1,12 @@
 import React from "react";
 import Navbar from "../../components/navbar/Navbar";
-import Order from "../../components/order/Order";
+import OrderRegistration from "../../components/orderRegistration/OrderRegistration";
 
 const User = () => {
   return (
     <div className="">
       <Navbar/>
-      <Order/>
+      <OrderRegistration/>
     </div>
   );
 };
