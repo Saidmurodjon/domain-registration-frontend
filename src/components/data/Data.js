@@ -81,6 +81,7 @@ const uz = {
       button: "Buyurtma berish",
     },
     more: "Barcha ta’riflarni ko‘rish",
+    less: "Ortga qaytarish",
     title2: "O‘zingizga qulay ta’rifni yarating",
   },
   site: {
@@ -200,6 +201,7 @@ const ru = {
       button: "Buyurtma berish",
     },
     more: "Barcha ta’riflarni ko‘rish",
+    less: "Ortga qaytarish",
     title2: "O‘zingizga qulay ta’rifni yarating",
   },
   site: {

@@ -8,14 +8,27 @@ import Sayt from "../../components/sayt/Sayt";
 import Partern from "../../components/partner/Partner";
 
 const Home = () => {
+  // import UseFetch from "../../components/hooks/UseFetch";
+  // import config from "../../config.json";
+  // const { data, loading, error } = UseFetch(config.SERVER_URL + "pochta", {
+  //   method: "get",
+  //   details: {
+  //     title: "Mail-5GB",
+  //     status: "NC panel",
+  //     hajmi: 10000,
+  //     quti_soni: 80,
+  //     narxi: 150000,
+  //   },
+  // });
+
   return (
     <>
       <div id="home" className="mx-auto">
         <Navbar />
-        
+
         <div className="bg-[#EFEFEF]">
           <Carousel />
-          <Domain  />
+          <Domain />
           <div className="bg-[#F1FAFF]">
             <Hosting />
             <CreateHosting />
