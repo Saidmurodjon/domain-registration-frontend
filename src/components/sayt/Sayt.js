@@ -3,12 +3,12 @@ import Button from "../button/Button";
 import Data from "../data/Data";
 import { FiCheck } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
-
+import './Sayt.css'
 const Sayt = () => {
   const navigate = useNavigate();
   return (
     <div
-      className={`bg-[#EFEFEF] lg:bg-[url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/BlankMap-World-Compact.svg/1024px-BlankMap-World-Compact.svg.png')] bg-no-repeat bg-cover bg-center pb-[80px] lg:pb-[160px] pt-[50px] lg:pt-[90px]`}
+      className={`bg-[#ffffff] bg-map pb-[80px] lg:pb-[160px] pt-[50px] lg:pt-[90px]`}
     >
       {/* up */}
       <div className="">

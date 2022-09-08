@@ -9,18 +9,18 @@ const uz = {
   ],
   sliderData: [
     {
-      url: "./assets/Cloud hosting-amico.png",
+      url: "./assets/carousel/hosting.png",
       title: "ISHONCHLI HOSTING XIZMATI",
       about:
         "-haftasiga 7 kun   24 soat uzluksiz -rezerevda saqlash -cheksiz internet trafik",
     },
     {
-      url: "./assets/Domain.png",
+      url: "./assets/carousel/domain.png",
       title: "DOMENINGIZNI TEZ VA QULAY RO‘YXATDAN O‘TKAZING",
       about: "600 MB hosting+domen Marketing uchun yangi imkoniyat",
     },
     {
-      url: "./assets/site.png",
+      url: "./assets/carousel/site.png",
       title: "SAYT YARATIB BERISH XIZMATI",
       about: "Istagingiz va didingizga mos keladigan saytga buyurtma bering",
     },
