@@ -1,10 +1,10 @@
-import React from "react";
 import Button from "../button/Button";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
-const PochtaCard = () => {
+const PochtaCard = ({props}) => {
   const navigate = useNavigate();
-
+  const [duration, setDuration] = useState(1);
   return (
     <>
       <div className="w-[278px] h-[453px] rounded-lg shadow-lg mx-auto bg-white mt-2 md:mt-6 xl:mt-4 transition duration-500 transform md:hover:-translate-y-[10px] md:hover:shadow-2xl">
@@ -26,15 +26,18 @@ const PochtaCard = () => {
               className="cursor-pointer rounded outline-none text-center w-[110px] h-[32px] shadow-md"
               name=""
               id=""
+              onChange={(e) => setDuration(e.target.value)}
             >
-              <option className="dark:bg-white" value="">
-                1 oyga
-              </option>
+              {[1, 2, 3, 4, 5, 6, 12].map((item) => (
+                <option key={item} className="dark:bg-white" value={item}>
+                  {item} oyga
+                </option>
+              ))}
             </select>
           </form>
         </div>
         <h1 className="text-[24px] text-center pt-[25px] text-[#333333] font-bold">
-          100 000 so‘m
+          {props.narxi*duration} so‘m
         </h1>
         <div className="flex justify-center pt-[30px]">
           <Button

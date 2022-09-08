@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import HostingCard from "../cards/HostingCard";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import Data from "../data/Data";
-import UseFetch from "../../components/hooks/UseFetch";
+import UseFetch from "../hooks/UseFetch";
 import config from "../../config.json";
 const Hosting = () => {
   const { data,error } = UseFetch(config.SERVER_URL + "hosting", {
