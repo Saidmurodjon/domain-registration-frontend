@@ -46,6 +46,8 @@ const uz = {
     title: "DOMENLARNI RO‘YXATGA OLISH",
     about:
       "Domen bo‘sh yoki bo‘sh emasligini tekshiring! So‘ng domenni ro‘yxatdan o‘tkazishga o‘ting.",
+      aktive:"Domain band",
+      noAktive:"Domain band emas",
     table: {
       title1: "Muddat",
       title2: "Ro‘yxatdan o‘tkazish",

@@ -1,12 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import Button from "../button/Button";
 import Data from "../data/Data";
+import config from "../../config.json";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Domain = ({ props }) => {
   const navigate = useNavigate();
+  const [status, setStatus] = useState({
+    state: false,
+    aktiv: false,
+  });
+  const [domain, setDomain] = useState({
+    domainName: "",
+    zone: "uz",
+    status: -1,
+  });
+  // const [data, setData] = useState([]);
+  const Search = async () => {
+    try {
+      const res = await axios.get(
+        `${config.SERVER_URL}whois?domain=${domain.domainName}&zone=${domain.zone}`
+      );
+      if (res.status === 200) {
+        // setData(res.data);
+        if (res.data.sorryButDomain) {
+          setStatus({ ...status, state: true, aktiv: false });
+        } else {
+          setStatus({ ...status, state: true, aktiv: true });
+        }
+      }
+      // console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
+  console.log(status);
   return (
     <>
       <div id={`domain`} className="md:mt-[70px] max-w-[1200px] mx-auto ">
@@ -18,22 +49,53 @@ const Domain = ({ props }) => {
           <h2 className="md:w-[340px] mx-auto text-[#797979] my-6 text-center">
             {Data.domain.about}
           </h2>
-          <form>
+          <form onSubmit={(e) => e.preventDefault()}>
             <div className="flex md:w-[673px] mx-auto mb-10">
               <div className="relative w-full">
                 <input
-                  type="search"
-                  className="block p-2.5 w-full z-20 text-sm text-gray-900 outline-none rounded-lg border"
+                  type="text"
+                  className={`block p-2 h-[60px] w-full z-20 outline-none rounded-lg pl-[70px] text-xl ${
+                    status.state
+                      ? status.aktiv
+                        ? "border-2 border-red-600 text-red-600"
+                        : "border-2 border-green-600 text-green-600"
+                      : "border-2 border-white text-gray-900"
+                  }`}
                   placeholder=""
                   required=""
+                  onChange={(e) => {
+                    setDomain({ ...domain, domainName: e.target.value });
+                    setStatus({ ...status, state: false, aktiv: false });
+                  }}
                 />
-                <button className="absolute top-0 right-0 p-2.5 text-sm font-medium text-white hover:text-black bg-[#00A59C] rounded-r-lg outline-none hover:bg-transparent focus:outline-none dark:bg-[#00A59C] dark:hover:bg-transparent">
-                  <FiSearch className="text-xl" />
+                  <h1 className="absolute top-0 left-[0px] p-[16px] font-medium text-center text-xl">www.  </h1>
+                <h1 className="absolute top-0 right-[60px] p-[16px] font-medium text-center text-xl ">.uz</h1>
+                <button
+                  onClick={() => Search()}
+                  className="absolute top-0 right-0 p-[18px] text-sm font-medium text-white hover:text-black bg-[#00A59C] rounded-r-lg outline-none hover:bg-transparent focus:outline-none dark:bg-[#00A59C] dark:hover:bg-transparent"
+                >
+                  <FiSearch className="text-2xl" />
                 </button>
               </div>
             </div>
           </form>
+          <h2
+            className={`mx-auto text-[#797979] md:text-2xl mt-6 mb-8 text-center ${
+              status.state
+                ? status.aktiv
+                  ? "text-red-600"
+                  : "text-green-600"
+                : "hidden"
+            }`}
+          >
+            {status.state
+              ? status.aktiv
+                ? Data.domain.aktive
+                : Data.domain.noAktive
+              : false}
+          </h2>
         </div>
+
         <div className="overflow-x-auto relative shadow-[0_35px_60px_-15px_rgba(0,0,0,0)] rounded-none">
           <table className="hidden md:inline w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-gray-700 uppercase dark:bg-[#34495E] dark:text-white">
@@ -61,7 +123,7 @@ const Domain = ({ props }) => {
                   <Button
                     ButtonFunction={() =>
                       navigate("/user", {
-                        state: { type: "domain", item: props },
+                        state: { type: "domain", item: {} },
                       })
                     }
                     name={Data.domain.table.button}
@@ -77,7 +139,7 @@ const Domain = ({ props }) => {
                   <Button
                     ButtonFunction={() =>
                       navigate("/user", {
-                        state: { type: "domain", item: props },
+                        state: { type: "domain", item: {} },
                       })
                     }
                     name={Data.domain.table.button}
