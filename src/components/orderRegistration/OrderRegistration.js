@@ -1,8 +1,9 @@
 import React from "react";
-import Form from "../aloqa/Form";
+import Form from "../form/Form";
 import { HiOutlineX } from "react-icons/hi";
 import { useNavigate ,useLocation} from "react-router-dom";
 import Registration from "../form/Registration";
+
 const OrderRegistration = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -25,11 +26,13 @@ const OrderRegistration = () => {
             <Form type={"order"} />
           )}
           <div className="flex items-center justify-center">
-            <img
-              className="hidden md:content"
-              src="./assets/user/user.png"
+           <div className="hidden md:inline">
+           <img
+              className="w-full"
+              src={"./assets/user/user.png"}
               alt="user"
             />
+           </div>
           </div>
         </div>
       </div>

@@ -13,7 +13,7 @@ const Right = ({ changeHandler, basic, send }) => {
   return (
     <>
       <div className="float-left px-3 md:px-[120px]">
-        <form className="md:mt-[130px]" action=""onSubmit={(e)=>e.preventDefault()}>
+        <form className="md:mt-[130px]" action="" onSubmit={(e)=>e.preventDefault()}>
           <label
             className="float-left text-[#333333] font-semibold cursor-pointer"
           >

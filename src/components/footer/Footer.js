@@ -39,20 +39,22 @@ const Footer = () => {
               </h3>
             </div>
           </div>
-          <div className="mb-6 md:mb-0 md:w-1/4 text-center md:my-12">
+          <div className="mb-6 md:mb-0 md:w-1/4 md:my-12 flex justify-center">
+            <div className="w-max">
             <h2 className="md:mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-[#ffff]">
               {Data.footer.title2}
             </h2>
             &nbsp;
-            <span className="self-center text-1xl dark:text-[#d0d0d0] w-10">
+            <div className="text-start mx-auto text-1xl dark:text-[#d0d0d0]">
               {Data.category.reverse().map((item, index) => (
                 <Link key={index} to={`./${item.slug}`}>
-                  <h3 className="hover:text-[#00A59C] cursor-pointer">
+                  <h3 className="hover:text-[#00A59C]">
                     {item.name}
                   </h3>
                 </Link>
               ))}
-            </span>
+            </div>
+            </div>
           </div>
           <div className="mb-6 md:mb-0 md:w-1/4 my-12 hidden lg:flex">
             <div className="grid grid-cols-2 w-5/6">

@@ -10,14 +10,14 @@ const HeaderCard = ({ props }) => {
         <div className="flex justify-end px-4 pt-4"></div>
         <div className="flex flex-col md:items-center pb-10 mx-3">
           <img
-            className="mb-3 w-14 h-14 rounded-full shadow-lg float-left md:mx-auto ml-4"
+            className="mb-3 w-[70px] h-[70px] mt-2 rounded-full shadow-lg float-left md:mx-auto ml-4"
             src={props.url}
             alt={props.title}
           />
-          <h5 className="mb-1 text-xl font-medium text-[#1F3D9D] md:text-[#FFFFFF] md:dark:text-white md:text-center">
+          <h5 className="mb-1 text-xl font-medium text-[#1F3D9D] md:text-[#FFFFFF] md:dark:text-white md:text-center mt-4">
             {props.title}
           </h5>
-          <span className="text-sm text-[#333333] md:dark:text-[#F8F8F8] md:text-center w-2/3 md:w-3/5">
+          <span className="text-sm text-[#333333] md:dark:text-[#F8F8F8] md:text-center w-2/3 md:w-3/6 mt-2">
             {props.info}
           </span>
           {/* <div className="flex mt-4 space-x-3 md:mt-6"></div> */}

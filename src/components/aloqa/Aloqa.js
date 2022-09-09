@@ -1,6 +1,6 @@
 import React from "react";
 import About from "./About";
-import Form from "./Form";
+import Form from "../form/Form";
 import Map from "./Map";
 const Aloqa = () => {
   return (
