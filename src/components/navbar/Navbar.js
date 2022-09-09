@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 500) {
+    if (scrolled >= 500) {
       setVisible(false);
     } else {
       setVisible(true);
@@ -58,7 +58,7 @@ const Navbar = () => {
         onClick={() => scrollToTop()}
         className={`${
           visible ? "hidden" : "flex"
-        } animate-bounce cursor-pointer w-[44px] h-[44px] bg-white shadow-md hover:shadow-lg fixed bottom-4 right-4 rounded-full mx-auto items-center hover:border `}
+        } animate-bounce cursor-pointer w-[44px] h-[44px] bg-white shadow-md hover:shadow-lg fixed bottom-4 right-4 rounded-full mx-auto items-center hover:border`}
       >
         <HiOutlineChevronUp className="mx-auto w-4/6 h-4/6 font-thin text-[#1F3D9D]" />
       </div>

@@ -132,18 +132,18 @@ const ru = {
   ],
   sliderData: [
     {
-      url: "./assets/Cloud hosting-amico.png",
+      url: "./assets/carousel/hosting.png",
       title: "ISHONCHLI HOSTING XIZMATI",
       about:
         "-haftasiga 7 kun   24 soat uzluksiz -rezerevda saqlash -cheksiz internet trafik",
     },
     {
-      url: "./assets/Domain.png",
+      url: "./assets/carousel/domain.png",
       title: "DOMENINGIZNI TEZ VA QULAY RO‘YXATDAN O‘TKAZING",
       about: "600 MB hosting+domen Marketing uchun yangi imkoniyat",
     },
     {
-      url: "./assets/site.png",
+      url: "./assets/carousel/site.png",
       title: "SAYT YARATIB BERISH XIZMATI",
       about: "Istagingiz va didingizga mos keladigan saytga buyurtma bering",
     },
@@ -169,6 +169,8 @@ const ru = {
     title: "DOMENLARNI RO‘YXATGA OLISH",
     about:
       "Domen bo‘sh yoki bo‘sh emasligini tekshiring! So‘ng domenni ro‘yxatdan o‘tkazishga o‘ting.",
+      aktive:"Domain band",
+      noAktive:"Domain band emas",
     table: {
       title1: "Muddat",
       title2: "Ro‘yxatdan o‘tkazish",
@@ -239,6 +241,7 @@ const ru = {
     title2: "Menyu",
     update: "Soʼngi martta saytdagi maʼlumotlar yangilangan kun: ",
     createdBy: "Sayt ishlab chiqildi:",
+    logo:"./assets/logo/LogoWhiteText.png"
   },
 };
 var language = localStorage.getItem("language");

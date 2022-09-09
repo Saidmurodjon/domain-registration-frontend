@@ -61,7 +61,7 @@ const Sayt = () => {
           </div>
         </div>
         <div className="rounded-2xl bg-white flex w-[362px] lg:w-[495px] mx-auto lg:my-[20px] my-[20px] border shadow-md">
-          <div className="w-[110px] h-[110px] lg:w-[143px] lg:h-[143px] bg-gradient-to-r from-[#1F3D9D] to-[#7E97E7] rounded-2xl shadow-2xl">
+          <div className="w-[110px] h-[110px] lg:w-[143px] lg:h-[143px] bg-gradient-to-r from-[#1F3D9D] to-[#7E97E7] rounded-2xl shadow-2xl ">
             <img
               src={`./assets/icons/yangi.png`}
               alt=""
