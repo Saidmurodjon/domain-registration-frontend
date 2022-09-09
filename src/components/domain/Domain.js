@@ -37,7 +37,7 @@ const Domain = ({ props }) => {
     }
   };
 
-  console.log(status);
+  // console.log(status);
   return (
     <>
       <div id={`domain`} className="md:mt-[70px] max-w-[1200px] mx-auto ">
