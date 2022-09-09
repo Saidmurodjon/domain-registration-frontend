@@ -11,8 +11,8 @@ const Footer = () => {
         <div className="md:flex md:justify-between justify-center">
           <div className="lg:mb-6 mb-0 md:w-1/4 h-max mx-5">
             <img
-              src={"./assets/logo/logoWhite.png"}
-              className="lg:mr-5 h-15 m-3 mx-auto md:mx-0"
+              src={Data.footer.logo}
+              className="lg:mr-5 h-15 m-3 mx-auto md:mx-0 w-[204px] h-[84px]"
               alt="FlowBite Logo"
             />
             &nbsp;

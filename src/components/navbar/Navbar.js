@@ -74,7 +74,7 @@ const Navbar = () => {
             <Link to={`/`}>
               <img
                 className="cursor-pointer md:w-[228px] w-[168px]"
-                src={"./assets/logo/logo.png"}
+                src={"./assets/logo/LogoGreenText.png"}
                 alt=""
               />
             </Link>

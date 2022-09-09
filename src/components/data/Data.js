@@ -116,6 +116,7 @@ const uz = {
     title2: "Menyu",
     update: "Soʼngi martta saytdagi maʼlumotlar yangilangan kun: ",
     createdBy: "Sayt ishlab chiqildi:",
+    logo:"./assets/logo/LogoWhiteText.png"
   },
 };
 const ru = {
