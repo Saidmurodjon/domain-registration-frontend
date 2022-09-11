@@ -11,14 +11,18 @@ const Form = ({ type }) => {
   });
   // eslint-disable-next-line
   const [data, setData] = useState([]);
+  // eslint-disable-next-line
+  const[loading,setLoading]=useState(false)
   const changeHandler = (e) => {
     setContact({ ...contact, [e.target.name]: e.target.value });
   };
   const SendContact = async() => {
     try {
-      const res = await axios.get(config.SERVER_URL + "hosting");
-      if (res) {
-        setData(res.data);
+      setLoading(true)
+      const res = await axios.post(config.SERVER_URL + "contact",contact);
+      console.log(res);
+      if (res.status===201) {
+        setLoading(false);
       }
     } catch (error) {
       console.log(error);
