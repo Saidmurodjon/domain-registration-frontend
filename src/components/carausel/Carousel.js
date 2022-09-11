@@ -7,7 +7,7 @@ import Data from "../data/Data";
 const Carousel = () => {
   const navigate = useNavigate();
   const [slide, setSlide] = useState(0);
-  const length = Data.sliderData.length;
+  const length = Data ? Data.sliderData.length : 0;
   // console.log(length)
 
   const prevSlide = () => {

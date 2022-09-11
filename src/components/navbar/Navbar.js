@@ -80,7 +80,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="hidden md:float-right md:contents">
-            {Data.category.map((elem) => (
+            {Data?Data.category.map((elem) => (
               <span
                 key={elem.slug}
                 onClick={() => Navigate(elem)}
@@ -88,7 +88,7 @@ const Navbar = () => {
               >
                 {elem.name}
               </span>
-            ))}
+            )):false}
           </div>
           <div
             onClick={() => setModal(!modal)}
