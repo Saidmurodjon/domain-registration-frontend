@@ -249,4 +249,4 @@ window.addEventListener("language", () => {
   window.location.reload(false);
 });
 
-export default language === "uz" ? uz : language === "ru" ? ru : [];
+export default language === "uz" ? uz : language === "ru" ? ru : uz;
