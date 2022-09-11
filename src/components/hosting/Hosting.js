@@ -10,7 +10,7 @@ const Hosting = () => {
     details: {},
   });
   const [slide, setSlide] = useState(0);
-  const length = data ? data.length : false;
+  const length = data ? data.length : 0;
   const [more, setMore] = useState(false);
   const prevSlide = () => {
     setSlide(slide === length - 1 ? 0 : slide + 1);

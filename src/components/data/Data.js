@@ -123,7 +123,7 @@ const uz = {
 };
 const ru = {
   category: [
-    { name: "Bosh sahifa ru", slug: "" },
+    { name: "Bosh sahifa", slug: "" },
     { name: "Domen", slug: "domain" },
     { name: "Hosting", slug: "hosting" },
     { name: "Pochta", slug: "pochta" },
