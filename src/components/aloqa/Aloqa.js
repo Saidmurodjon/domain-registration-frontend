@@ -13,7 +13,7 @@ const Aloqa = () => {
         <div className="col-span-2">
           <Map />
           <div className="md:hidden">
-            <Form />
+            <Form type={"contact"} />
           </div>
         </div>
       </div>

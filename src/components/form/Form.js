@@ -2,33 +2,54 @@ import { useState } from "react";
 import config from "../../config.json";
 import Button from "../button/Button";
 import axios from "axios";
-const Form = ({ type }) => {
+import { useNavigate } from "react-router-dom";
+const Form = ({ type, data }) => {
+  const navigate = useNavigate();
   const [contact, setContact] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
+    order: JSON.stringify(data),
   });
   // eslint-disable-next-line
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
   // eslint-disable-next-line
   const [loading, setLoading] = useState(false);
   const changeHandler = (e) => {
     setContact({ ...contact, [e.target.name]: e.target.value });
   };
   const SendContact = async () => {
+    console.log(config.SERVER_URL);
     try {
-      setLoading(true);
+      // setLoading(true);
       const res = await axios.post(config.SERVER_URL + "contact", contact);
       console.log(res);
       if (res.status === 201) {
+        alert("Xabar saqlandi");
         setLoading(false);
+        setContact({ name: "", email: "", phone: "", message: "" });
       }
     } catch (error) {
       console.log(error);
     }
   };
-  // console.log(data);
+  //
+  const SendOrder = async () => {
+    console.log(config.SERVER_URL);
+    try {
+      setLoading(true);
+      const res = await axios.post(config.SERVER_URL + "order", contact);
+      if (res.status === 201) {
+        setLoading(false);
+        alert("Buytma saqlandi");
+        navigate(-1)
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  // console.log(contact);
   return (
     <>
       <div className="py-4">
@@ -87,7 +108,7 @@ const Form = ({ type }) => {
             ></textarea>
           </form>
           <Button
-            ButtonFunction={type === "order" ? false : () => SendContact()}
+            ButtonFunction={type === "order" ? SendOrder : SendContact}
             name={"YUBORISH"}
             styles={`w-full ${
               type === "order" ? "" : "xl:w-1/3"

@@ -23,7 +23,7 @@ const OrderRegistration = () => {
           {location.state.type === "registration" ? (
             <Registration />
           ) : (
-            <Form type={"order"} />
+            <Form type={"order"} data={location.state} />
           )}
           <div className="flex items-center justify-center">
            <div className="hidden md:inline">

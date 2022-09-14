@@ -9,16 +9,16 @@ const PochtaCard = ({props}) => {
     <>
       <div className="w-[278px] h-[453px] rounded-lg shadow-lg mx-auto bg-white mt-2 md:mt-6 xl:mt-4 transition duration-500 transform md:hover:-translate-y-[10px] md:hover:shadow-2xl">
         <h1 className="text-[32px] text-center pt-[25px] text-[#00A59C] font-bold">
-          Mail-5GB
+          {props.title}
         </h1>
         <h1 className="text-[24px] text-center pt-[25px] text-[#1F3D9D] font-bold">
-          NC panel
+          {props.status}
         </h1>
         <h1 className="text-[14px] text-center pt-[25px] ">
-          Hajmi: <p className="pl-2 inline font-semibold">5GB</p>
+          Hajmi: <p className="pl-2 inline font-semibold">{props.hajmi}</p>
         </h1>
         <h1 className="text-[14px] text-center pt-[25px] ">
-          Pochta qutilari: <p className="pl-2 inline font-semibold">5GB</p>
+          Pochta qutilari: <p className="pl-2 inline font-semibold">{props.quti_soni}</p>
         </h1>
         <div className="flex justify-center pt-[25px]">
           <form action="">
@@ -44,7 +44,7 @@ const PochtaCard = ({props}) => {
             name={"Buyurtma berish"}
             styles="w-[250px]"
             ButtonFunction={() =>
-              navigate("/user", { state: { type: "pochta", item: {} } })
+              navigate("/user", { state: { type: "pochta", item:props } })
             }
           />
         </div>
