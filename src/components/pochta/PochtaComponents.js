@@ -17,10 +17,10 @@ const PochtaComponents = () => {
         <div className="bg-[#F1FAFF]">
           <div className="max-w-[1200px] mx-auto py-5">
             <div className="px-2 md:px-0 md:py-5">
-              <h1 className=" text-[#1F3D9D] text-[24px] md:text-[48px] text-center font-semibold">
+              <h1 className="text-[#1F3D9D] text-[24px] md:text-[48px] text-center title-font">
                 POCHTA UCHUN TA‘RIFLAR
               </h1>
-              <hr className="border-[#00A59C] w-[90px] mx-auto" />
+              <hr className="border-[#00A59C] border-t-2 w-[90px] mx-auto" />
               <h2 className="md:w-[637px] text-center mx-auto text-[#797979] my-6">
                 {Data.hosting.about}
               </h2>

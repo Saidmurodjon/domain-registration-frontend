@@ -1,9 +1,7 @@
-.bg-map{
-    background-color: rgba(247, 243, 243, 0.6);
-    background-image: url("../../assets/map.png") ;
-    background-repeat: no-repeat;
-    background-size: 120%;
-    background-position: center;
-    
-  
+.bg-map {
+  background-color: rgba(247, 243, 243, 0.6);
+  background-image: url("../../assets/map2.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  /* background-position: center; */
 }

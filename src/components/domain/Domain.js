@@ -53,10 +53,10 @@ const Domain = ({ props }) => {
       {Data ? (
         <div id={`domain`} className="md:mt-[70px] max-w-[1200px] mx-auto ">
           <div className="px-2 md:px-0">
-            <h1 className=" text-[#1F3D9D] text-[24px] md:text-[48px] text-center font-semibold">
+            <h1 className=" text-[#1F3D9D] text-[24px] md:text-[48px] text-center title-font">
               {Data.domain.title}
             </h1>
-            <hr className="border-[#00A59C] w-[90px] mx-auto" />
+            <hr className="border-[#00A59C] border-t-2 w-[90px] mx-auto" />
             <h2 className="md:w-[340px] mx-auto text-[#797979] my-6 text-center">
               {Data.domain.about}
             </h2>
