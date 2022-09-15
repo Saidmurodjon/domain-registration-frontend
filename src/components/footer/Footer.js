@@ -1,10 +1,35 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate } from "react-router-dom";
 import Data from "../data/Data";
 import { RiMapPin2Line, RiGoogleFill, RiInstagramLine } from "react-icons/ri";
 import { TbPhonePlus } from "react-icons/tb";
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
 const Footer = () => {
+  const navigate=useNavigate()
+  const ScrollNavigate = async (to) => {
+    await navigate("/");
+    window.scrollTo({
+      top: to,
+      behavior: "smooth",
+    });
+  };
+  const Navigate = (elem) => {
+    const WSW = window.screen.width;
+    if (elem.slug === "domain") {
+      let to = WSW < 450 ? 1230 : WSW < 1250 ? 1000 : 900;
+      ScrollNavigate(to);
+    } else if (elem.slug === "hosting") {
+      let to = WSW < 450 ? 1930 : WSW < 1250 ? 1700 : 1550;
+      ScrollNavigate(to);
+    } else if (elem.slug === "sayt") {
+      let to = WSW < 450 ? 3930 : WSW < 1250 ? 4100 : 3300;
+      ScrollNavigate(to);
+    } else {
+      navigate(`/${elem.slug}`);
+    }
+   
+    
+  };
   return (
     <>
       {Data ? (
@@ -48,10 +73,10 @@ const Footer = () => {
                   </h2>
                   &nbsp;
                   <div className="text-start mx-auto text-1xl dark:text-[#d0d0d0]">
-                    {Data.category.reverse().map((item, index) => (
-                      <Link key={index} to={`./${item.slug}`}>
-                        <h3 className="hover:text-[#00A59C]">{item.name}</h3>
-                      </Link>
+                    {Data.category.reverse().map((elem) => (
+                      // <Link key={index} to={`./${item.slug}`}>
+                        <h3 key={elem.slug} className="hover:text-[#00A59C]" onClick={() => Navigate(elem)}>{elem.name}</h3>
+                      // </Link>
                     ))}
                   </div>
                 </div>

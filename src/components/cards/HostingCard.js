@@ -14,7 +14,7 @@ const HostingCard = ({ props }) => {
         <div className="w-[278px] px-[0px] rounded-lg shadow-lg mx-auto bg-white">
           {/* Header */}
           <div className="text-center">
-            <h1 className="text-[24px] md:text-[32px] md:my-[20px] font-semibold text-[#00A59C]">
+            <h1 className="text-[24px] md:text-[32px] md:my-[20px] font-semibold text-[#00A59C] capitalize">
               {props.title}
             </h1>
             <h1 className="text-[20px] text-[#1F3D9D] font-semibold">
