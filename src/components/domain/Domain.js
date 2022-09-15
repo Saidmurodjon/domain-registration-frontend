@@ -31,13 +31,11 @@ const Domain = ({ props }) => {
           setStatus({ ...status, state: true, aktiv: true });
         }
       }
-      // console.log(res);
     } catch (error) {
       console.log(error);
     }
   };
 
-  // console.log(status);
   return (
     <>
       {Data ? (

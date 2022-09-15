@@ -108,7 +108,7 @@ const Right = ({ changeHandler, basic, send }) => {
             <hr className="border-t dark:border-gray-100 my-4" />
             <p className="text-gray-500">{card.total}</p>
             <h3 className="text-4xl font-bold ">
-              560 000 <span className="text-xl font-medium">so'm</span>
+              {basic.narxi} <span className="text-xl font-medium">so'm</span>
             </h3>
             <div className="mx-auto mt-12">
               <Button

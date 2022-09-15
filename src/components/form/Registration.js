@@ -38,7 +38,6 @@ const Registration = () => {
       console.log(error);
     }
   };
-  // console.log(customer);
   return (
     <div className="py-4">
       <div className="mx-auto w-full xl:pl-8 px-4 md:px-10 xl:px-0">

@@ -8,7 +8,6 @@ const Carousel = () => {
   const navigate = useNavigate();
   const [slide, setSlide] = useState(0);
   const length = Data ? Data.sliderData.length : 0;
-  // console.log(length)
 
   const prevSlide = () => {
     setSlide(slide === length - 1 ? 0 : slide + 1);

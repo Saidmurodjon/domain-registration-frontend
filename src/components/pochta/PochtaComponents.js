@@ -4,19 +4,13 @@ import Data from "../data/Data";
 import UseFetch from "../hooks/UseFetch";
 import config from "../../config.json";
 const PochtaComponents = () => {
-  const { data, loading, error } = UseFetch(config.SERVER_URL + "pochta", {
+  const { data, loading } = UseFetch(config.SERVER_URL + "pochta", {
     method: "get",
-    details: {
-      title: "Mail-5GB",
-      status: "NC panel",
-      hajmi: 10000,
-      quti_soni: 80,
-      narxi: 150000,
-    },
+    details: {},
   });
-  if (error) {
-    console.log(error);
-  }
+  // if (error) {
+  //   console.log(error);
+  // }
   return (
     <>
       {Data ? (

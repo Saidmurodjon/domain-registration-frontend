@@ -7,7 +7,6 @@ import Registration from "../form/Registration";
 const OrderRegistration = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  console.log(location.state);
   return (
     <div className="w-full h-full backdrop-blur-sm bg-gray-700/30 overflow-y-auto overflow-x-hidden fixed top-[0px] right-0 left-0 z-50 inset-0 h-modal md:h-full flex md:items-center justify-center">
       <div className="w-[95%] md:w-5/6 xl:w-[1200px] bg-white mx-auto mt-4 rounded-md shadow-md">

@@ -20,11 +20,9 @@ const Form = ({ type, data }) => {
     setContact({ ...contact, [e.target.name]: e.target.value });
   };
   const SendContact = async () => {
-    console.log(config.SERVER_URL);
     try {
       // setLoading(true);
       const res = await axios.post(config.SERVER_URL + "contact", contact);
-      console.log(res);
       if (res.status === 201) {
         alert("Xabar saqlandi");
         setLoading(false);
@@ -36,7 +34,6 @@ const Form = ({ type, data }) => {
   };
   //
   const SendOrder = async () => {
-    console.log(config.SERVER_URL);
     try {
       setLoading(true);
       const res = await axios.post(config.SERVER_URL + "order", contact);
@@ -49,7 +46,6 @@ const Form = ({ type, data }) => {
       console.log(error);
     }
   };
-  // console.log(contact);
   return (
     <>
       <div className="py-4">

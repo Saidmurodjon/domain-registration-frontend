@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import test from "../../../test.json";
 import Data from "../../data/Data";
 
 const Left = ({ changeHandler, basic }) => {
@@ -9,6 +8,28 @@ const Left = ({ changeHandler, basic }) => {
     trafik: basic.trafik,
   });
   const card = Data.hosting.card;
+  const data = {
+    capacity: [
+      { id: 1, hajmi: 100, cost: 10000 },
+      { id: 2, hajmi: 200, cost: 20000 },
+      { id: 3, hajmi: 300, cost: 30000 },
+    ],
+    domain: [
+      { id: 1, domain: 1, cost: 10000 },
+      { id: 2, domain: 2, cost: 20000 },
+      { id: 3, domain: 3, cost: 30000 },
+    ],
+    subDomain: [
+      { id: 1, subdomain: 1, cost: 10000 },
+      { id: 2, subdomain: 2, cost: 20000 },
+      { id: 3, subdomain: 3, cost: 30000 },
+    ],
+    DB: [
+      { id: 1, db: 1, cost: 10000 },
+      { id: 2, db: 2, cost: 20000 },
+      { id: 3, db: 3, cost: 30000 },
+    ],
+  };
   return (
     <>
       {" "}
@@ -25,14 +46,19 @@ const Left = ({ changeHandler, basic }) => {
             <select
               className="float-right w-[96px] h-[30px] cursor-pointer rounded dark:bg-[#00A59C] text-white outline-none text-center"
               onChange={(e) =>
-                changeHandler({ name: "hajmi", value: e.target.value })
+                changeHandler({
+                  name: "hajmi",
+                  value: JSON.parse(e.target.value).hajmi,
+                  cost: JSON.parse(e.target.value).cost,
+                })
               }
             >
-              {test.map((item) => (
+              <option className="dark:bg-white text-[#797979]">tanlang</option>
+              {data.capacity.map((item) => (
                 <option
                   className="dark:bg-white text-black"
                   key={item.id}
-                  value={item.hajmi}
+                  value={JSON.stringify(item)}
                 >
                   {item.hajmi} MB
                 </option>
@@ -48,13 +74,20 @@ const Left = ({ changeHandler, basic }) => {
             </label>
             <select
               className="float-right w-[96px] h-[30px] cursor-pointer rounded dark:bg-[#00A59C] text-white outline-none text-center"
-              onChange={(e) => console.log(e.target.value)}
+              onChange={(e) =>
+                changeHandler({
+                  name: "domain",
+                  value: JSON.parse(e.target.value).domain,
+                  cost: JSON.parse(e.target.value).cost,
+                })
+              }
             >
-              {test.map((item) => (
+              <option className="dark:bg-white text-[#797979]">tanlang</option>
+              {data.domain.map((item) => (
                 <option
                   className="dark:bg-white text-black"
                   key={item.id}
-                  value={item.domain}
+                  value={JSON.stringify(item)}
                 >
                   {item.domain} ta
                 </option>
@@ -67,12 +100,22 @@ const Left = ({ changeHandler, basic }) => {
             <label className="float-left text-[#333333] font-semibold cursor-pointer">
               {card.subdomain}
             </label>
-            <select className="float-right w-[96px] h-[30px] cursor-pointer rounded dark:bg-[#00A59C] text-white outline-none text-center">
-              {test.map((item) => (
+            <select
+              className="float-right w-[96px] h-[30px] cursor-pointer rounded dark:bg-[#00A59C] text-white outline-none text-center"
+              onChange={(e) =>
+                changeHandler({
+                  name: "subdomain",
+                  value: JSON.parse(e.target.value).subdomain,
+                  cost: JSON.parse(e.target.value).cost,
+                })
+              }
+            >
+              <option className="dark:bg-white text-[#797979]">tanlang</option>
+              {data.subDomain.map((item) => (
                 <option
                   className="dark:bg-white text-black"
                   key={item.id}
-                  value={item.subdomain}
+                  value={JSON.stringify(item)}
                 >
                   {item.subdomain} ta
                 </option>
@@ -85,12 +128,22 @@ const Left = ({ changeHandler, basic }) => {
             <label className="float-left text-[#333333] font-semibold cursor-pointer">
               {card.db}
             </label>
-            <select className="float-right w-[96px] h-[30px] cursor-pointer rounded dark:bg-[#00A59C] text-white outline-none text-center">
-              {test.map((item) => (
+            <select
+              className="float-right w-[96px] h-[30px] cursor-pointer rounded dark:bg-[#00A59C] text-white outline-none text-center"
+              onChange={(e) =>
+                changeHandler({
+                  name: "db",
+                  value: JSON.parse(e.target.value).db,
+                  cost: JSON.parse(e.target.value).cost,
+                })
+              }
+            >
+              <option className="dark:bg-white text-[#797979]">tanlang</option>
+              {data.DB.map((item) => (
                 <option
                   className="dark:bg-white text-black"
                   key={item.id}
-                  value={item.db}
+                  value={JSON.stringify(item)}
                 >
                   {item.db} ta
                 </option>
