@@ -27,8 +27,6 @@ const Footer = () => {
     } else {
       navigate(`/${elem.slug}`);
     }
-   
-    
   };
   return (
     <>
@@ -75,7 +73,7 @@ const Footer = () => {
                   <div className="text-start mx-auto text-1xl dark:text-[#d0d0d0]">
                     {Data.category.reverse().map((elem) => (
                       // <Link key={index} to={`./${item.slug}`}>
-                        <h3 key={elem.slug} className="hover:text-[#00A59C]" onClick={() => Navigate(elem)}>{elem.name}</h3>
+                        <h3 key={elem.slug} className="hover:text-[#00A59C] cursor-pointer" onClick={() => Navigate(elem)}>{elem.name}</h3>
                       // </Link>
                     ))}
                   </div>

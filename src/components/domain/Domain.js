@@ -16,6 +16,7 @@ const Domain = ({ props }) => {
     domainName: "",
     zone: "uz",
     status: -1,
+    duration: { id: 1, month: 12, reg: 24000, strtch: 24000 },
   });
   // const [data, setData] = useState([]);
   const Search = async () => {
@@ -35,7 +36,18 @@ const Domain = ({ props }) => {
       console.log(error);
     }
   };
-
+  const duration = [
+    { id: 1, month: 12, reg: 24000, strtch: 24000 },
+    { id: 2, month: 24, reg: 48000, strtch: 24000 },
+    { id: 3, month: 48, reg: 96000, strtch: 24000 },
+  ];
+  const Order = async (elem) => {
+    await setDomain({ ...domain, duration: elem });
+    navigate("/user", {
+      state: { type: "domain", item: domain },
+    });
+  };
+  // console.log(domain);
   return (
     <>
       {Data ? (
@@ -118,38 +130,24 @@ const Domain = ({ props }) => {
                 </tr>
               </thead>
               <tbody>
-                <tr className="bg-white dark:bg-white dark:border-gray-700 text-black hover:bg-[#F1FAFF] dark:hover:bg-[#F1FAFF] md:h-[77px] text-center">
-                  <td className="py-4 px-6">Sliver</td>
-                  <td className="py-4 px-6">Laptop</td>
-                  <td className="py-4 px-6">$2999</td>
-                  <td className="py-4 px-6">
-                    <Button
-                      ButtonFunction={() =>
-                        navigate("/user", {
-                          state: { type: "domain", item: {} },
-                        })
-                      }
-                      name={Data.domain.table.button}
-                      styles={"md:w-[249px]"}
-                    />
-                  </td>
-                </tr>
-                <tr className="bg-white border-t dark:bg-white dark:border-gray-200 text-black hover:bg-[#F1FAFF] dark:hover:bg-[#F1FAFF] md:h-[77px] text-center">
-                  <td className="py-4 px-6">Sliver</td>
-                  <td className="py-4 px-6">Laptop</td>
-                  <td className="py-4 px-6">$2999</td>
-                  <td className="py-4 px-6">
-                    <Button
-                      ButtonFunction={() =>
-                        navigate("/user", {
-                          state: { type: "domain", item: {} },
-                        })
-                      }
-                      name={Data.domain.table.button}
-                      styles={"md:w-[249px]"}
-                    />
-                  </td>
-                </tr>
+                {duration.map((elem) => (
+                  <tr
+                    key={elem.id}
+                    className="bg-white dark:bg-white dark:border-gray-700 text-black hover:bg-[#F1FAFF] dark:hover:bg-[#F1FAFF] md:h-[77px] text-center"
+                  >
+                    <td className="py-4 px-6">{elem.month} oy</td>
+                    <td className="py-4 px-6">{elem.reg} so'm</td>
+                    <td className="py-4 px-6">{elem.strtch} so'm</td>
+                    <td className="py-4 px-6">
+                      <Button
+                        ButtonFunction={Order}
+                        name={Data.domain.table.button}
+                        styles={"md:w-[249px]"}
+                        elem={elem}
+                      />
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
@@ -165,13 +163,24 @@ const Domain = ({ props }) => {
               <div className="mx-auto mt-[21px] font-semibold">
                 <form action="" className="">
                   <select
-                    className="outline-none text-[#00A59C] font-semibold"
-                    name=""
-                    id=""
+                    className="font-semibold cursor-pointer rounded dark:bg-[#00A59C] text-white outline-none text-center"
+                    onChange={(e) =>
+                      setDomain({
+                        ...domain,
+                        duration: JSON.parse(e.target.value),
+                      })
+                    }
                   >
-                    <option className="mt-0" value="">
-                      1 yil
-                    </option>
+                    {/* <option className="mt-0">tanlang</option> */}
+                    {duration.map((elem) => (
+                      <option
+                        key={elem.id}
+                        className="mt-0 "
+                        value={JSON.stringify(elem)}
+                      >
+                        {elem.month} oy
+                      </option>
+                    ))}
                   </select>
                 </form>
               </div>
@@ -180,14 +189,14 @@ const Domain = ({ props }) => {
                 <h1>{Data.domain.table.title2}</h1>
               </div>
               <div className="mx-auto mt-[21px] font-semibold">
-                <h1>narhi</h1>
+                <h1>{domain.duration.reg} so'm</h1>
               </div>
               {/*  */}
               <div className="mt-[21px]">
                 <h1>{Data.domain.table.title3}</h1>
               </div>
               <div className="mx-auto mt-[21px] font-semibold">
-                <h1>narhi</h1>
+                <h1>{domain.duration.strtch} so'm</h1>
               </div>
               {/*  */}
             </div>
@@ -195,9 +204,8 @@ const Domain = ({ props }) => {
               <Button
                 name={Data.domain.table.button}
                 styles={"w-full"}
-                ButtonFunction={() =>
-                  navigate("/user", { state: { type: "domain", item: props } })
-                }
+                ButtonFunction={Order}
+                elem={domain.duration}
               />
             </div>
           </div>
