@@ -18,9 +18,40 @@ const responsive = {
     slidesToSlide: 1, // optional, default to 1.
   },
 };
-const test =["p1.png","p2.png","p3.png","p4.png","p5.png","p6.png","p7.png","p8.png"]
+
+const partner = [
+  {
+    id: 1,
+    slug: "parliament.gov.uz",
+    about: "O'zbekiston Respublikasi Oliy majlis qonunchilik palatasi",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf9rZ-7ra_nt5701hcS57ET6g7KQK2rajjRg&usqp=CAU",
+  },
+  {
+    id: 2,
+    slug: "egov.uz",
+    about: "O'zbekiston Respublikasi Oliy majlis qonunchilik palatasi",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf9rZ-7ra_nt5701hcS57ET6g7KQK2rajjRg&usqp=CAU",
+  },
+  {
+    id: 3,
+    slug: "id.uz",
+    about: "O'zbekiston Respublikasi Oliy majlis qonunchilik palatasi",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf9rZ-7ra_nt5701hcS57ET6g7KQK2rajjRg&usqp=CAU",
+  },
+  {
+    id: 4,
+    slug: "gov.uz",
+    about: "O'zbekiston Respublikasi Oliy majlis qonunchilik palatasi",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf9rZ-7ra_nt5701hcS57ET6g7KQK2rajjRg&usqp=CAU",
+  },
+  {
+    id: 5,
+    slug: "my.gov.uz",
+    about: "O'zbekiston Respublikasi Oliy majlis qonunchilik palatasi",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf9rZ-7ra_nt5701hcS57ET6g7KQK2rajjRg&usqp=CAU",
+  },
+];
 const Partner = () => {
- 
   return (
     <div className="max-w-[1200px] mx-auto">
       <Carousel
@@ -36,19 +67,15 @@ const Partner = () => {
         customTransition="all .5"
         transitionDuration={500}
         containerClass="carousel-container"
-        removeArrowOnDeviceType={["desktop","tablet", "mobile"]}
+        removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
         // deviceType={this.props.deviceType}
         dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px"
       >
-       {test.map((item) => {
-              return (
-               <PartnerCard item={item}/>
-              );
-            })}
-
+        {partner.map((item) => {
+          return <PartnerCard item={item} />;
+        })}
       </Carousel>
-      
     </div>
   );
 };
