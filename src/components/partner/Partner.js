@@ -1,9 +1,10 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import PartnerCard from "../cards/PartnerCard";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 5,
+    items: 4,
     slidesToSlide: 1, // optional, default to 1.
   },
   tablet: {
@@ -42,9 +43,7 @@ const Partner = () => {
       >
        {test.map((item) => {
               return (
-                <div key={item} className="">
-                  <img src={`./assets/partner/${item}`} alt="" />
-                </div>
+               <PartnerCard item={item}/>
               );
             })}
 
