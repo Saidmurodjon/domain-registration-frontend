@@ -40,7 +40,7 @@ const Hosting = () => {
           {data ? (
             (more ? data : data.slice(0, 4)).map((item) => {
               return (
-                <div key={item.id} className="">
+                <div key={item._id} className="">
                   <HostingCard props={item} />
                 </div>
               );

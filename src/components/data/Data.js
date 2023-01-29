@@ -1,11 +1,11 @@
 const uz = {
   category: [
-    { name: "Bosh sahifa", slug: "" },
-    { name: "Domen", slug: "domain" },
-    { name: "Hosting", slug: "hosting" },
-    { name: "Pochta", slug: "pochta" },
-    { name: "Sayt", slug: "sayt" },
-    { name: "Aloqa", slug: "aloqa" },
+    { _id: 1, name: "Bosh sahifa", slug: "" },
+    { _id: 2, name: "Domen", slug: "domain" },
+    { _id: 3, name: "Hosting", slug: "hosting" },
+    { _id: 4, name: "Pochta", slug: "pochta" },
+    { _id: 5, name: "Sayt", slug: "sayt" },
+    { _id: 6, name: "Aloqa", slug: "aloqa" },
   ],
   sliderData: [
     {
@@ -46,8 +46,8 @@ const uz = {
     title: "DOMENLARNI RO‘YXATGA OLISH",
     about:
       "Domen bo‘sh yoki bo‘sh emasligini tekshiring! So‘ng domenni ro‘yxatdan o‘tkazishga o‘ting.",
-      aktive:"Domain band",
-      noAktive:"Domain band emas",
+    aktive: "Domain band",
+    noAktive: "Domain band emas",
     table: {
       title1: "Muddat",
       title2: "Ro‘yxatdan o‘tkazish",
@@ -118,17 +118,17 @@ const uz = {
     title2: "Menyu",
     update: "Soʼngi martta saytdagi maʼlumotlar yangilangan kun: ",
     createdBy: "Sayt ishlab chiqildi:",
-    logo:"./assets/logo/LogoWhiteText.png"
+    logo: "./assets/logo/LogoWhiteText.png",
   },
 };
 const ru = {
   category: [
-    { name: "Bosh sahifa", slug: "" },
-    { name: "Domen", slug: "domain" },
-    { name: "Hosting", slug: "hosting" },
-    { name: "Pochta", slug: "pochta" },
-    { name: "Sayt", slug: "sayt" },
-    { name: "Aloqa", slug: "aloqa" },
+    { _id: 1, name: "Bosh sahifa", slug: "" },
+    { _id: 2, name: "Domen", slug: "domain" },
+    { _id: 3, name: "Hosting", slug: "hosting" },
+    { _id: 4, name: "Pochta", slug: "pochta" },
+    { _id: 5, name: "Sayt", slug: "sayt" },
+    { _id: 6, name: "Aloqa", slug: "aloqa" },
   ],
   sliderData: [
     {
@@ -169,8 +169,8 @@ const ru = {
     title: "DOMENLARNI RO‘YXATGA OLISH",
     about:
       "Domen bo‘sh yoki bo‘sh emasligini tekshiring! So‘ng domenni ro‘yxatdan o‘tkazishga o‘ting.",
-      aktive:"Domain band",
-      noAktive:"Domain band emas",
+    aktive: "Domain band",
+    noAktive: "Domain band emas",
     table: {
       title1: "Muddat",
       title2: "Ro‘yxatdan o‘tkazish",
@@ -241,12 +241,11 @@ const ru = {
     title2: "Menyu",
     update: "Soʼngi martta saytdagi maʼlumotlar yangilangan kun: ",
     createdBy: "Sayt ishlab chiqildi:",
-    logo:"./assets/logo/LogoWhiteText.png"
+    logo: "./assets/logo/LogoWhiteText.png",
   },
 };
-var language = localStorage.getItem("language");
+let language = localStorage.getItem("language");
 window.addEventListener("language", () => {
   window.location.reload(false);
 });
-
 export default language === "uz" ? uz : language === "ru" ? ru : uz;

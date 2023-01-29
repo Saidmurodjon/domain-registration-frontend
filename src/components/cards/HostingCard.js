@@ -91,7 +91,7 @@ const HostingCard = ({ props }) => {
         <Button
           name={card.button}
           ButtonFunction={() =>
-            navigate("/user", { state: { type: "hosting", item: props } })
+            navigate("/order", { state: { type: "hosting", item: props } })
           }
           styles="w-full"
         />

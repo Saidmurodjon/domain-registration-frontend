@@ -11,7 +11,7 @@ const SignIn = () => {
         <div className="w-full">
           <HiOutlineX
             onClick={() => {
-              navigate(-1);
+              navigate('/');
             }}
             className=" mr-4 mt-4 cursor-pointer float-right"
           />

@@ -1,17 +1,27 @@
 import { useState } from "react";
-import config from "../../config.json";
 import Button from "../button/Button";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import jwt_decode from "jwt-decode";
 const Form = ({ type, data }) => {
+  const SERVER_URL = process.env.REACT_APP_SERVER_URL;
   const navigate = useNavigate();
+  let auth = localStorage.getItem("auth");
+  window.addEventListener("auth", () => {
+    window.location.reload(false);
+  });
+  var decoded = auth ? jwt_decode(auth) : false;
+
+  console.log(decoded);
   const [contact, setContact] = useState({
-    name: "",
-    email: "",
-    phone: "",
+    auhor: decoded?._id,
+    fullName: decoded?.fullName,
+    email: decoded?.email,
+    phone: decoded?.phone,
     message: "",
     order: JSON.stringify(data),
   });
+  console.log(contact);
   // eslint-disable-next-line
   // const [data, setData] = useState([]);
   // eslint-disable-next-line
@@ -22,7 +32,7 @@ const Form = ({ type, data }) => {
   const SendContact = async () => {
     try {
       // setLoading(true);
-      const res = await axios.post(config.SERVER_URL + "contact", contact);
+      const res = await axios.post(SERVER_URL + "contact", contact);
       if (res.status === 201) {
         alert("Xabar saqlandi");
         setLoading(false);
@@ -36,11 +46,11 @@ const Form = ({ type, data }) => {
   const SendOrder = async () => {
     try {
       setLoading(true);
-      const res = await axios.post(config.SERVER_URL + "order", contact);
+      const res = await axios.post(SERVER_URL + "orders", contact);
       if (res.status === 201) {
         setLoading(false);
         alert("Buytma saqlandi");
-        navigate(-1)
+        navigate(-1);
       }
     } catch (error) {
       console.log(error);
@@ -48,15 +58,15 @@ const Form = ({ type, data }) => {
   };
   return (
     <>
-      <div className="py-4">
+      <div className="p-1 md:p-2">
         <div className="mx-auto w-full xl:pl-8 px-2 md:px-10 xl:px-0">
           {type === "order" ? (
             <>
               <h1 className="w-full text-[20px] pt-4">
-                Buyurtma berish uchun quyidagilarni to‘ldiring
+                Buyurtmachi haqida qisqa ma'lumot
               </h1>{" "}
               <h1 className="w-full text-[14px] pt-2">
-                Buyurtma berish uchun quyidagilarni to‘ldiring
+                Buyurtma berish bilan bog'liq xamaringizni yozishingiz mumkin
               </h1>
             </>
           ) : (
@@ -73,8 +83,8 @@ const Form = ({ type, data }) => {
               className="w-full h-[60px] p-2.5 outline-none rounded-md dark:text-[#5B5B5B] border-2"
               type="text"
               placeholder="Name*"
-              name="name"
-              value={contact.name}
+              name="fullName"
+              value={contact.fullName}
               onChange={changeHandler}
             />
             <input

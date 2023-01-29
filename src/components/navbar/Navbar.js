@@ -10,14 +10,22 @@ const Navbar = () => {
   const scrollDirection = useScrollDirection();
   const navigate = useNavigate();
   const [modal, setModal] = useState(false);
-  // const [show, setShow] = useState(true);
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   };
-
+  const NavSlugs = Data?.category.map((elem) => (
+    <span
+      key={elem.slug}
+      onClick={() => navigate(`/${elem.slug}`)}
+      className="md:float-right mt-8 align-middle text-[#333333] text-[#16px] lg:ml-14 md:ml-8 font-semibold cursor-pointer hover:text-[#00A59C]"
+    >
+      {elem.name}
+    </span>
+  ));
   return (
     <>
       <div
@@ -50,17 +58,7 @@ const Navbar = () => {
                 />
               </Link>
             </div>
-            <div className="hidden md:float-right md:contents">
-              {Data?.category.map((elem) => (
-                <span
-                  key={elem.slug}
-                  onClick={() => navigate(`/${elem.slug}`)}
-                  className="md:float-right mt-8 align-middle text-[#333333] text-[#16px] lg:ml-14 md:ml-8 font-semibold cursor-pointer hover:text-[#00A59C]"
-                >
-                  {elem.name}
-                </span>
-              ))}
-            </div>
+            <div className="hidden md:float-right md:contents">{NavSlugs}</div>
             <div
               onClick={() => setModal(!modal)}
               className={`md:hidden float-right w-[43px] h-[43px] mt-[21px] shadow-md hover:shadow-lg cursor-pointer right-2`}
