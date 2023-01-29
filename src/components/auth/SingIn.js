@@ -7,6 +7,7 @@ import Button from "../button/Button";
 // Login page
 export default function SignIn() {
   const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+  console.log(SERVER_URL);
   const navigate = useNavigate();
   const [user, setUser] = useState({
     login: "",
@@ -29,13 +30,8 @@ export default function SignIn() {
       if (res?.status === 200) {
         var JWT = res?.data?.token;
         var decoded = jwt_decode(JWT);
-        if (decoded.type === "chemist") {
-          localStorage.setItem("login", JSON.stringify(decoded));
-          navigate("/");
-        } else if (decoded.type === "user") {
-          localStorage.setItem("login", JSON.stringify(decoded));
-          navigate("/");
-        }
+        localStorage.setItem("auth", JSON.stringify(decoded));
+        navigate("/");
         toast.success("Siz muvaffaqqiyatli kirdingiz", { theme: "colored" });
       }
     } catch (error) {

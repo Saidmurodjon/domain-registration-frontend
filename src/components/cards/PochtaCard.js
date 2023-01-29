@@ -15,11 +15,11 @@ const PochtaCard = ({ props }) => {
           {props.status}
         </h1>
         <h1 className="text-[14px] text-center pt-[25px] ">
-          Hajmi: <p className="pl-2 inline font-semibold">{props.hajmi}</p>
+          Hajmi: <p className="pl-2 inline font-semibold">{props.capacity}</p>
         </h1>
         <h1 className="text-[14px] text-center pt-[25px] ">
           Pochta qutilari:{" "}
-          <p className="pl-2 inline font-semibold">{props.quti_soni}</p>
+          <p className="pl-2 inline font-semibold">{props.box}</p>
         </h1>
         <div className="flex justify-center pt-[25px]">
           <form action="">
@@ -38,7 +38,7 @@ const PochtaCard = ({ props }) => {
           </form>
         </div>
         <h1 className="text-[24px] text-center pt-[25px] text-[#333333] font-bold">
-          {props.narxi * duration - (props.narxi * duration) / 200} so‘m
+          {props.price * duration - (props.price * duration) / 200} so‘m
         </h1>
         <div className="flex justify-center pt-[30px]">
           <Button

@@ -3,9 +3,9 @@ import HostingCard from "../cards/HostingCard";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import Data from "../data/Data";
 import UseFetch from "../hooks/UseFetch";
-import config from "../../config.json";
 const Hosting = () => {
-  const { data, error } = UseFetch(config.SERVER_URL + "hosting", {
+  const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+  const { data, error } = UseFetch(SERVER_URL + "hostings", {
     method: "get",
     details: {},
   });

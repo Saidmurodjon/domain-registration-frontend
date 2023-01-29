@@ -12,9 +12,13 @@ import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import SignIn from "../view/auth/SignIn";
 import SignUp from "../view/auth/SignUp";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function Routers() {
   return (
     <Router>
+      <ToastContainer />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

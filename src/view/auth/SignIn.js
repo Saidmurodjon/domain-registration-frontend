@@ -1,7 +1,7 @@
 import React from "react";
 import { HiOutlineX } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
-import SignInComponent from "../../components/auth/SingIn";
+import SignInComponent from "../../components/auth/SingIn"; 
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ const SignIn = () => {
             className=" mr-4 mt-4 cursor-pointer float-right"
           />
         </div>
-        <div className="grid md:grid-cols-2 w-full">
+        <div className="grid md:grid-cols-2 w-full">  
           <SignInComponent />
           <div className="flex items-center justify-center">
             <div className="hidden md:inline">
