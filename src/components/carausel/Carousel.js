@@ -52,7 +52,7 @@ const Carousel = () => {
                         <Button
                           name={"RO‘YXATDAN O‘TISH"}
                           ButtonFunction={() =>
-                            navigate("/user", {
+                            navigate("/signin", {
                               state: { type: "registration" },
                             })
                           }
@@ -70,7 +70,7 @@ const Carousel = () => {
                         <Button
                           name={"RO‘YXATDAN O‘TISH"}
                           ButtonFunction={() =>
-                            navigate("/user", {
+                            navigate("/signin", {
                               state: { type: "registration" },
                             })
                           }

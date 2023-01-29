@@ -1,15 +1,7 @@
-import React from 'react'
-import Footer from '../../components/footer/Footer'
-import Navbar from '../../components/navbar/Navbar'
-import PochtaComponents from '../../components/pochta/PochtaComponents'
+import React from "react";
+import PochtaComponents from "../../components/pochta/PochtaComponents";
 const Pochta = () => {
-  return (
-    <>
-      <Navbar/>
-      <PochtaComponents/>
-      <Footer/>
-    </>
-  )
-}
+  return <PochtaComponents />
+};
 
-export default Pochta
+export default Pochta;

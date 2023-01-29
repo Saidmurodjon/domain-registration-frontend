@@ -5,7 +5,7 @@ import Map from "./Map";
 const Aloqa = () => {
   return (
     <div>
-      <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 mt-[60px] xl:mt-[80px]">
+      <div className="max-w-[1200px] mx-auto grid md:grid-cols-2">
         <About />
         <div className="hidden md:inline">
           <Form />

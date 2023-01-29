@@ -1,9 +1,13 @@
-import React from 'react'
-
+import React from "react";
+import CreateHosting from "../../components/hosting/createHosting/CreateHosting";
+import HostingComponent from "../../components/hosting/Hosting";
 const Hosting = () => {
   return (
-    <div>Hosting</div>
-  )
-}
+    <>
+      <HostingComponent />
+      <CreateHosting />
+    </>
+  );
+};
 
-export default Hosting
+export default Hosting;
