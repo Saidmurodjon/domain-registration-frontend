@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Home from "../view/home/Home";
 import E404 from "../components/errors/E404";
 import Domen from "../view/domain/Domain";
@@ -12,8 +14,7 @@ import Footer from "../components/footer/Footer";
 import SignIn from "../view/auth/SignIn";
 import SignUp from "../view/auth/SignUp";
 import Order from "../view/order/Order";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import About from "../view/about/About";
 
 function Routers() {
   return (
@@ -23,6 +24,7 @@ function Routers() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/about" element={<About />} />
         <Route path="/domain" element={<Domen />} />
         <Route path="/hosting" element={<Hosting />} />
         <Route path="/pochta" element={<Pochta />} />

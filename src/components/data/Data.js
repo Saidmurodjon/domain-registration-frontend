@@ -6,6 +6,7 @@ const uz = {
     { _id: 4, name: "Pochta", slug: "pochta" },
     { _id: 5, name: "Sayt", slug: "sayt" },
     { _id: 6, name: "Aloqa", slug: "aloqa" },
+    { _id: 7, name: "Biz haqimizda", slug: "about" },
   ],
   sliderData: [
     {
