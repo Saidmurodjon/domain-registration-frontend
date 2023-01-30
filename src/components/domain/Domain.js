@@ -5,6 +5,8 @@ import Data from "../data/Data";
 import config from "../../config.json";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useEffect } from "react";
+import { toast } from "react-toastify";
 
 const Domain = ({ props }) => {
   const navigate = useNavigate();
@@ -42,12 +44,16 @@ const Domain = ({ props }) => {
     { id: 3, month: 48, reg: 96000, strtch: 24000 },
   ];
   const Order = async (elem) => {
-    await setDomain({ ...domain, duration: elem });
-    navigate("/user", {
-      state: { type: "domain", item: domain },
-    });
+    if (!status.aktiv && !status.state) toast.error("domain bo'sh");
+    if (status.aktiv && status.state) toast.error("domain band");
+    if (!status.aktiv && status.state) {
+      await setDomain({ ...domain, duration: elem });
+      navigate("/order", {
+        state: { type: "domain", item: domain },
+      });
+    }
   };
-  // console.log(domain);
+
   return (
     <div id={`domain`} className="md:mt-[70px] max-w-[1200px] mx-auto ">
       <div className="px-2 md:px-0">

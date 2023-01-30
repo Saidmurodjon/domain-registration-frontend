@@ -6,7 +6,6 @@ import Hosting from "../view/hosting/Hosting";
 import Pochta from "../view/pochta/Pochta";
 import Sayt from "../view/site/Site";
 import Aloqa from "../view/contact/Contact";
-// import Order from "../view/user/User";
 import Admin from "../view/admin/Admin";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
@@ -29,7 +28,6 @@ function Routers() {
         <Route path="/pochta" element={<Pochta />} />
         <Route path="/sayt" element={<Sayt />} />
         <Route path="/aloqa" element={<Aloqa />} />
-        <Route path="/user" element={<Order />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/order" element={<Order />} />

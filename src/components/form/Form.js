@@ -3,7 +3,8 @@ import Button from "../button/Button";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import jwt_decode from "jwt-decode";
-const Form = ({ type, data }) => {
+import { toast } from "react-toastify";
+const Form = ({ type, ordered }) => {
   const SERVER_URL = process.env.REACT_APP_SERVER_URL;
   const navigate = useNavigate();
   let auth = localStorage.getItem("auth");
@@ -12,14 +13,15 @@ const Form = ({ type, data }) => {
   });
   var decoded = auth ? jwt_decode(auth) : false;
 
-  console.log(decoded);
+  // console.log(decoded);
   const [contact, setContact] = useState({
-    auhor: decoded?._id,
+    author: decoded?._id,
     fullName: decoded?.fullName,
     email: decoded?.email,
     phone: decoded?.phone,
     message: "",
-    order: JSON.stringify(data),
+    type: ordered?.type,
+    isOrdered: ordered?.item,
   });
   console.log(contact);
   // eslint-disable-next-line
@@ -49,10 +51,11 @@ const Form = ({ type, data }) => {
       const res = await axios.post(SERVER_URL + "orders", contact);
       if (res.status === 201) {
         setLoading(false);
-        alert("Buytma saqlandi");
+        toast.success("Buyritma qabul qilindi", { theme: "colored" });
         navigate(-1);
       }
     } catch (error) {
+      toast.error(error?.response?.data, { theme: "colored" });
       console.log(error);
     }
   };
