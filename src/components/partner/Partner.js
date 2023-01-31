@@ -63,10 +63,10 @@ const Partner = () => {
         infinite={true}
         autoPlay={true}
         // {"this.props.deviceType" !== "mobile" ? true : false}
-        autoPlaySpeed={1000}
+        // autoPlaySpeed={1000}
         keyBoardControl={true}
-        customTransition="all .5"
-        transitionDuration={500}
+        customTransition="transform 5000ms" 
+        // transitionDuration={300}
         containerClass="carousel-container"
         removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
         // deviceType={this.props.deviceType}
