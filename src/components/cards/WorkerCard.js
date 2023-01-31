@@ -4,7 +4,7 @@ import { MdEmail } from "react-icons/md";
 const WorkerCard = ({ element }) => {
   return (
     <>
-      <div className="w-[278px] h-[400px] rounded-lg shadow-lg mx-auto bg-white mt-2 md:mt-6 xl:mt-4 transition duration-500 transform md:hover:-translate-y-[10px] md:hover:shadow-2xl">
+      <div className="w-[278px] h-[380px] rounded-lg shadow-lg mx-auto bg-white mt-2 md:mt-6 xl:mt-4 transition duration-500 transform md:hover:-translate-y-[10px] md:hover:shadow-2xl">
         <div className="mx-auto py-8">
           <img
             className="rounded-full w-44 h-44 mx-auto"

@@ -5,7 +5,6 @@ import Data from "../data/Data";
 import config from "../../config.json";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useEffect } from "react";
 import { toast } from "react-toastify";
 
 const Domain = ({ props }) => {

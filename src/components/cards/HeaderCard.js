@@ -1,8 +1,12 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 const HeaderCard = ({ props }) => {
+  const navigate = useNavigate();
   return (
-    <>
+    <div
+      className="mx-auto cursor-pointer"
+      onClick={() => navigate(props.slug)}
+    >
       <div
         className="w-[360px] bg-white rounded-lg shadow-xl border border-gray-100 md:border-none md:dark:bg-[#0A96FF]  hover:bg-[#00A59C] h-[202px
 ] md:h-[223px] xl:h-[273px] md:w-[380px] xl:w-[370px] transition duration-500 transform md:hover:-translate-y-[30px] md:hover:shadow-2xl my-4"
@@ -23,7 +27,7 @@ const HeaderCard = ({ props }) => {
           {/* <div className="flex mt-4 space-x-3 md:mt-6"></div> */}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@ import Carousel from "../../components/carausel/Carousel";
 import Domain from "../../components/domain/Domain";
 import Hosting from "../../components/hosting/Hosting";
 import CreateHosting from "../../components/hosting/createHosting/CreateHosting";
-import Sayt from "../../components/sayt/Sayt";
+import Sayt from "../../components/site/Site";
 import Partern from "../../components/partner/Partner";
 
 const Home = () => {

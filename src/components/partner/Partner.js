@@ -61,8 +61,9 @@ const Partner = () => {
         responsive={responsive}
         ssr={true} // means to render carousel on server-side.
         infinite={true}
-        autoPlay={"this.props.deviceType" !== "mobile" ? true : false}
-        autoPlaySpeed={5000}
+        autoPlay={true}
+        // {"this.props.deviceType" !== "mobile" ? true : false}
+        autoPlaySpeed={1000}
         keyBoardControl={true}
         customTransition="all .5"
         transitionDuration={500}
@@ -71,6 +72,7 @@ const Partner = () => {
         // deviceType={this.props.deviceType}
         dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px"
+        minimumTouchDrag={50}
       >
         {partner?.map((item) => {
           return <PartnerCard key={item._id} item={item} />;

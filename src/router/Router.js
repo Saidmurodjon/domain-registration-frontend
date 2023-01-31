@@ -28,7 +28,7 @@ function Routers() {
         <Route path="/domain" element={<Domen />} />
         <Route path="/hosting" element={<Hosting />} />
         <Route path="/pochta" element={<Pochta />} />
-        <Route path="/sayt" element={<Sayt />} />
+        <Route path="/site" element={<Sayt />} />
         <Route path="/aloqa" element={<Aloqa />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
