@@ -37,19 +37,17 @@ const Hosting = () => {
       <div className="hidden md:contents">
         <div className="grid xl:grid-cols-4 md:grid-cols-2 lg:grid-cols-3 items-center relative justify-center">
           {" "}
-          {data ? (
-            data?.map((item) => {
+          {data ? data?.map((item) => {
               return (
                 <div key={item._id} className="">
                   <HostingCard props={item} />
                 </div>
               );
-            })
-          ) : (
+            }): 
             <>
               <p>Please wait...</p>
             </>
-          )}
+          }
         </div>
         <div className="mx-3 mt-5 flex justify-end">
           <p
