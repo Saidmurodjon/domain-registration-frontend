@@ -6,7 +6,7 @@ import Data from "../data/Data";
 import { toast } from "react-toastify";
 const Hosting = () => {
   const SERVER_URL = process.env.REACT_APP_SERVER_URL;
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -33,13 +33,14 @@ const Hosting = () => {
   const nextSlide = () => {
     setSlide(slide === 0 ? length - 1 : slide - 1);
   };
-  const hostingCard = data ? (
-    data?.map((item) => <HostingCard props={item} key={item._id} />)
-  ) : (
-    <>
-      <p>Please wait...</p>
-    </>
-  );
+  const hostingCard =
+    data.length > 0 ? (
+      data?.map((item) => <HostingCard props={item} key={item._id} />)
+    ) : (
+      <>
+        <p>Please wait...</p>
+      </>
+    );
   return (
     <div className="max-w-[1200px] mx-auto py-5">
       <div className="px-2 md:px-0 md:py-5">

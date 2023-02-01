@@ -4,7 +4,7 @@ const Info = ({ show }) => {
   // online information
   const [time, setTime] = useState('');
   setInterval(() => {
-    setTime(new Date().toLocaleString().slice(11, 19));
+    setTime(new Date().toLocaleString().slice(10, 18));
   }, 1000);
   return (
     <div className={`${show ? "contents" : "hidden"} duration-1000`}>
