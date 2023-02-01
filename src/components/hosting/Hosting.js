@@ -6,7 +6,7 @@ import Data from "../data/Data";
 import { toast } from "react-toastify";
 const Hosting = () => {
   const SERVER_URL = process.env.REACT_APP_SERVER_URL;
-  const [data, setData] = useState([]);
+  const [hosting, setHosting] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -15,7 +15,7 @@ const Hosting = () => {
           url: SERVER_URL + "hostings",
         });
         if (res.status === 200) {
-          setData(res.data);
+          setHosting(res.data);
         }
       } catch (error) {
         toast.error(error?.response?.data, { theme: "colored" });
@@ -25,7 +25,7 @@ const Hosting = () => {
     // eslint-disable-next-line
   }, []);
   const [slide, setSlide] = useState(0);
-  const length = data ? data.length : 0;
+  const length = hosting ? hosting.length : 0;
   const [more, setMore] = useState(false);
   const prevSlide = () => {
     setSlide(slide === length - 1 ? 0 : slide + 1);
@@ -33,14 +33,7 @@ const Hosting = () => {
   const nextSlide = () => {
     setSlide(slide === 0 ? length - 1 : slide - 1);
   };
-  const hostingCard =
-    data.length > 0 ? (
-      data?.map((item) => <HostingCard props={item} key={item._id} />)
-    ) : (
-      <>
-        <p>Please wait...</p>
-      </>
-    );
+console.log(hosting.length);
   return (
     <div className="max-w-[1200px] mx-auto py-5">
       <div className="px-2 md:px-0 md:py-5">
@@ -56,7 +49,13 @@ const Hosting = () => {
 
       <div className="hidden md:contents">
         <div className="grid xl:grid-cols-4 md:grid-cols-2 lg:grid-cols-3 items-center relative justify-center">
-          {hostingCard}
+          {hosting.length > 0 ? (
+            hosting.map((item) => <HostingCard props={item} key={item._id} />)
+          ) : (
+            <>
+              <p>Please wait...</p>
+            </>
+          )}
         </div>
         <div className="mx-3 mt-5 flex justify-end">
           <p
