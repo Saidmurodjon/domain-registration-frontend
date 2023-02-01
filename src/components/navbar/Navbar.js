@@ -2,25 +2,31 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { RiMenu3Fill } from "react-icons/ri";
 import { HiOutlineX, HiOutlineChevronUp } from "react-icons/hi";
-import Data from "../data/Data";
 import "./Navbar.css";
 import Info from "./Info";
 import useScrollDirection from "../hooks/useScrollDirection";
+
 const Navbar = () => {
   const scrollDirection = useScrollDirection();
   const navigate = useNavigate();
   const [modal, setModal] = useState(false);
-
+  let category = JSON.parse(localStorage.getItem("navbarCategories"));
+  window.addEventListener("navbarCategories", () => {
+    window.location.reload(false);
+  });
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   };
-  const NavSlugs = Data?.category.map((elem) => (
+  const NavSlugs = category?.map((elem) => (
     <span
       key={elem.slug}
-      onClick={() => navigate(`/${elem.slug}`)}
+      onClick={() => {
+        navigate(`/${elem.slug}`);
+        setModal(false);
+      }}
       className="md:float-right mt-8 align-middle text-[#333333] text-[#16px] lg:ml-14 md:ml-8 font-semibold cursor-pointer hover:text-[#00A59C]"
     >
       {elem.name}
@@ -76,11 +82,14 @@ const Navbar = () => {
                   onClick={() => setModal(false)}
                   className="float-right mr-4 mt-4 cursor-pointer"
                 />
-                {Data?.category.map((elem) => (
+                {category?.map((elem) => (
                   // <Link key={elem.slug} to={`/${elem.slug}`}>
                   <h1
                     key={elem.slug}
-                    onClick={() => navigate(`/${elem.slug}`)}
+                    onClick={() => {
+                      navigate(`/${elem.slug}`);
+                      setModal(false);
+                    }}
                     className="mx-3 py-3 align-middle text-[#333333] text-[#16px] lg:ml-14 md:ml-8 font-semibold cursor-pointer hover:text-[#00A59C]"
                   >
                     {elem.name}

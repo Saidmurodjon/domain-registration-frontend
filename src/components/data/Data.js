@@ -127,12 +127,13 @@ const uz = {
 };
 const ru = {
   category: [
-    { _id: 1, name: "Bosh sahifa", slug: "" },
+    { _id: 1, name: "Bosh sahifa ru", slug: "" },
     { _id: 2, name: "Domen", slug: "domain" },
     { _id: 3, name: "Hosting", slug: "hosting" },
     { _id: 4, name: "Pochta", slug: "pochta" },
-    { _id: 5, name: "Sayt", slug: "sayt" },
+    { _id: 5, name: "Sayt", slug: "site" },
     { _id: 6, name: "Aloqa", slug: "aloqa" },
+    { _id: 7, name: "Biz haqimizda", slug: "about" },
   ],
   sliderData: [
     {
@@ -157,16 +158,19 @@ const ru = {
       url: "./assets/headerCard/domain.png",
       title: "Domenni ro‘yxatdan o‘tkazish",
       info: "Milliy domen bilan biznesga ilk qadam ",
+      slug: "domain",
     },
     {
       url: "./assets/headerCard/hosting.png",
       title: "Ishonchli hosting xizmati",
       info: "Ishlash uchun qulaylik haftasiga 7 kun 24 soat uzluksiz",
+      slug: "hosting",
     },
     {
       url: "./assets/headerCard/site.png",
       title: "Websaytlar yaratib berish",
       info: "Istalgan murakkablikdagi saytlar biz uchun sifat birinchi o‘rinda",
+      slug: "site",
     },
   ],
   domain: {
@@ -252,4 +256,15 @@ let language = localStorage.getItem("language");
 window.addEventListener("language", () => {
   window.location.reload(false);
 });
-export default language === "uz" ? uz : language === "ru" ? ru : uz;
+const Switcher = (lan) => {
+  localStorage.setItem(
+    "navbarCategories",
+    JSON.stringify(lan.category.reverse())
+  );
+  return lan;
+};
+export default language === "uz"
+  ? Switcher(uz)
+  : language === "ru"
+  ? Switcher(ru)
+  : Switcher(uz);
