@@ -7,6 +7,7 @@ const Left = ({ changeHandler, basic, basicHosting }) => {
     pochta: basic.pochta,
     trafik: basic.trafik,
   });
+
   const card = Data.hosting.card;
 
   return (
@@ -29,10 +30,10 @@ const Left = ({ changeHandler, basic, basicHosting }) => {
             })
           }
         >
-          {basicHosting?.capacity.map((item) => (
+          {basicHosting?.capacity?.map((item) => (
             <option
               className="dark:bg-white text-black"
-              key={item.id}
+              key={item._id}
               value={JSON.stringify(item)}
             >
               {item.value} MB
@@ -57,10 +58,10 @@ const Left = ({ changeHandler, basic, basicHosting }) => {
             })
           }
         >
-          {basicHosting?.domain.map((item) => (
+          {basicHosting?.domain?.map((item) => (
             <option
               className="dark:bg-white text-black"
-              key={item.id}
+              key={item._id}
               value={JSON.stringify(item)}
             >
               {item.value} ta
@@ -84,10 +85,10 @@ const Left = ({ changeHandler, basic, basicHosting }) => {
             })
           }
         >
-          {basicHosting?.subDomain.map((item) => (
+          {basicHosting?.subDomain?.map((item) => (
             <option
               className="dark:bg-white text-black"
-              key={item.id}
+              key={item._id}
               value={JSON.stringify(item)}
             >
               {item.value} ta
@@ -114,7 +115,7 @@ const Left = ({ changeHandler, basic, basicHosting }) => {
           {basicHosting?.db.map((item) => (
             <option
               className="dark:bg-white text-black"
-              key={item.id}
+              key={item._id}
               value={JSON.stringify(item)}
             >
               {item.value} ta
@@ -137,7 +138,7 @@ const Left = ({ changeHandler, basic, basicHosting }) => {
               changeHandler({
                 name: "domainUz",
                 value: toggle.domainUz,
-                cost: basicHosting.domainUz,
+                cost: basicHosting?.domainUz,
               })
             }
           />
@@ -165,7 +166,7 @@ const Left = ({ changeHandler, basic, basicHosting }) => {
               changeHandler({
                 name: "pochta",
                 value: toggle.pochta,
-                cost: basicHosting.pochta,
+                cost: basicHosting?.pochta,
               })
             }
           />
@@ -191,7 +192,7 @@ const Left = ({ changeHandler, basic, basicHosting }) => {
               changeHandler({
                 name: "trafik",
                 value: toggle.trafik,
-                cost: basicHosting.trafik,
+                cost: basicHosting?.trafik,
               })
             }
           />

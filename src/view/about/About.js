@@ -30,7 +30,6 @@ const About = () => {
     method: "get",
     details: {},
   });
-  console.log(products);
   return (
     <div className="">
       <div className="max-w-[1200px] mx-auto py-5">

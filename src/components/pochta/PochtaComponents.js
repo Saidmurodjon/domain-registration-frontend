@@ -8,9 +8,6 @@ const PochtaComponents = () => {
     method: "get",
     details: {},
   });
-  // if (error) {
-  //   console.log(error);
-  // }
   return (
     <div className="bg-[#F1FAFF]">
       <div className="max-w-[1200px] mx-auto py-5">

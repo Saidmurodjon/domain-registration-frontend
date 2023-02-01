@@ -17,7 +17,6 @@ const Form = ({ type, ordered }) => {
       auth: localStorage.getItem("jwt-token"),
     },
   };
-  // console.log(decoded);
   const [contact, setContact] = useState({
     author: decoded?._id,
     fullName: decoded?.fullName,
@@ -27,7 +26,6 @@ const Form = ({ type, ordered }) => {
     type: ordered?.type,
     isOrdered: ordered?.item,
   });
-  console.log(contact);
   // eslint-disable-next-line
   // const [data, setData] = useState([]);
   // eslint-disable-next-line
@@ -63,7 +61,6 @@ const Form = ({ type, ordered }) => {
       console.log(error);
     }
   };
-  console.log(TOKEN.headers.auth);
   return (
     <>
       <div className="p-1 md:p-2">

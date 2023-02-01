@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import Button from "../button/Button";
 import Data from "../data/Data";
-import config from "../../config.json";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -23,7 +22,7 @@ const Domain = ({ props }) => {
   const Search = async () => {
     try {
       const res = await axios.get(
-        `${config.SERVER_URL}whois?domain=${domain.domainName}&zone=${domain.zone}`
+        `${process.env.REACT_APP_SERVER_URL}whois?domain=${domain.domainName}&zone=${domain.zone}`
       );
       if (res.status === 200) {
         // setData(res.data);

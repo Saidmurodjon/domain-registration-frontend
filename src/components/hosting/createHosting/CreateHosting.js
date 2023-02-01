@@ -3,12 +3,17 @@ import { useState } from "react";
 import Left from "./Left";
 import Right from "./Right";
 import { useNavigate } from "react-router-dom";
+import UseFetch from "../../hooks/UseFetch";
 
 const CreateHosting = () => {
+  const SERVER_URL = process.env.REACT_APP_SERVER_URL;
   const navigate = useNavigate();
-
+  const { data } = UseFetch(SERVER_URL + "hostingcreators", {
+    method: "get",
+    details: {},
+  });
   const [hosting, setHosting] = useState({
-    title: "Start",
+    title: "New hosting",
     price: 50000,
     capacity: 100,
     domain: 2,
@@ -21,40 +26,6 @@ const CreateHosting = () => {
     ftp: false,
     dns: false,
     access_log: false,
-  });
-  // eslint-disable-next-line
-  const [basicHosting, setBasicHosting] = useState({
-    capacity: [
-      { id: 0, value: "0", cost: 0 },
-      { id: 1, value: 100, cost: 10000 },
-      { id: 2, value: 250, cost: 25000 },
-      { id: 3, value: 340, cost: 35000 },
-    ],
-    domain: [
-      { id: 0, value: 0, cost: 0 },
-      { id: 1, value: 1, cost: 10000 },
-      { id: 2, value: 2, cost: 20000 },
-      { id: 3, value: 3, cost: 30000 },
-    ],
-    subDomain: [
-      { id: 0, value: 0, cost: 0 },
-      { id: 1, value: 1, cost: 10000 },
-      { id: 2, value: 2, cost: 20000 },
-      { id: 3, value: 3, cost: 30000 },
-    ],
-    db: [
-      { id: 0, value: 0, cost: 0 },
-      { id: 1, value: 1, cost: 10000 },
-      { id: 2, value: 2, cost: 20000 },
-      { id: 3, value: 3, cost: 30000 },
-    ],
-    domainUz: 21000,
-    pochta: 120,
-    trafik: 123,
-    backUp: 1,
-    ftp: 2,
-    dns: 3,
-    access_log: 4,
   });
   const [hostingCost, setHostingCost] = useState({
     total: 0,
@@ -102,7 +73,6 @@ const CreateHosting = () => {
   const Send = () => {
     navigate("/order", { state: { type: "new-hosting", item: hosting } });
   };
-  console.log(hosting);
   return (
     <>
       <div className="grid md:grid-cols-2 gap-2 sm:grid-cols-1 max-w-[1200px] mx-auto bg-[#ffff] py-4">
@@ -110,14 +80,14 @@ const CreateHosting = () => {
         <Left
           changeHandler={changeHandler}
           basic={hosting}
-          basicHosting={basicHosting}
+          basicHosting={data ? data[0] : null}
         />
         {/* O'ng tomondagi ma'lumotlar */}
         <Right
           changeHandler={changeHandler}
           basic={hosting}
           send={Send}
-          basicHosting={basicHosting}
+          basicHosting={data ? data[0] : null}
         />
       </div>
     </>

@@ -24,8 +24,6 @@ export default function SignUp() {
     });
   };
   const Registration = async () => {
-    console.log("Registration");
-    console.log(user);
     try {
       setLoading(true);
       const res = await axios({

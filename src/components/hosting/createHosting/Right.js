@@ -9,6 +9,7 @@ const Right = ({ changeHandler, basic, send, basicHosting }) => {
     dns: basic.dns,
     access_log: basic.access_log,
   });
+
   const card = Data.hosting.card;
   return (
     <div className="float-left px-3 md:px-[120px]">

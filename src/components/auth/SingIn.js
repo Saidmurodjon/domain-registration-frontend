@@ -7,7 +7,6 @@ import Button from "../button/Button";
 // Login page
 export default function SignIn() {
   const SERVER_URL = process.env.REACT_APP_SERVER_URL;
-  console.log(SERVER_URL);
   const navigate = useNavigate();
   const [user, setUser] = useState({
     login: "",
@@ -33,7 +32,7 @@ export default function SignIn() {
         localStorage.setItem("user", JSON.stringify(decoded));
         localStorage.setItem("auth", JSON.stringify(JWT));
         localStorage.setItem("jwt-token", JWT);
-        navigate("/");
+        navigate(-1);
         toast.success("Siz muvaffaqqiyatli kirdingiz", { theme: "colored" });
       }
     } catch (error) {
