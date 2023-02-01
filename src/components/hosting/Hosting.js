@@ -1,14 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import HostingCard from "../cards/HostingCard";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import Data from "../data/Data";
-import UseFetch from "../hooks/UseFetch";
+import { toast } from "react-toastify";
 const Hosting = () => {
   const SERVER_URL = process.env.REACT_APP_SERVER_URL;
-  const { data, error } = UseFetch(SERVER_URL + "hostings", {
-    method: "get",
-    details: {},
-  });
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios({
+          method: "get",
+          url: SERVER_URL + "hostings",
+        });
+        if (res.status === 200) {
+          setData(res.data);
+        }
+      } catch (error) {
+        toast.error(error?.response?.data, { theme: "colored" });
+      }
+    };
+    fetchData();
+    // eslint-disable-next-line
+  }, []);
   const [slide, setSlide] = useState(0);
   const length = data ? data.length : 0;
   const [more, setMore] = useState(false);
@@ -18,9 +33,6 @@ const Hosting = () => {
   const nextSlide = () => {
     setSlide(slide === 0 ? length - 1 : slide - 1);
   };
-  if (error) {
-    console.log(error);
-  }
   return (
     <div className="max-w-[1200px] mx-auto py-5">
       <div className="px-2 md:px-0 md:py-5">
@@ -36,17 +48,19 @@ const Hosting = () => {
 
       <div className="hidden md:contents">
         <div className="grid xl:grid-cols-4 md:grid-cols-2 lg:grid-cols-3 items-center relative justify-center">
-          {data ? data.map((item) => {
+          {data ? (
+            data.map((item) => {
               return (
                 <div key={item._id} className="">
                   <HostingCard props={item} />
                 </div>
               );
-            }): 
+            })
+          ) : (
             <>
               <p>Please wait...</p>
             </>
-          }
+          )}
         </div>
         <div className="mx-3 mt-5 flex justify-end">
           <p
