@@ -33,6 +33,13 @@ const Hosting = () => {
   const nextSlide = () => {
     setSlide(slide === 0 ? length - 1 : slide - 1);
   };
+  const hostingCard = data ? (
+    data?.map((item) => <HostingCard props={item} key={item._id} />)
+  ) : (
+    <>
+      <p>Please wait...</p>
+    </>
+  );
   return (
     <div className="max-w-[1200px] mx-auto py-5">
       <div className="px-2 md:px-0 md:py-5">
@@ -48,19 +55,7 @@ const Hosting = () => {
 
       <div className="hidden md:contents">
         <div className="grid xl:grid-cols-4 md:grid-cols-2 lg:grid-cols-3 items-center relative justify-center">
-          {/* {data ? (
-            data?.map((item) => {
-              return (
-                <div key={item._id} className="">
-                  <HostingCard props={item} />
-                </div>
-              );
-            })
-          ) : (
-            <>
-              <p>Please wait...</p>
-            </>
-          )} */}
+          {hostingCard}
         </div>
         <div className="mx-3 mt-5 flex justify-end">
           <p
