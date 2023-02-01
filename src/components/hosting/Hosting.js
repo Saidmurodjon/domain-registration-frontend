@@ -38,7 +38,7 @@ const Hosting = () => {
         <div className="grid xl:grid-cols-4 md:grid-cols-2 lg:grid-cols-3 items-center relative justify-center">
           {" "}
           {data ? (
-            (more ? data : data.slice(0, 4)).map((item) => {
+            (more ? data : data?.slice(0, 4)).map((item) => {
               return (
                 <div key={item._id} className="">
                   <HostingCard props={item} />

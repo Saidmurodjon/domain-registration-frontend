@@ -112,7 +112,7 @@ const Left = ({ changeHandler, basic, basicHosting }) => {
             })
           }
         >
-          {basicHosting?.db.map((item) => (
+          {basicHosting?.db?.map((item) => (
             <option
               className="dark:bg-white text-black"
               key={item._id}
