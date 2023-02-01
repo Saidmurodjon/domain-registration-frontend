@@ -6,7 +6,7 @@ import Data from "../data/Data";
 import { toast } from "react-toastify";
 const Hosting = () => {
   const SERVER_URL = process.env.REACT_APP_SERVER_URL;
-  const [data, setData] = useState([]);
+  const [data, setData] = useState();
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -49,7 +49,7 @@ const Hosting = () => {
       <div className="hidden md:contents">
         <div className="grid xl:grid-cols-4 md:grid-cols-2 lg:grid-cols-3 items-center relative justify-center">
           {data ? (
-            data.map((item) => {
+            data?.map((item) => {
               return (
                 <div key={item._id} className="">
                   <HostingCard props={item} />
