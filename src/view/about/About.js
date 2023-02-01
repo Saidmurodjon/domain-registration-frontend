@@ -26,7 +26,7 @@ const About = () => {
     fetchData();
     // eslint-disable-next-line
   }, []);
-  const { data, loading } = UseFetch(SERVER_URL + "workers", {
+  const { data } = UseFetch(SERVER_URL + "workers", {
     method: "get",
     details: {},
   });

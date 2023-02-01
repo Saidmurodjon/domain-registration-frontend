@@ -36,7 +36,6 @@ const Hosting = () => {
 
       <div className="hidden md:contents">
         <div className="grid xl:grid-cols-4 md:grid-cols-2 lg:grid-cols-3 items-center relative justify-center">
-          {" "}
           {data ? data.map((item) => {
               return (
                 <div key={item._id} className="">
