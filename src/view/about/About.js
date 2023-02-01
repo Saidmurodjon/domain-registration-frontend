@@ -24,7 +24,7 @@ const About = () => {
       }
     };
     fetchData();
-     // eslint-disable-next-line
+    // eslint-disable-next-line
   }, []);
   const { data, loading } = UseFetch(SERVER_URL + "workers", {
     method: "get",
@@ -56,13 +56,8 @@ const About = () => {
           </h1>
         </div>
         <div className="grid xl:grid-cols-4 grid-cols-2 lg:grid-cols-3 items-center relative justify-center">
-          {show
-            ? data
-              ? data?.map((e) => <WorkerCard key={e._id} element={e} />)
-              : loading
-            : data
-            ? products?.map((e) => <ProductCard key={e._id} element={e} />)
-            : loading}
+          {show? data?.map((e) => <WorkerCard key={e._id} element={e} />)
+            : products?.map((e) => <ProductCard key={e._id} element={e} />)}
         </div>
       </div>
     </div>
