@@ -48,7 +48,7 @@ const Hosting = () => {
 
       <div className="hidden md:contents">
         <div className="grid xl:grid-cols-4 md:grid-cols-2 lg:grid-cols-3 items-center relative justify-center">
-          {data ? (
+          {/* {data ? (
             data?.map((item) => {
               return (
                 <div key={item._id} className="">
@@ -60,7 +60,7 @@ const Hosting = () => {
             <>
               <p>Please wait...</p>
             </>
-          )}
+          )} */}
         </div>
         <div className="mx-3 mt-5 flex justify-end">
           <p
@@ -73,7 +73,7 @@ const Hosting = () => {
       </div>
       {/* Hosting carousel */}
       <div className="md:hidden">
-        {data
+        {/* {data
           ? (more ? data : data.slice(0, 4)).map((item, index) => (
               <div
                 key={index}
@@ -86,7 +86,7 @@ const Hosting = () => {
                 )}
               </div>
             ))
-          : false}
+          : false} */}
         <div className="w-[114px]  mx-auto flex justify-between my-4">
           <div className="w-[35px] h-[35px] bg-white border rounded-full float-left">
             <FiChevronLeft
