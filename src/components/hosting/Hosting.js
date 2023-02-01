@@ -1,31 +1,16 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import HostingCard from "../cards/HostingCard";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import Data from "../data/Data";
-import { toast } from "react-toastify";
+import UseFetch from "../hooks/UseFetch";
 const Hosting = () => {
   const SERVER_URL = process.env.REACT_APP_SERVER_URL;
-  const [hosting, setHosting] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await axios({
-          method: "get",
-          url: SERVER_URL + "hostings",
-        });
-        if (res.status === 200) {
-          setHosting(res.data);
-        }
-      } catch (error) {
-        toast.error(error?.response?.data, { theme: "colored" });
-      }
-    };
-    fetchData();
-    // eslint-disable-next-line
-  }, []);
+  const { data } = UseFetch(SERVER_URL + "hostings", {
+    method: "get",
+    details: {},
+  });
   const [slide, setSlide] = useState(0);
-  const length = hosting ? hosting.length : 0;
+  const length = data ? data.length : 0;
   const [more, setMore] = useState(false);
   const prevSlide = () => {
     setSlide(slide === length - 1 ? 0 : slide + 1);
@@ -33,7 +18,6 @@ const Hosting = () => {
   const nextSlide = () => {
     setSlide(slide === 0 ? length - 1 : slide - 1);
   };
-console.log(hosting.length);
   return (
     <div className="max-w-[1200px] mx-auto py-5">
       <div className="px-2 md:px-0 md:py-5">
@@ -49,8 +33,8 @@ console.log(hosting.length);
 
       <div className="hidden md:contents">
         <div className="grid xl:grid-cols-4 md:grid-cols-2 lg:grid-cols-3 items-center relative justify-center">
-          {hosting.length > 0 ? (
-            hosting.map((item) => <HostingCard props={item} key={item._id} />)
+          {data ? (
+            data?.map((item) => <HostingCard props={item} key={item._id} />)
           ) : (
             <>
               <p>Please wait...</p>
@@ -68,7 +52,7 @@ console.log(hosting.length);
       </div>
       {/* Hosting carousel */}
       <div className="md:hidden">
-        {/* {data
+        {data
           ? (more ? data : data.slice(0, 4)).map((item, index) => (
               <div
                 key={index}
@@ -81,7 +65,7 @@ console.log(hosting.length);
                 )}
               </div>
             ))
-          : false} */}
+          : false}
         <div className="w-[114px]  mx-auto flex justify-between my-4">
           <div className="w-[35px] h-[35px] bg-white border rounded-full float-left">
             <FiChevronLeft
