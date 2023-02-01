@@ -11,8 +11,12 @@ const Form = ({ type, ordered }) => {
   window.addEventListener("auth", () => {
     window.location.reload(false);
   });
-  var decoded = auth ? jwt_decode(auth) : false;
-
+  let decoded = auth ? jwt_decode(auth) : false;
+  const TOKEN = {
+    headers: {
+      auth: localStorage.getItem("jwt-token"),
+    },
+  };
   // console.log(decoded);
   const [contact, setContact] = useState({
     author: decoded?._id,
@@ -48,7 +52,7 @@ const Form = ({ type, ordered }) => {
   const SendOrder = async () => {
     try {
       setLoading(true);
-      const res = await axios.post(SERVER_URL + "orders", contact);
+      const res = await axios.post(SERVER_URL + "orders", contact, TOKEN);
       if (res.status === 201) {
         setLoading(false);
         toast.success("Buyritma qabul qilindi", { theme: "colored" });
@@ -59,6 +63,7 @@ const Form = ({ type, ordered }) => {
       console.log(error);
     }
   };
+  console.log(TOKEN.headers.auth);
   return (
     <>
       <div className="p-1 md:p-2">

@@ -22,7 +22,7 @@ const CreateHosting = () => {
     dns: false,
     access_log: false,
   });
-  // eslint-disable-next-line 
+  // eslint-disable-next-line
   const [basicHosting, setBasicHosting] = useState({
     capacity: [
       { id: 0, value: "0", cost: 0 },
@@ -51,10 +51,10 @@ const CreateHosting = () => {
     domainUz: 21000,
     pochta: 120,
     trafik: 123,
-    backUp: 129,
-    ftp: 120,
-    dns: 120,
-    access_log: 0,
+    backUp: 1,
+    ftp: 2,
+    dns: 3,
+    access_log: 4,
   });
   const [hostingCost, setHostingCost] = useState({
     total: 0,
@@ -113,7 +113,12 @@ const CreateHosting = () => {
           basicHosting={basicHosting}
         />
         {/* O'ng tomondagi ma'lumotlar */}
-        <Right changeHandler={changeHandler} basic={hosting} send={Send} />
+        <Right
+          changeHandler={changeHandler}
+          basic={hosting}
+          send={Send}
+          basicHosting={basicHosting}
+        />
       </div>
     </>
   );

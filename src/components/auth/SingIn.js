@@ -32,6 +32,7 @@ export default function SignIn() {
         var decoded = jwt_decode(JWT);
         localStorage.setItem("user", JSON.stringify(decoded));
         localStorage.setItem("auth", JSON.stringify(JWT));
+        localStorage.setItem("jwt-token", JWT);
         navigate("/");
         toast.success("Siz muvaffaqqiyatli kirdingiz", { theme: "colored" });
       }
