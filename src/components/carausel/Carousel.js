@@ -45,9 +45,9 @@ const Carousel = () => {
                       <h1 className="text-[26px] xl:text-[56px] lg:text-[36px] md:text-[32px] text-[#1F3D9D] text-center md:text-start title-font">
                         {item.title}
                       </h1>
-                      <h3 className="text-[#797979] md:mt-7 text-[16px] xl:w-1/2">
+                      <p className="text-[#797979] md:mt-7 text-[16px] xl:w-1/2">
                         {item.about}
-                      </h3>
+                      </p>
                       <div className="mt-2 lg:mt-[60px] hidden md:contents">
                         <Button
                           name={"RO‘YXATDAN O‘TISH"}

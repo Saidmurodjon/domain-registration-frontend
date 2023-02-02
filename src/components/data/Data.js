@@ -14,6 +14,7 @@ const uz = {
       title: "ISHONCHLI HOSTING XIZMATI",
       about:
         "-haftasiga 7 kun   24 soat uzluksiz -rezerevda saqlash -cheksiz internet trafik",
+
     },
     {
       url: "./assets/carousel/domain.png",

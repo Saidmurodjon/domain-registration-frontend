@@ -26,10 +26,9 @@ const PochtaCard = ({ props }) => {
             <select
               className="cursor-pointer rounded outline-none text-center w-[110px] h-[32px] shadow-md"
               name=""
-              id=""
               onChange={(e) => setDuration(e.target.value)}
             >
-              {[1, 2, 3, 4, 5, 6, 12].map((item) => (
+              {[1, 2, 3, 4, 5, 6, 12,24].map((item) => (
                 <option key={item} className="dark:bg-white" value={item}>
                   {item} oyga
                 </option>
@@ -45,7 +44,7 @@ const PochtaCard = ({ props }) => {
             name={"Buyurtma berish"}
             styles="w-[250px]"
             ButtonFunction={() =>
-              navigate("/user", { state: { type: "pochta", item: props } })
+              navigate("/order", { state: { type: "pochta", item: props } })
             }
           />
         </div>
