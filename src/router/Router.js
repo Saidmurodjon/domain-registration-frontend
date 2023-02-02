@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import 'react-loading-skeleton/dist/skeleton.css'
 import Home from "../view/home/Home";
 import E404 from "../components/errors/E404";
 import Domen from "../view/domain/Domain";

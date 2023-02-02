@@ -13,7 +13,7 @@ const SignUp = () => {
             onClick={() => {
               navigate('/');
             }}
-            className=" mr-4 mt-4 cursor-pointer float-right"
+            className=" mr-4 mt-4 cursor-pointer float-right md:text-2xl"
           />
         </div>
         <div className="grid md:grid-cols-2 w-full ">

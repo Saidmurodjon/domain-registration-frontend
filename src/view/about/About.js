@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import ProductCard from "../../components/cards/ProductCard";
 import WorkerCard from "../../components/cards/WorkerCard";
 import UseFetch from "../../components/hooks/UseFetch";
+import Skeleton from "react-loading-skeleton";
 const About = () => {
   const SERVER_URL = process.env.REACT_APP_SERVER_URL;
   const [show, setShow] = useState(true);
@@ -55,9 +56,18 @@ const About = () => {
             Boshqa loyihalarimiz
           </h1>
         </div>
-        <div className="grid xl:grid-cols-4 grid-cols-2 lg:grid-cols-3 items-center relative justify-center">
-          {show? data?.map((e) => <WorkerCard key={e._id} element={e} />)
-            : products?.map((e) => <ProductCard key={e._id} element={e} />)}
+        <div className="grid xl:grid-cols-4 grid-cols-2 lg:grid-cols-3 items-center relative justify-center mt-1">
+          {show ? (
+            data ? (
+              data?.map((e) => <WorkerCard key={e._id} element={e} />)
+            ) : (
+              <Skeleton className="" count={8} />
+            )
+          ) : products ? (
+            products?.map((e) => <ProductCard key={e._id} element={e} />)
+          ) : (
+            <Skeleton count={5} />
+          )}
         </div>
       </div>
     </div>

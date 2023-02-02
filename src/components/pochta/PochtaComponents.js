@@ -2,9 +2,10 @@ import React from "react";
 import PochtaCard from "../cards/PochtaCard";
 import Data from "../data/Data";
 import UseFetch from "../hooks/UseFetch";
+import Skeleton from "react-loading-skeleton";
 const PochtaComponents = () => {
   const SERVER_URL = process.env.REACT_APP_SERVER_URL;
-  const { data, loading } = UseFetch(SERVER_URL + "pochtas", {
+  const { data} = UseFetch(SERVER_URL + "pochtas", {
     method: "get",
     details: {},
   });
@@ -21,9 +22,11 @@ const PochtaComponents = () => {
           </h2>
         </div>
         <div className="grid xl:grid-cols-4 md:grid-cols-2 lg:grid-cols-3 items-center relative justify-center">
-          {data
-            ? data?.map((item) => <PochtaCard key={item._id} props={item} />)
-            : loading}
+          {data ? (
+            data?.map((item) => <PochtaCard key={item._id} props={item} />)
+          ) : (
+            <Skeleton count={5}/>
+          )}
         </div>
       </div>
     </div>

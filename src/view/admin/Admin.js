@@ -1,5 +1,5 @@
 const Admin = () => {
-  window.location.href = "https://ddek-admin.herokuapp.com/admin";
+  window.location.href = process.env.REACT_APP_ADMIN_URL;
 };
 
 export default Admin;

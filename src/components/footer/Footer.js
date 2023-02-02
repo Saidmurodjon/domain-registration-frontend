@@ -117,6 +117,7 @@ const Footer = () => {
               {[`image 2.png`, `image 3.png`, `image 5.png`, `image 4.png`].map(
                 (e) => (
                   <img
+                    key={e}
                     src={"./assets/footer/" + e}
                     alt="Alt"
                     className="mr-4 inline"

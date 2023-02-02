@@ -4,6 +4,7 @@ import Left from "./Left";
 import Right from "./Right";
 import { useNavigate } from "react-router-dom";
 import UseFetch from "../../hooks/UseFetch";
+import Skeleton from "react-loading-skeleton";
 
 const CreateHosting = () => {
   const SERVER_URL = process.env.REACT_APP_SERVER_URL;
@@ -77,18 +78,27 @@ const CreateHosting = () => {
     <>
       <div className="grid md:grid-cols-2 gap-2 sm:grid-cols-1 max-w-[1200px] mx-auto bg-[#ffff] py-4">
         {/* chap tomondagi ma'lumotlar */}
-        <Left
-          changeHandler={changeHandler}
-          basic={hosting}
-          basicHosting={data ? data[0] : null}
-        />
-        {/* O'ng tomondagi ma'lumotlar */}
-        <Right
-          changeHandler={changeHandler}
-          basic={hosting}
-          send={Send}
-          basicHosting={data ? data[0] : null}
-        />
+        {data ? (
+          <>
+            {" "}
+            <Left
+              changeHandler={changeHandler}
+              basic={hosting}
+              basicHosting={data ? data[0] : null}
+            />
+            {/* O'ng tomondagi ma'lumotlar */}
+            <Right
+              changeHandler={changeHandler}
+              basic={hosting}
+              send={Send}
+              basicHosting={data ? data[0] : null}
+            />
+          </>
+        ) : (
+          <>
+            <Skeleton className="mx-2 md:px-4" count={10} />
+          </>
+        )}
       </div>
     </>
   );

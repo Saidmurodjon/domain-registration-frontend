@@ -45,7 +45,7 @@ export default function SignUp() {
       <div className="flex flex-col items-center pt-6 sm:justify-center sm:pt-0  ">
         <div>
           <Link to="/">
-            <h3 className="text-4xl font-bold text-purple-600">
+            <h3 className="md:text-3xl text-2xl font-bold">
               Ro'yxatdan o'tish
             </h3>
           </Link>

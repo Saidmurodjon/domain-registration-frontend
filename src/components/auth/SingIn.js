@@ -45,9 +45,19 @@ export default function SignIn() {
   return (
     <div className="relative flex flex-col justify-center overflow-hidden">
       <div className="w-full p-6 m-auto bg-white rounded-md lg:max-w-xl">
-        <h1 className="text-3xl font-semibold text-center text-purple-700 underline">
-          Sign in
+        <h1 className="md:text-3xl text-2xl font-bold text-center">
+          Kirish
         </h1>
+        <div className="flex justify-between items-center mx-auto w-1/2 py-[40px]">
+          <img src="./assets/icons/social/g.png" alt="" />
+          <img src="./assets/icons/social/f.png" alt="" />
+          <img src="./assets/icons/social/t.png" alt="" />
+        </div>
+        <div className="flex my-2 justify-center">
+          <hr className="border w-1/3 border-[#000000]/15 mt-4" />
+          <p className="inline w-1/4 text-center">yoki</p>
+          <hr className="border w-1/3 border-[#000000]/15 mt-4" />
+        </div>
         <form className="mt-6" onSubmit={(e) => e.preventDefault()}>
           <div className="mb-2">
             <label

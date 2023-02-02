@@ -3,6 +3,7 @@ import HostingCard from "../cards/HostingCard";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import Data from "../data/Data";
 import UseFetch from "../hooks/UseFetch";
+import Skeleton from "react-loading-skeleton";
 const Hosting = () => {
   const SERVER_URL = process.env.REACT_APP_SERVER_URL;
   const { data } = UseFetch(SERVER_URL + "hostings", {
@@ -36,9 +37,7 @@ const Hosting = () => {
           {data ? (
             data?.map((item) => <HostingCard props={item} key={item._id} />)
           ) : (
-            <>
-              <p>Please wait...</p>
-            </>
+            <Skeleton count={10} />
           )}
         </div>
         <div className="mx-3 mt-5 flex justify-end">
