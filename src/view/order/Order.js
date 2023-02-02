@@ -1,22 +1,33 @@
 import { useEffect } from "react";
+import axios from "axios";
 import { HiOutlineX } from "react-icons/hi";
 import { useNavigate, useLocation } from "react-router-dom";
-import jwt_decode from "jwt-decode";
 import OrderList from "../../components/order/OrderList";
 import Form from "../../components/form/Form";
+import { toast } from "react-toastify";
+
 const Order = () => {
   const navigate = useNavigate();
-  let auth = localStorage.getItem("auth");
-  window.addEventListener("auth", () => {
-    window.location.reload(false);
-  });
-  var decoded = auth ? jwt_decode(auth) : false;
-
   const location = useLocation();
+  const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+  const TOKEN = {
+    headers: {
+      auth: localStorage.getItem("jwt-token"),
+    },
+  };
   useEffect(() => {
-    if (!decoded) {
-      navigate("/signin");
-    }
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(SERVER_URL + "auth", TOKEN);
+        if (!res.status === 200) {
+          navigate("/signin");
+        }
+      } catch (error) {
+        navigate("/signin");
+        toast.error(error?.response?.data, { theme: "colored" });
+      }
+    };
+    fetchData();
     // eslint-disable-next-line
   }, []);
   return (
@@ -31,14 +42,7 @@ const Order = () => {
           />
         </div>
         <div className="grid md:grid-cols-2 w-full ">
-          {/* {location.state.type === "registration" ? (
-            <Registration />
-          ) : (
-            <Form type={"order"} data={location.state} />
-          )} */}
-
           <OrderList />
-
           <Form type={"order"} ordered={location.state} />
         </div>
       </div>

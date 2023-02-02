@@ -85,7 +85,10 @@ const Sayt = () => {
             name={Data.site.button}
             styles="w-full"
             ButtonFunction={() =>
-              navigate("/site", { state: { type: "site" } })
+              // navigate("/site", { state: { type: "site" } })
+              navigate("/order", {
+                state: { type: "site", item: {} },
+              })
             }
           />
         </div>
