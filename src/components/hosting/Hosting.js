@@ -4,6 +4,7 @@ import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import Data from "../data/Data";
 import UseFetch from "../hooks/UseFetch";
 import Skeleton from "react-loading-skeleton";
+import { Link } from "react-router-dom";
 const Hosting = () => {
   const SERVER_URL = process.env.REACT_APP_SERVER_URL;
   const { data } = UseFetch(SERVER_URL + "hostings", {
@@ -41,12 +42,12 @@ const Hosting = () => {
           )}
         </div>
         <div className="mx-3 mt-5 flex justify-end">
-          <p
+          <Link to={'/hosting'}
             onClick={() => setMore(!more)}
             className=" text-[#00A59C] border-b-2 border-transparent hover:border-b-2 hover:border-current cursor-pointer"
           >
-            {more ? Data.hosting.less : Data.hosting.more}
-          </p>
+            {Data.hosting.more}
+          </Link>
         </div>
       </div>
       {/* Hosting carousel */}
