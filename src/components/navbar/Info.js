@@ -1,11 +1,47 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import { HiOutlinePhoneMissedCall } from "react-icons/hi";
 const Info = ({ show }) => {
   // online information
-  const [time, setTime] = useState('');
+  const EX_RATE_API = process.env.REACT_APP_EXCHANGE_RATE_API_URL;
+  const [time, setTime] = useState("");
+  const [usd, setUsd] = useState("");
+  const [rub, setRub] = useState("");
+  const [eur, SetEur] = useState("");
   setInterval(() => {
     setTime(new Date().toLocaleString().slice(10, 18));
   }, 1000);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const resUsd = await axios({
+          method: "get",
+          url: EX_RATE_API + "USD",
+        });
+        const resRub = await axios({
+          method: "get",
+          url: EX_RATE_API + "RUB",
+        });
+        const resEur = await axios({
+          method: "get",
+          url: EX_RATE_API + "EUR",
+        });
+        if (resUsd.status === 200) {
+          setUsd(resUsd.data.conversion_rates.UZS);
+        }
+        if (resRub.status === 200) {
+          setRub(resRub.data.conversion_rates.UZS);
+        }
+        if (resEur.status === 200) {
+          SetEur(resEur.data.conversion_rates.UZS);
+        }
+      } catch (error) {
+        throw error;
+      }
+    };
+    fetchData();
+    // eslint-disable-next-line
+  }, []);
   return (
     <div className={`${show ? "contents" : "hidden"} duration-1000`}>
       <div className="bg-slate-600 hidden md:block h-[50px]">
@@ -15,13 +51,13 @@ const Info = ({ show }) => {
           </div>
           <div className="col-span-3 flex justify-between mx-5 items-center">
             <h1 className="text-white font-semibold">
-              USD=<p className="font-normal inline">11.00</p>
+              USD=<p className="font-normal inline">{usd}</p>
             </h1>{" "}
             <h1 className="text-white font-semibold">
-              RUBL=<p className="font-normal inline">175</p>
+              RUBL=<p className="font-normal inline">{rub}</p>
             </h1>{" "}
             <h1 className="text-white font-semibold">
-              EURO=<p className="font-normal inline">12.50</p>
+              EURO=<p className="font-normal inline">{eur}</p>
             </h1>
           </div>
           <div className="col-span-4 lg:col-span-3 flex justify-end items-center">
