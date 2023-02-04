@@ -42,7 +42,7 @@ const Order = () => {
           />
         </div>
         <div className="grid md:grid-cols-2 w-full ">
-          <OrderList />
+          <OrderList ordered={location.state} />
           <Form type={"order"} ordered={location.state} />
         </div>
       </div>

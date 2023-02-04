@@ -10,6 +10,7 @@ const Footer = () => {
   window.addEventListener("navbarCategories", () => {
     window.location.reload(false);
   });
+  const date = new Date();
   return (
     <footer className="p-4 bg-white sm:p-6 dark:bg-[#34495E]">
       <div className="max-w-[1240px] mx-auto">
@@ -38,9 +39,14 @@ const Footer = () => {
             <div className="flex">
               <TbPhonePlus className="mt-6 dark:text-white" />
               <h3 className="text-1xl dark:text-[#d0d0d0] w-5/6 text-start p-2 flex-none">
-                {Data.footer.contact1}
+                <a href={`tel:${Data.footer.contact1}`}>
+                  {Data.footer.contact1}
+                </a>
+
                 <br />
-                {Data.footer.contact2}
+                <a href={`tel:${Data.footer.contact2}`}>
+                  {Data.footer.contact2}
+                </a>
               </h3>
             </div>
           </div>
@@ -68,8 +74,7 @@ const Footer = () => {
           <div className="mb-6 md:mb-0 md:w-1/4 my-12 hidden lg:flex">
             <div className="grid grid-cols-2 w-5/6">
               <div className="">
-                <h1 className="dark:text-[#d0d0d0]">Bugun 20-iyul</h1>
-                <h1 className="dark:text-[#d0d0d0]">Chorshanba</h1>
+                <h1 className="dark:text-[#d0d0d0]">{date.toDateString()}</h1>
               </div>
               <div className="border-l flex justify-center">
                 <form action="" className="mx-auto dark:text-[#d0d0d0]">
@@ -90,7 +95,7 @@ const Footer = () => {
                 <h1 className="text-[14px] dark:text-[#d0d0d0]">
                   {Data.footer.update}
                   <p className="font-semibold inline text-white">
-                    20.07.2022
+                    04.02.2023
                   </p>{" "}
                 </h1>
               </div>

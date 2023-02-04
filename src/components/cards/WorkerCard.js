@@ -2,12 +2,13 @@ import { FaFacebookF, FaTelegramPlane } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 const WorkerCard = ({ element }) => {
+  const UPLOADS_URL = process.env.REACT_APP_UPLOADS_URL;
   return (
     <div className="w-[278px] h-[380px] rounded-lg shadow-lg mx-auto bg-white mt-2 md:mt-6 xl:mt-4 transition duration-500 transform md:hover:-translate-y-[10px] md:hover:shadow-2xl col-span-2 md:col-span-1">
       <div className="mx-auto py-8">
         <img
           className="rounded-full w-44 h-44 mx-auto"
-          src={element.photo}
+          src={UPLOADS_URL+element.photo}
           alt="avatar"
         />
       </div>

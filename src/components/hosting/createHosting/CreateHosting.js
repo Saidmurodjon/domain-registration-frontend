@@ -15,11 +15,11 @@ const CreateHosting = () => {
   });
   const [hosting, setHosting] = useState({
     title: "New hosting",
-    price: 50000,
-    capacity: 100,
-    domain: 2,
-    subdomain: 2,
-    db: 2,
+    price: 0,
+    capacity: 0,
+    domain: 0,
+    subdomain: 0,
+    db: 0,
     domainUz: false,
     pochta: false,
     trafik: false,

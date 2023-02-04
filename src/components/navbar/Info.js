@@ -66,7 +66,9 @@ const Info = ({ show }) => {
             </div>
             <div className="mx-5">
               <h1 className="text-[#d0cece]">Aloqa uchun</h1>
-              <h1 className="text-white">+99873 244-05-35</h1>
+              <a className="text-white" href={`tel:+99873 244-05-35`}>
+                +99873 244-05-35
+              </a>
             </div>
             <div className="w-[44px] h-[43px] bg-[#00A59C] flex  items-center rounded-md text-white">
               <form action="bg-[#00A59C]">

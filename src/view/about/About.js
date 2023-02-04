@@ -7,6 +7,7 @@ import UseFetch from "../../components/hooks/UseFetch";
 import Skeleton from "react-loading-skeleton";
 const About = () => {
   const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+
   const [show, setShow] = useState(true);
   const [products, setProducts] = useState();
   useEffect(() => {
